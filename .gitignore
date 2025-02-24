@@ -5,3 +5,4 @@ save.var
 tmp.json
 pluglist.json
 test*
+env.cnf
