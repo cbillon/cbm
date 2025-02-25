@@ -2,10 +2,13 @@
 
 #exec 1> >(logger -s -t $(basename $0)) 2>&1
 
-
-. env.cnf
-source functions.cfg
-
+if [ -f env.cnf ]; then
+  source env.cnf
+  source functions.cfg
+else
+  echo env.cnf missing see README.md
+  exit
+fi
 # Le script
 CURRENT_DIR=$(dirname "${0}")
 SCRIPT_NAME=$(basename "${0}")
@@ -22,7 +25,7 @@ verif_pre_requis && info continue... || exit
 [ -d "$PROJECTS_PATH" ] || create_env 
 # restore last project                                          
 . save.var
-PROJECT=$(whiptail --inputbox "What is your project?" 8 39 "$PROJECT" --title "Project" 3>&1 1>&2 2>&3)
+PROJECT=$(whiptail --inputbox "What is your project?" 8 39 "$PROJECT" --title "Code Base Manager" 3>&1 1>&2 2>&3)
 # A trick to swap stdout and stderr.
 # Again, you can pack this inside if, but it seems really long for some 80-col terminal users.
 exitstatus=$?
