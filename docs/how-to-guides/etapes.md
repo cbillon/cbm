@@ -32,15 +32,13 @@ dans les autres cas il n'y a pas d'impact.
 
 ### 1.2 Plugins
 
-A partir des information fournies par le répertoire officiel des plugins la commande **Import d'un plugin** met à jour le cache local (clone du dépot git du plugins).
+A partir des informations fournies par le répertoire officiel des plugins la commande **Import d'un plugin** met à jour le cache local (clone du dépôt git du plugins).
 
 #### 2 Mise à jour de la configuration, intégration
 
 La liste des plugins à intégrer dans la base de code est fournie par le fichier de configuration.
 
-
-
-L'état du plugin est donné par les parametres : branch, tag et/ou version
+L'état du plugin est donné par les paramètres : branch, tag et/ou version
 - branch du plugin
 - version : branch, tag ou commit 
 

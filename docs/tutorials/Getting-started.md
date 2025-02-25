@@ -1,18 +1,16 @@
 
 # Création d'un nouveau projet
 
-
-Nous allons dérouler le scénario suivant :
-
+Le tutoriel enchaine les différentes étapes de la mise à jour d'une base de code :
+A l'issus vous obtiendrez :
 - création d'une base de code Moodle:
   - Version Moodle 4.5 avec les derniers fixes publiés
-  - 2 plugins : moodle-tool_opcache, moodle-tool_redis
-- génération  (build)
+  - installation de 2 plugins : moodle-tool_opcache, moodle-tool_redis
 - livraison de la base de code
 
 ## Pre requis
 
-L' outil est un script bash qui fonctionne dans un environnement Linux avec les pre requis suivants:
+L'outil est un script bash qui fonctionne dans un environnement Linux avec les pre requis suivants:
 - installation de git pour récupérer les sources de Moodle, des plugins.
 
 ```bash
@@ -38,26 +36,36 @@ L' outil est un script bash qui fonctionne dans un environnement Linux avec les 
     sudo chmod +x /usr/bin/yq
 
   ```
+
+
 ## Installation
 
-cloner le dépot dans votre environnement de travail:
+cloner le dépôt du script Code Base Manager (cbm) dans votre environnement de travail :
 
 ```bash
 
   git clone https://gitbub.com:cbillon/cbm.git
   
 ```
+- créer le fichier de configuration de l'environnement à partir du fichier exemple
+
+```bash
+
+  cd cbm
+  cp env.cnf.copy env.cnf
+
+```
 
 ## Les étapes 
 
-Lancer l' éxécution du script :
+Lancer l'exécution du script pour exécuter les différentes étapes :
+
 - 1 création d'un nouveau projet  
 - 2 Installation des plugins
 - 3 Mise à jour de la base de code
 - 4 Génération d'une nouvelle livraison
 - 5 Mise à jour Moodle
-
-
+- 6 Mise des plugins
 
 ### 1 Création du nouveau projet
 
@@ -68,19 +76,19 @@ Lancer le script :
   ./cbm
 
 ```
-Nommez le projet par exemple: demo
+Nommez le projet par exemple : demo
 
-La création d'un nouveau projet entraine une mise à jour d'un clone du dépot Moodle
+La création d'un nouveau projet entraine une mise à jour d'un clone dépôt Moodle
 A chaque projet est associée une base de code.
 
-Le fichier de configuration de la base de code s'affiche:
+Le fichier de configuration de la base de code s'affiche :
 
-Il comporte:
+Il comporte :
 - la version source de Moodle 
 - la liste des plugins à installer (cette liste est vide au démarrage)
 
-L'outil maintient en local un dépot Moodle, un dépot pour chaque plugin.
-Il est possible de gérer plusieurs projets (multi instances), les émements communs étant paragés(dépot Moodle, plugins).
+L'outil maintient en local un dépôt Moodle, un dépôt pour chaque plugin.
+Il est possible de gérer plusieurs projets (multi instances), les éléments communs étant partagédépôtpot Moodle, plugins).
 
 #### Version de Moodle
 
@@ -111,12 +119,12 @@ Le script récupère :
 
 Le dépot du plugin est cloné en local (mise à jour du cache local)
 Les plugins importés dans le cache en local, sont disponibles pour les différents projets.
-La version installée dépond de la version Moodle du projet.   
-Le script propose une version (best effort..), et laisse à l'administrateur la possibilité de corriger cette proposition. 
+La version installée dépend de la version Moodle du projet.   
+Le script propose une version (best effort..), et laisse à l'administrateur la responsabilité de corriger cette proposition. 
 
 Le cache Moodle le cache des plugins sont partagés par toutes les instances de base de code (factorisation des sources).
 
-nota : il est possible de choisir un plugin qui n'est pas dans le répertoire officiel Moodle en sasisissant l'url du dépot du plugin dans le fichier de configuration.
+nota : il est possible de choisir un plugin qui n'est pas dans le répertoire officiel Moodle en saisissant l'url du dépôt du plugin dans le fichier de configuration.
 
 #### 2.2 Mise à jour du fichier de configuration
 
@@ -151,7 +159,7 @@ Le script essaie de déterminer la version du plugin compatible avec la version 
 
 Pour mettre à jour la base de code, lancer l'option du menu **Mise à jour de la base de code**
 Le script effectue le travail de réconciliation: **état demandé** vs **état observé**
-A l'issue de cette étape les plugins fugurant dans le fichier de configuration sont installés.
+A l'issue de cette étape les plugins figurant dans le fichier de configuration sont installés.
 Vous pouvez le vérifier en examinant le dépot Moodle du projet.
 
 ### 4 Génération d'une livraison

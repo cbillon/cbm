@@ -4,7 +4,8 @@ Lancement du script, sélection du projet, choix de la commande **Edition de la 
 Le fichier de configuration du projet s'affiche ![fichier de configuration](../pictures/Configuration_file.png)
 
 Quand l'administrateur ajoute un plugin au projet, le script met à jour le fichier de configuration.
-Les spécifications publiées par Moodle pour le développment de nouveaux plugins ne donnent pas de directives précises pour gérer les versions.
+Attention , cette version doit etre validée par l'administrateur.
+Les spécifications publiées par Moodle pour le développement de nouveaux plugins ne donnent pas de directives précises pour gérer les versions.
 Ce qui fait qu'on peut avoir :
 - une seule branche, la version étant gérée (ou pas) dans les meta données du plugin
 - une branche par version Moodle

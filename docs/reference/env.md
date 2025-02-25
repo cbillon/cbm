@@ -50,3 +50,25 @@ Lors de la création du clone du dépot Moodle cette option permet d'avoir une v
 ## DIFF_DAYS
 
 Pour mettre à jour le cache des plugins (commande import plugin) le script utilise le fichier issu du répertoire officiel maintenu par Moodle HQ; le paramètre indique la fréquence de rafraichissement du fichier.
+
+## MOODLE_UPDATE_ORIGIN
+Valeur par défaut = N pas de mise à jour distante
+
+si = Y  permet de synchroniser un dépot remote lors de la génération d 'une nouvelle version de la base de code
+Le script effectue simplement une commande git push origin <nom du projet>
+Il faut donc mettre à jour la configuration git du dépot Moodle
+
+Exemple d'un dépot remote sur github
+ 
+- créer un projet pour avoir le dépot Moodle présent en local   
+- créer le dépot sur github, noter l'url du dépot
+- exécuter le commandes:
+  - cd cbm/moodle
+  - git remote add origin <url du dépot>
+  - git branch -M <nom du projet> 
+  - git push -u origin <nom du projet> 
+
+
+
+
+

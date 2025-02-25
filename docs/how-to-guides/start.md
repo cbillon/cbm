@@ -3,8 +3,8 @@
 A partir du répertoire d'installation
 
 ```
-  cd mcm
-  ./mcm
+  cd cbm
+  ./cbm
 
 ```
 Le menu des différentes commandes s'affiche 
