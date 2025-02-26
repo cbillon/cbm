@@ -2,13 +2,16 @@
 
 #exec 1> >(logger -s -t $(basename $0)) 2>&1
 
-if [ -f env.cnf ]; then
-  source env.cnf
-  source functions.cfg
-else
-  echo env.cnf missing see README.md
-  exit
+if [ ! -f env.cnf ]; then  
+  cp env.cnf.default env.cnf
+  nano env.cnf
+  [ ! -f env.cnf ] && exit
+  info Create env.cnf 
 fi
+
+source env.cnf
+source functions.cfg
+
 # Le script
 CURRENT_DIR=$(dirname "${0}")
 SCRIPT_NAME=$(basename "${0}")

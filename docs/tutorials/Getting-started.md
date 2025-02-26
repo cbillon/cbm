@@ -2,16 +2,17 @@
 # Création d'un nouveau projet
 
 Le tutoriel enchaine les différentes étapes de la mise à jour d'une base de code :
-A l'issus vous obtiendrez :
+A l'issue vous obtiendrez :
 - création d'une base de code Moodle:
   - Version Moodle 4.5 avec les derniers fixes publiés
-  - installation de 2 plugins : moodle-tool_opcache, moodle-tool_redis
+  - installation de 2 plugins : moodle-tool_opcache           moodle-tool_redis
 - livraison de la base de code
 
 ## Pre requis
 
 L'outil est un script bash qui fonctionne dans un environnement Linux avec les pre requis suivants:
-- installation de git pour récupérer les sources de Moodle, des plugins.
+
+- installation de git 
 
 ```bash
 
@@ -28,7 +29,7 @@ L'outil est un script bash qui fonctionne dans un environnement Linux avec les p
 ```
 
 - installation de [yq](https://github.com/mikefarah/yq/#install) pour lire le fichier de configuration au format yaml
-  sous unbuntu/debian pour installer la derniere version
+  sous ubuntu/debian pour installer la dernière version
   
   ```bash
 
@@ -36,7 +37,6 @@ L'outil est un script bash qui fonctionne dans un environnement Linux avec les p
     sudo chmod +x /usr/bin/yq
 
   ```
-
 
 ## Installation
 
@@ -47,14 +47,9 @@ cloner le dépôt du script Code Base Manager (cbm) dans votre environnement de 
   git clone https://gitbub.com:cbillon/cbm.git
   
 ```
-- créer le fichier de configuration de l'environnement à partir du fichier exemple
-
-```bash
-
-  cd cbm
-  cp env.cnf.copy env.cnf
-
-```
+- le fichier env.cnf permet de décrire l'environnement de l'outil Code Base Manager
+Par défaut un fichier env.cnf sera créé à partir de env.cnf.default
+Si vous souhaitez un environnement personnalisé, mettez à jour le fichier de configuration par défaut.
 
 ## Les étapes 
 
@@ -76,9 +71,9 @@ Lancer le script :
   ./cbm
 
 ```
-Nommez le projet par exemple : demo
+Nommez le nouveau projet par exemple : demo
 
-La création d'un nouveau projet entraine une mise à jour d'un clone dépôt Moodle
+La création d'un nouveau projet entraine une mise à jour d'un clone dépôt Moodle en local.
 A chaque projet est associée une base de code.
 
 Le fichier de configuration de la base de code s'affiche :
@@ -88,7 +83,7 @@ Il comporte :
 - la liste des plugins à installer (cette liste est vide au démarrage)
 
 L'outil maintient en local un dépôt Moodle, un dépôt pour chaque plugin.
-Il est possible de gérer plusieurs projets (multi instances), les éléments communs étant partagédépôtpot Moodle, plugins).
+Il est possible de gérer plusieurs projets (multi instances), les éléments communs étant partagés (dépôt Moodle, plugins).
 
 #### Version de Moodle
 
@@ -102,29 +97,29 @@ Les différentes options du fichier de configuration sont détaillées [ici](../
 ### 2 Installation des plugins
 
 2 étapes :
-- import pour mettre à jour le dépot des plugins (cache local)
+- import pour mettre à jour le dépot local des plugins (mise à jour du cache)
 - ajouter le plugin au projet
 
 #### 2.1 Mise à jour du cache des plugins
 
 Choisissez dans le menu **Import d'un plugin**
 
-A partir du nom saisi par l'administrateur l'outil va chercher des informations dans le répertoire officiel des plugins agréés par Moodle.
+A partir du nom saisi par l'administrateur l'outil va chercher les informations dans le répertoire officiel des plugins agréés par Moodle.
 
 Le script récupère :
 
 - la description
-- la source du dépot git
+- la source du dépôt git
 - la version 
 
-Le dépot du plugin est cloné en local (mise à jour du cache local)
+Le dépôt du plugin est cloné en local.
 Les plugins importés dans le cache en local, sont disponibles pour les différents projets.
 La version installée dépend de la version Moodle du projet.   
 Le script propose une version (best effort..), et laisse à l'administrateur la responsabilité de corriger cette proposition. 
 
 Le cache Moodle le cache des plugins sont partagés par toutes les instances de base de code (factorisation des sources).
 
-nota : il est possible de choisir un plugin qui n'est pas dans le répertoire officiel Moodle en saisissant l'url du dépôt du plugin dans le fichier de configuration.
+nota : il est possible de choisir un plugin qui n'est pas dans le répertoire officiel Moodle en saisissant directement l'url du dépôt du plugin dans le fichier de configuration.
 
 #### 2.2 Mise à jour du fichier de configuration
 
@@ -133,7 +128,7 @@ En lançant la commande : **Ajout d'un plugin au projet**
 Le script présente la liste des plugins présents dans le cache, mais ne faisant pas partie du projet.
 L'administrateur sélectionne le (ou les) plugin(s) à installer.
 
-dans le fichier de configuration 2 parametres obligatoires:
+dans le fichier de configuration 2 paramètres obligatoires:
 - source : url du depôt git du mainteneur
 - version : version du plugin à utiliser, **qui doit être compatible avec la version Moodle**
 
@@ -142,7 +137,7 @@ La version peut être :
 - une étiquette (tag)
 - un commit   
 
-C'est cette information qui donne l'état de la ressource, qui sera utilisée dans la boucle de reconciliation.
+C'est cette information qui donne l'état de la ressource, qui sera utilisée dans la boucle de reconciliation (état observé versus état attendu).
 
 Pour agréer un plugin, Moodle demande au développeur :
 - d'indiquer un dépot git (la plupart du temps github)
@@ -158,9 +153,9 @@ Le script essaie de déterminer la version du plugin compatible avec la version 
 ### 3 Mise à jour de la base de code
 
 Pour mettre à jour la base de code, lancer l'option du menu **Mise à jour de la base de code**
-Le script effectue le travail de réconciliation: **état demandé** vs **état observé**
+Le script effectue le travail de réconciliation : **état demandé** vs **état observé**
 A l'issue de cette étape les plugins figurant dans le fichier de configuration sont installés.
-Vous pouvez le vérifier en examinant le dépot Moodle du projet.
+Vous pouvez le vérifier en examinant le dépôt Moodle du projet.
 
 ### 4 Génération d'une livraison
 
@@ -170,7 +165,7 @@ Chaque livraison crée un nouveau commit avec une étiquette (tag)
 ![détail](../pictures/Releases.png) 
 
 Sur la capture d'écran vous pouvez voir:
-- le tag identifiant la livraison (nom du projet+timestamp de générartion)
+- le tag identifiant la livraison (nom du projet+timestamp de génération)
 - les commits correspondants à l'installation des plugins
 - la branche de Moodle de départ du projet
 
@@ -188,6 +183,6 @@ Dans le menu, la commande **Mise à jour Moodle** effectue cette opération de r
 
 dans le détail :
 - recherche des dernières mises à jour Moodle
-- si cela entraine une mise à jour de la base de code, fusion avec la branche du projet 
+- si cela entraine une mise à jour de la base de code, mise à jour du dépôt Moodle local, fusion avec la branche du projet 
 
-Apres cette opération vous obtenez une nouvelle livraison.
+Après cette opération vous obtenez une nouvelle livraison.
