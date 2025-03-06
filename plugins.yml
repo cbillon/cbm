@@ -1,0 +1,193 @@
+#moodle-report_upgradelog:
+#  repo: github
+#  owner: paulholden
+#  branch: master
+ 
+moodle-local_openlms:
+  repo: github
+  owner: open-lms-open-source
+  branch: MOODLE_311_STABLE
+ 
+moodle-mod_livepoll:
+  repo: github
+  owner: open-lms-open-source
+  branch: master
+ 
+moodle-block_myprograms:
+  repo: github
+  owner: open-lms-open-source
+  branch: MOODLE_311_STABLE
+ 
+moodle-mod_reengagement:
+  repo: github
+  owner: catalyst
+  branch: MOODLE_400_STABLE
+ 
+moodle-enrol_programs:
+  repo: github
+  owner: open-lms-open-source
+  branch: MOODLE_311_STABLE
+ 
+moodle-mod_attendance:
+  repo: github
+  owner: danmarsden
+  branch: MOODLE_401_STABLE
+ 
+moodle-tool_datewatch:
+  repo: github
+  owner: moodleworkplace
+  branch: master
+ 
+moodle-report_benchmark:
+  repo: github
+  owner: mikasmart
+  branch: master
+ 
+moodle-tool_opcache:
+  repo: github
+  owner: moodleuulm
+  branch: MOODLE_400_STABLE
+ 
+moodle-tool_redis:
+  repo: github
+  owner: moodle-an-hochschulen
+  branch: MOODLE_400_STABLE
+ 
+moodle-tool_usersuspension:
+  repo: github
+  owner: sebsoftnl
+  branch: main
+ 
+moodle-local_advancedperfs:
+  repo: github
+  owner: vfremaux
+  branch: MOODLE_41_STABLE
+ 
+moodle-local_vflibs:
+  repo: github
+  owner: vfremaux
+  branch: MOODLE_39_STABLE
+ 
+moodle-mod_organizer:
+  repo: github
+  owner: academic-moodle-cooperation
+  branch: MOODLE_400_STABLE
+ 
+moodle-mod_board:
+  repo: github
+  owner: brickfield
+  branch: MOODLE_400_STABLE
+ 
+moodle-report_lpmonitoring:
+  repo: github
+  owner: StudiUM
+  branch: master
+ 
+moodle-tool_cmcompetency:
+  repo: github
+  owner: StudiUM
+  branch: master
+ 
+moodle-block_dedication:
+  repo: github
+  owner: catalyst
+  branch: MOODLE_400_STABLE
+ 
+moodle-report_activitylog:
+  repo: github
+  owner: catalyst
+  branch: master
+ 
+moodle-report_filetrash:
+  repo: github
+  owner: catalyst
+  branch: master
+ 
+moodle-tool_copier:
+  repo: github
+  owner: catalyst
+  branch: master
+ 
+moodle-local_extwebservices:
+  repo: bitbucket
+  owner: cbillon
+  branch: master
+ 
+moodle-local_plugincopy:
+  repo: github
+  owner: marcusgreen
+  branch: main
+ 
+moodle-mod_syllabus:
+  repo: github
+  owner: Studium
+  branch: master
+  originalname: moodle-mod_syllabus.git
+ 
+moodle-report_cmcompetency:
+  repo: github
+  owner: StudiUM
+  branch: master
+ 
+moodle-mod_unilabel:
+  repo: github
+  owner: grabs
+  branch: MOODLE_401_STABLE
+ 
+moodle-tiny_c4l:
+  repo: github
+  owner: reskit
+  branch: main
+ 
+moodle-tool_excimer:
+  repo: github
+  owner: catalyst
+  branch: MOODLE_35_STABLE
+ 
+moodle-quizaccess_delayed:
+  repo: github
+  owner: juacas
+  branch: master
+  originalname: quizaccess_delayed
+ 
+moodle-local_codechecker:
+  repo: github
+  owner: moodlehq
+  branch: main
+ 
+moodle-mod_scheduler:
+  repo: github
+  owner: bostelm
+  branch: master
+ 
+moodle-mod_pdfannotator:
+  repo: github
+  owner: rwthmoodle
+  branch: main
+ 
+moodle-local_wswizard:
+  repo: github
+  owner: markanyx
+  branch: master
+ 
+moodle-block_qrcode:
+  repo: github
+  owner: learnweb
+  branch: master
+ 
+moodle-filter_filtercodes:
+  repo: github
+  owner: michael-milette
+  branch: master
+  plugin_version: v2.6.1
+ 
+moodle-tool_userdebug:
+  repo: github
+  owner: grabs
+  branch: MOODLE_401_STABLE
+ 
+moodle-local_debugtoolbar:
+  repo: github
+  owner: DSI-Universite-Rennes2
+  branch: master
+ 

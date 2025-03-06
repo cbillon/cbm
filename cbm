@@ -1,0 +1,103 @@
+#!/bin/bash
+
+#exec 1> >(logger -s -t $(basename $0)) 2>&1
+
+if [ ! -f env.cnf ]; then  
+  cp env.cnf.default env.cnf
+  nano env.cnf
+  [ ! -f env.cnf ] && exit
+  info Create env.cnf 
+fi
+
+source env.cnf
+source functions.cfg
+info DEBUG="$DEBUG"
+# Le script
+CURRENT_DIR=$(dirname "${0}")
+SCRIPT_NAME=$(basename "${0}")
+HOSTNAME=$(hostname)
+DATE_DU_JOUR=$(date)
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+[ $EUID -eq 0 ] && echo error "This script must run as normal user" && exit 1 
+
+# Verify pre requis
+
+verif_pre_requis && info continue... || exit
+ 
+[ -d "$PROJECTS_PATH" ] || create_env 
+# restore last project                                          
+. save.var
+PROJECT=$(whiptail --inputbox "What is your project?" 8 39 "$PROJECT" --title "Code Base Manager" 3>&1 1>&2 2>&3)
+# A trick to swap stdout and stderr.
+# Again, you can pack this inside if, but it seems really long for some 80-col terminal users.
+exitstatus=$?
+
+if [ $exitstatus = 0 ]; then    
+  if [ -d "$PROJECTS_PATH"/"$PROJECT" ]; then    
+    info "Project: $PROJECT"
+  else
+    echo "Project not exists."
+    if (whiptail --title "Boite de dialogue Oui / Non" --yesno "Create new project $PROJECT ?" 10 60); then      
+      new_project "$PROJECT" && info env "$PROJECT" created  || error Syntax error in "$RACINE/projects/$PROJECT"/"PROJECT".yaml
+    else
+       echo "Cancel."
+       exit 1 
+    fi 
+  fi
+else 
+   echo "Select canceled."
+   exit 1 
+fi
+# save last acceeded project
+echo "PROJECT=$PROJECT" > "$RACINE/save.var"
+# Verify date pluglist.json
+get_pluglist
+get_requested_state "$PROJECT" || exit 1
+sortie=0
+
+while [ $sortie = 0 ];
+do 
+  OPTION=$(whiptail --title "Code Base Manager" --menu "Projet : ${PROJECT}" 20 60 12 \
+  "0"  "Import d'un plugin" \
+  "1"  "Liste des plugins (cache)" \
+  "2"  "Edition des plugins du projet" \
+  "3"  "Ajout d'un plugin au projet" \
+  "4"  "Mise à jour du cache Moodle" \
+  "5"  "Mise à jour du cache dépot local des plugins" \
+  "6"  "Mise à jour de la base de code du projet" \
+  "7"  "Génèration d'une nouvelle version du projet"  \
+  "8"  "Help" \
+  "9"  "Exit" 3>&1 1>&2 2>&3)
+  
+  exitstatus=$?
+  if [ $exitstatus = 0 ]; then
+    
+    if   [ "$OPTION" = 0 ]; then add_plugin_cache
+    elif [ "$OPTION" = 1 ]; then list_plugins_cache "$PROJECT"
+    elif [ "$OPTION" = 2 ]; then edit_plugins "$PROJECT"
+    elif [ "$OPTION" = 3 ]; then add_plugin_project "$PROJECT" "$PLUGIN"   
+    elif [ "$OPTION" = 4 ]; then update_moodle "$PROJECT"
+    elif [ "$OPTION" = 5 ]; then update_repo  "$PROJECT"           
+    elif [ "$OPTION" = 6 ]; then update_codebase "$PROJECT"          
+    elif [ "$OPTION" = 7 ]; then release  "$PROJECT"
+    elif [ "$OPTION" = 8 ]; then help "$PROJECT" 
+    elif [ "$OPTION" = 9 ]; then sortie=1
+     
+    else  
+     echo "Vous avez annulé"
+     sortie=1
+    fi
+  
+  else
+  
+    #echo "Vous avez annulé... :-("
+    sortie=1
+  fi  
+  if [ "$DEBUG" = true ]; then
+    echo -e "Press any key \n"
+    read -rn 1 c
+  fi
+done
+
+info Bye Bye  

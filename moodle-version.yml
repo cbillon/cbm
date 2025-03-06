@@ -1,0 +1,24 @@
+"4.1":
+  version: "2022112800"
+  release: "4.1"  
+  branch: MOODLE_401_STABLE
+
+"4.2":
+  version: "2023042400"
+  release: "4.2"
+  branch: MOODLE_402_STABLE
+
+"4.3":
+  version: "2023100900"
+  release: "4.3"
+  branch: MOODLE_403_STABLE
+   
+"4.4":
+  version: "2024042200"
+  release: "4.4"
+  branch: MOODLE_404_STABLE
+
+"4.5":
+  version: "2024100700"
+  release: "4.5"
+  branch: MOODLE_405_STABLE
