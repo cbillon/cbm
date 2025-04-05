@@ -52,10 +52,6 @@ Valeur par défaut pour la création d'un nouvel environnement
 Peut être changé au moment de la création
 Les différentes valeurs possibles sont décrites [ici](conf.md)
 
-## MOODLE_DEPTH
-
-Lors de la création du clone du dépot Moodle cette option permet d'avoir une version limitée de l'historique et donc d'occuper un espace disque limité.
-
 ## DIFF_DAYS
 
 Pour mettre à jour le cache des plugins (commande import plugin) le script utilise le fichier issu du répertoire officiel maintenu par Moodle HQ; le paramètre indique la fréquence de rafraichissement du fichier.
