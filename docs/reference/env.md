@@ -77,8 +77,3 @@ Exemple d'un dépot remote sur github
  
 - créer un projet pour avoir le dépot Moodle présent en local   
 - créer le dépot sur github, noter l'url du dépot
-- exécuter le commandes:
-  - cd cbm/moodle
-  - git remote add origin <url du dépot>
-  - git branch -M <nom du projet> 
-  - git push -u origin <nom du projet> 
