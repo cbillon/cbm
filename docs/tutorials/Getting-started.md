@@ -18,7 +18,13 @@ L'outil est un script bash qui fonctionne dans un environnement Linux avec les p
   sudo apt install git
 
 ```
+Configurer username and email en utilsant les commandes ci dessous, après avoir mis à jour les informations :
 
+```bash
+  git config --global user.name "Emma Paris"
+  git config --global user.email "eparis@gmail.com"
+
+```
 - installation du package jq pour lire les fichiers au format json
 
 ```bash
@@ -48,7 +54,7 @@ cloner le dépôt du script Code Base Manager (cbm) dans votre environnement de 
 ```
 - le fichier env.cnf permet de décrire l'environnement de l'outil Code Base Manager
 Par défaut un fichier env.cnf sera créé à partir de env.cnf.default
-Si vous souhaitez un environnement personnalisé, mettez à jour le fichier de configuration par défaut.
+Si vous souhaitez un environnement personnalisé, mettez à jour le fichier de configuration avant de le sauvegarder.
 
 ## Les étapes 
 
@@ -101,7 +107,7 @@ Les différentes options du fichier de configuration sont détaillées [ici](../
 ### 2 Installation des plugins
 
 2 étapes :
-- import pour mettre à jour le dépot local des plugins (mise à jour du cache)
+- import pour mettre à jour le dépôt local des plugins (mise à jour du cache)
 - ajouter le plugin au projet
 
 #### 2.1 Mise à jour du cache des plugins
@@ -109,6 +115,7 @@ Les différentes options du fichier de configuration sont détaillées [ici](../
 Choisissez dans le menu **Import d'un plugin**
 
 A partir du nom saisi par l'administrateur l'outil va chercher les informations dans le répertoire officiel des plugins agréés par Moodle.
+Vous pouvez saisir le nom du plugin sous la forme moodle-<type>_<nom> ou simplement <type>_<nom>
 
 Le script récupère :
 
@@ -123,7 +130,9 @@ Le script propose une version (best effort..), et laisse à l'administrateur la 
 
 Le cache Moodle le cache des plugins sont partagés par toutes les instances de base de code (factorisation des sources).
 
-nota : il est possible de choisir un plugin qui n'est pas dans le répertoire officiel Moodle en saisissant directement l'url du dépôt du plugin dans le fichier de configuration.
+nota : il est possible 
+- de choisir un plugin qui n'est pas dans le répertoire officiel Moodle en saisissant directement l'url du dépôt du plugin dans le fichier de configuration.
+- d'utiliser une version personnalisée du plugin.
 
 #### 2.2 Mise à jour du fichier de configuration
 
@@ -132,7 +141,7 @@ En lançant la commande : **Ajout d'un plugin au projet**
 Le script présente la liste des plugins présents dans le cache, mais ne faisant pas partie du projet.
 L'administrateur sélectionne le (ou les) plugin(s) à installer.
 
-dans le fichier de configuration 2 paramètres obligatoires:
+dans le fichier de configuration 2 paramètres obligatoires :
 - source : url du depôt git du mainteneur
 - version : version du plugin à utiliser, **qui doit être compatible avec la version Moodle**
 
@@ -183,10 +192,10 @@ La publication d'une nouvelle version mineure est précédée du passage d'une s
 
 Ces mises à jour peuvent entrainer une mise à jour de la base de code.
 
-Dans le menu, la commande **Mise à jour Moodle** effectue cette opération de reconciliation.
+Dans le menu, la commande **Mise à jour Moodle** effectue cette opération de mise à jour.
 
 dans le détail :
 - recherche des dernières mises à jour Moodle
 - si cela entraine une mise à jour de la base de code, mise à jour du dépôt Moodle local, fusion avec la branche du projet 
 
-Après cette opération vous obtenez une nouvelle livraison.
+Après cette opération vous obtenez une nouvelle version compléte de la base de code.
