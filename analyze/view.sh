@@ -1,58 +1,48 @@
 #!/bin/bash
-echo param: "$1"
+
 source fonction.sh
 #declare -a fonc=($(cat fonc.txt))
 n=${#fonc[@]}
 n=$((n-1))
-echo n: $n
-for i in $(seq 0 $n);
-do
-  echo $i ${fonc[$i]}
-done
+if [[ -z "$1" ]];
+then
+  echo Liste des fonctions:    
+  for i in $(seq 0 $n);
+  do
+    echo $i ${fonc[$i]}
+  done
+else
+  
+  func=${fonc["$1"]}
+  [[ -z "$func" ]] && echo valeur incorrecte "$1" && exit 1
+  echo Analyze: "$1" "$func"
+  source code.sh 
 
-func=${fonc["$1"]}
-echo Cas d emploi Param: "$1" $func
-
-source code.sh
-
-# cas d'emploi
-emploi=()
-for i in $(seq 0 $n);
-do
-  s="${fonc[$i]}"
-  if [[ "$s" != "$func" ]] && [[ "${code[$s]}" =~ "$func" ]];
-  then
-    emploi+=("$s")
-  fi
-done
-
-echo "Cas d'emploi:"
-
-n="${#emploi[@]}"
-n=$((n-1))
-for i in $(seq 0 "$n");
-do
-  echo "$i" "${emploi[$i]}"
-done
-
-s="${fonc[$1]}"
-echo decomposition Param : "$1" "$s"
-decomp=()
-for i in $(seq 0 $n);
-do
-  if [[ "${code[$s]}" =~ "${fonc[$i]}" ]];
-  then
-    decomp+=("${fonc[$i]}")
-  fi
-done
-
-echo Decomposition: 
-
-n="${#decomp[@]}"
-n=$((n-1))
-for i in $(seq 0 "$n");
-do
-   echo "$i" "${decomp[$i]}"
-done 
-
+  # cas d'emploi
+  echo "Cas d'emploi:"
+  emploi=()
+  j=0
+  for i in $(seq 0 $n);
+  do
+    s="${fonc[$i]}"    
+    if [[ "$s" != "$func" ]] && [[ "${code[$s]}" =~ "$func" ]];
+    then
+      j=$((j+1))
+      echo "$j" "$s"
+    fi
+  done
+  
+  s="${fonc[$1]}"
+  echo Decomposition
+  j=0
+  decomp=()
+  for i in $(seq 0 $n);
+  do
+    if [[ "${code[$s]}" =~ "${fonc[$i]}" ]];
+    then
+      j=$((j+1))
+      echo "$j" "${fonc[$i]}"     
+    fi
+  done 
+fi
 echo "That's All!"
