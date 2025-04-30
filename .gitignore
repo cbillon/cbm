@@ -6,3 +6,5 @@ tmp.json
 pluglist.json
 test*
 env.cnf
+analyze/code.sh
+analyze/fonction.sh
