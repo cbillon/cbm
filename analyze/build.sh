@@ -16,7 +16,6 @@ do
   if [[ ${str:0:$l} =~ $regexp ]];
   then
     fonc=${BASH_REMATCH[1]}
-    echo "$n" "$fonc"
     a["$n"]="$fonc"
     code[$fonc]="${BASH_REMATCH[2]}"
     n=$((n+1))
