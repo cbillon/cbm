@@ -2,16 +2,16 @@
 
 #exec 1> >(logger -s -t $(basename $0)) 2>&1
 
-if [ ! -f env.cnf ]; then  
-  cp env.cnf.default env.cnf
+if [ ! -f includes/env.cnf ]; then
+  cp env.cnf.default includes/env.cnf
   nano env.cnf
-  [ ! -f env.cnf ] && exit
-  info Create env.cnf 
+  [ ! -f includes/env.cnf ] && exit
+  info Create includes/env.cnf
 fi
 
-source env.cnf
-source functions.cfg
-source menu.sh
+source includes/env.cnf
+source includes/functions.cfg
+source includes/menu.sh
 
 info DEBUG="$DEBUG"
 # Le script
@@ -21,35 +21,35 @@ HOSTNAME=$(hostname)
 DATE_DU_JOUR=$(date)
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-[ $EUID -eq 0 ] && echo error "This script must run as normal user" && exit 1 
+[ $EUID -eq 0 ] && echo error "This script must run as normal user" && exit 1
 
 # Verify pre requis
 
 verif_pre_requis && info continue... || exit
- 
-[ -d "$PROJECTS_PATH" ] || create_env 
-# restore last project                                          
+
+[ -d "$PROJECTS_PATH" ] || create_env
+# restore last project
 . save.var
 PROJECT=$(whiptail --inputbox "What is your project?" 8 39 "$PROJECT" --title "Code Base Manager" 3>&1 1>&2 2>&3)
 # A trick to swap stdout and stderr.
 # Again, you can pack this inside if, but it seems really long for some 80-col terminal users.
 exitstatus=$?
 
-if [ $exitstatus = 0 ]; then    
-  if [ -d "$PROJECTS_PATH"/"$PROJECT" ]; then    
+if [ $exitstatus = 0 ]; then
+  if [ -d "$PROJECTS_PATH"/"$PROJECT" ]; then
     info "Project: $PROJECT"
   else
     echo "Project not exists."
-    if (whiptail --title "Boite de dialogue Oui / Non" --yesno "Create new project $PROJECT ?" 10 60); then      
+    if (whiptail --title "Boite de dialogue Oui / Non" --yesno "Create new project $PROJECT ?" 10 60); then
       new_project "$PROJECT" && info env "$PROJECT" created  || error Syntax error in "$RACINE/projects/$PROJECT"/"PROJECT".yaml
     else
        echo "Cancel."
-       exit 1 
-    fi 
+       exit 1
+    fi
   fi
-else 
+else
    echo "Select canceled."
-   exit 1 
+   exit 1
 fi
 # save last acceeded project
 echo "PROJECT=$PROJECT" > "$RACINE/save.var"
@@ -59,7 +59,7 @@ get_requested_state "$PROJECT" || exit 1
 sortie=0
 
 while [ $sortie = 0 ];
-do 
+do
   OPTION=$(whiptail --title "Code Base Manager" --menu "Projet : ${PROJECT}" 20 60 12 \
   "0"  "${menu[0]}" \
   "1"  "${menu[1]}" \
@@ -71,28 +71,28 @@ do
   "7"  "${menu[7]}" \
   "8"  "${menu[8]}" \
   "9"  "${menu[9]}" 3>&1 1>&2 2>&3)
-  
+
   exitstatus=$?
-  if [ $exitstatus = 0 ]; then    
+  if [ $exitstatus = 0 ]; then
     if   [ "$OPTION" = 0 ]; then add_plugin_cache
     elif [ "$OPTION" = 1 ]; then list_plugins_cache
     elif [ "$OPTION" = 2 ]; then edit_plugins "$PROJECT"
-    elif [ "$OPTION" = 3 ]; then add_plugin_project "$PROJECT" "$PLUGIN"   
+    elif [ "$OPTION" = 3 ]; then add_plugin_project "$PROJECT" "$PLUGIN"
     elif [ "$OPTION" = 4 ]; then update_moodle "$PROJECT"
-    elif [ "$OPTION" = 5 ]; then update_repo  "$PROJECT"           
-    elif [ "$OPTION" = 6 ]; then update_codebase "$PROJECT"          
+    elif [ "$OPTION" = 5 ]; then update_repo  "$PROJECT"
+    elif [ "$OPTION" = 6 ]; then update_codebase "$PROJECT"
     elif [ "$OPTION" = 7 ]; then release  "$PROJECT"
-    elif [ "$OPTION" = 8 ]; then help "$PROJECT" 
+    elif [ "$OPTION" = 8 ]; then help "$PROJECT"
     elif [ "$OPTION" = 9 ]; then sortie=1
-    else  
+    else
      echo "Vous avez annulé"
      sortie=1
     fi
   else
     #"Vous avez annulé... :-("
     sortie=1
-  fi 
-  
+  fi
+
   if [ "$DEBUG" = true ];
   then
     echo -e "Press any key \n"
@@ -100,4 +100,4 @@ do
   fi
 done
 
-info Bye Bye  
+info Bye Bye
