@@ -12,7 +12,7 @@ fi
 source includes/env.cnf
 source includes/functions.cfg
 source includes/menu.sh
-
+#source includes/bash_strict.sh
 info DEBUG="$DEBUG"
 # Le script
 CURRENT_DIR=$(dirname "${0}")
@@ -77,7 +77,7 @@ do
     if   [ "$OPTION" = 0 ]; then add_plugin_cache
     elif [ "$OPTION" = 1 ]; then list_plugins_cache
     elif [ "$OPTION" = 2 ]; then edit_plugins "$PROJECT"
-    elif [ "$OPTION" = 3 ]; then add_plugin_project "$PROJECT" "$PLUGIN"
+    elif [ "$OPTION" = 3 ]; then add_plugin_project "$PROJECT"
     elif [ "$OPTION" = 4 ]; then update_moodle "$PROJECT"
     elif [ "$OPTION" = 5 ]; then update_repo  "$PROJECT"
     elif [ "$OPTION" = 6 ]; then update_codebase "$PROJECT"
