@@ -3,7 +3,7 @@
 declare -A a
 declare -A code
 
-str=$(cat ../functions.cfg)
+str=$(cat ../includes/functions.cfg)
 #str='  function toto () { echo Coucou } '
 l=${#str}
 echo length : $l
