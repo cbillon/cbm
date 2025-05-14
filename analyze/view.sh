@@ -9,7 +9,8 @@ then
   echo Liste des fonctions:    
   for i in $(seq 0 $n);
   do
-    echo $i ${fonc[$i]}
+    f=${fonc[$i]}
+    echo "$i" "$f" $(grep -n "$f ()" ../includes/functions.cfg | head -n 1 | cut -d: -f1)
   done
 else
   
