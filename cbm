@@ -25,7 +25,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 # Verify pre requis
 
-verif_pre_requis && info continue... || exit
+verif_pre_requis
 
 [ -d "$PROJECTS_PATH" ] || create_env
 # restore last project
@@ -33,9 +33,8 @@ verif_pre_requis && info continue... || exit
 PROJECT=$(whiptail --inputbox "What is your project?" 8 39 "$PROJECT" --title "Code Base Manager" 3>&1 1>&2 2>&3)
 # A trick to swap stdout and stderr.
 # Again, you can pack this inside if, but it seems really long for some 80-col terminal users.
-exitstatus=$?
 
-if [ $exitstatus = 0 ]; then
+if [[ "$?" -eq 0 ]]; then
   if [ -d "$PROJECTS_PATH"/"$PROJECT" ]; then
     info "Project: $PROJECT"
   else
