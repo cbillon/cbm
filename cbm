@@ -30,7 +30,7 @@ verif_pre_requis
 [ -d "$PROJECTS_PATH" ] || create_env
 # restore last project
 . save.var
-PROJECT=$(whiptail --inputbox "What is your project?" 8 39 "$PROJECT" --title "Code Base Manager" 3>&1 1>&2 2>&3)
+PROJECT=$(menu --inputbox "What is your project?" 8 39 "$PROJECT" --title "Code Base Manager")
 # A trick to swap stdout and stderr.
 # Again, you can pack this inside if, but it seems really long for some 80-col terminal users.
 
