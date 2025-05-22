@@ -47,7 +47,7 @@ if [[ "$?" -eq 0 ]]; then
         MOODLE_VERSION=$(menu --inputbox "What is your Moodle version?" 8 39 --title "Conf $PROJECT" "$MOODLE_VERSION")
         [[ "$MOODLE_VERSION" =~ ^[4-5]\.[0-5]\+?$|^[4-5]\.[0-5]\.[0-4]\+?$|^[a-f0-9]{7,40} ]] && version_valid=true || version_valid=false
       done 
-      new_project "$PROJECT" "$MOODLE_VERSION"
+      create_project "$PROJECT" "$MOODLE_VERSION"
     else
        echo "Cancel."
        exit 1
