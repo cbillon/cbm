@@ -1,24 +1,42 @@
 #!/bin/bash
 
 source fonction.sh
+source code.sh 
 #declare -a fonc=($(cat fonc.txt))
 n=${#fonc[@]}
 n=$((n-1))
 if [[ -z "$1" ]];
 then
-  echo Liste des fonctions:    
+  echo List of functions:    
   for i in $(seq 0 $n);
   do
     f=${fonc[$i]}
     echo "$i" "$f" $(grep -n "$f ()" ../includes/functions.cfg | head -n 1 | cut -d: -f1)
   done
+  echo ' '
+  echo Functions not used:
+  echo ' '
+  for i in $(seq 0 $n);
+  do
+    func=${fonc[$i]}
+    f="$func"
+    #echo func: "$func"
+    k=0
+    for j in $(seq 0 $n);
+    do
+      s="${fonc[$j]}"    
+      [[ "$s" != "$func" ]] && [[ "${code[$s]}" =~ "$func" ]] && k=$((k+1))  
+    done
+    [ "$k" -eq 0 ] && echo "   $f"
+    
+  done
+
 else
   
   func=${fonc["$1"]}
   [[ -z "$func" ]] && echo valeur incorrecte "$1" && exit 1
   echo Analyze: "$1" "$func"
-  source code.sh 
-
+  
   # cas d'emploi
   echo "Cas d'emploi:"
   emploi=()
@@ -32,7 +50,7 @@ else
       echo "$j" "$s"
     fi
   done
-  
+  [ "$j" -eq 0 ] && echo *** "$func" not used
   s="${fonc[$1]}"
   echo Decomposition
   j=0
