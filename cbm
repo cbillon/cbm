@@ -84,7 +84,7 @@ do
     elif [ "$OPTION" = 2 ]; then edit_plugins "$PROJECT"
     elif [ "$OPTION" = 3 ]; then add_plugin_project "$PROJECT"
     elif [ "$OPTION" = 4 ]; then update_moodle "$PROJECT" && update_project "$PROJECT"
-    elif [ "$OPTION" = 5 ]; then update_repo  "$PROJECT"
+    elif [ "$OPTION" = 5 ]; then update_plugins_repo  "$PROJECT"
     elif [ "$OPTION" = 6 ]; then update_codebase "$PROJECT"
     elif [ "$OPTION" = 7 ]; then release  "$PROJECT"
     elif [ "$OPTION" = 8 ]; then help "$PROJECT"
