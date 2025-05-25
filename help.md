@@ -1,21 +1,26 @@
 
-Le fichier de configuration comprend 2 parties:
+Le fichier de configuration comprend 3 parties:
+1. le nom du projet
+2. la version de Moodle
+3. la liste des plugins
 
-1. la version de Moodle
-2. la liste des plugins
+## Nom du projet
+La plateforme peut gérer plusieurs instances de base de code 
+Le nom du projet est unique.
 
 ## Version Moodle
 
-La version de Moodle est composée de 3 chiffres: par exemple 4.4.1
+La version de Moodle est composée de 2 ou 3 chiffres : par exemple 4.4.1
 
 Les 2 premiers chiffres indiquent la version majeure.
-A chaque version majeure correspond une branche git spécifique
-Les versions majeures peuvent comprendre des pre requis techniques qui ont chnage par rapport aux versions précédentes (version minimum de php par exemple).
-Les versions majeures peuvent comporter des modifications d'API Moodle et/ou de structure des taables de la base données , qui peuvent empecher un plugin de s'éxécuter.
-Les versions mineures peuvent des modififications (nouvelles fonctions pr exemple) mais ne comportent pas de modification qui introduire des rupture de fonctionnement des plugins 
+A chaque version majeure correspond une branche git spécifique.
+Les versions majeures peuvent comprendre des pre requis techniques qui ont changé par rapport aux versions précédentes (version minimum de php par exemple).
+Les versions majeures peuvent comporter des modifications d'API Moodle et/ou de structure des tables de la base données, qui peuvent empêcher un plugin de s'éxécuter.
+Les versions mineures peuvent des modifications (nouvelles fonctions pr exemple) mais ne comportent pas de modifications qui introduisent des ruptures de fonctionnement. 
 A chaque livraison d'une version mineure le dernier chiffre est incrementé: 4.4.1, 4.4.2, ...
-des corrections sont livrées chaque semaine; mais des tests globaux de non régression sont seulement effectués lors des livraisons de versions mineures.   
-Le paramétre version est renseigné de la façon suivante:
+des corrections sont livrées chaque semaine par Moodle HQ, mais des tests globaux de non régression sont seulement effectués lors des livraisons de nouvelles versions mineures.   
+
+Le paramètre version est renseigné de la façon suivante:
 
 | Version         | Source obtenu                                     
 | --------------- | --------------------------------------------- 
@@ -44,8 +49,8 @@ Le nom du plugin à indiquer est le nom complet selon la régle [franken style](
 
 - version
 
-par défaut on récupere la derniere version commitée dans la branche indiquée.
-si on souhaite une version spécifique on l'indique avec le parametre version suivi d'un tag ou d'un hash   
+par défaut on récupère la dernière version commitée dans la branche indiquée.
+si on souhaite une version spécifique on l'indique avec le paramètre version suivi d'un tag ou d'un hash   
 
 - localdev
 
@@ -56,7 +61,3 @@ permet de gérer en local une version personnalisée du plugin avec une branche 
  1. localdev
  2. version
  3. branch
-
-Les options du Menu
-
-

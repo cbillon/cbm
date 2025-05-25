@@ -2,7 +2,8 @@
 
 source fonction.sh
 source code.sh 
-#declare -a fonc=($(cat fonc.txt))
+function_file='../includes/functions.cfg'
+
 n=${#fonc[@]}
 n=$((n-1))
 if [[ -z "$1" ]];
@@ -11,7 +12,7 @@ then
   for i in $(seq 0 $n);
   do
     f=${fonc[$i]}
-    echo "$i" "$f" $(grep -n "$f ()" ../includes/functions.cfg | head -n 1 | cut -d: -f1)
+    echo "$i" "$f" $(grep -n "$f ()" "$function_file" | head -n 1 | cut -d: -f1)
   done
   echo ' '
   echo Functions not used:
@@ -63,5 +64,12 @@ else
       echo "$j" "${fonc[$i]}"     
     fi
   done 
+  
+  echo ' '
+  func=${fonc["$1"]}
+  echo Source "$func"
+  echo "${code[$func]}"
+
 fi
+echo ''
 echo "That's All!"
