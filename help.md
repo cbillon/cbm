@@ -15,7 +15,7 @@ La version de Moodle est composée de 2 ou 3 chiffres : par exemple 4.4.1
 Les 2 premiers chiffres indiquent la version majeure.
 A chaque version majeure correspond une branche git spécifique.
 Les versions majeures peuvent comprendre des pre requis techniques qui ont changé par rapport aux versions précédentes (version minimum de php par exemple).
-Les versions majeures peuvent comporter des modifications d'API Moodle et/ou de structure des tables de la base données, qui peuvent empêcher un plugin de s'éxécuter.
+Les versions majeures peuvent comporter des modifications d'API Moodle et/ou de structure des tables de la base données, qui peuvent empêcher un plugin de s'exécuter.
 Les versions mineures peuvent des modifications (nouvelles fonctions pr exemple) mais ne comportent pas de modifications qui introduisent des ruptures de fonctionnement. 
 A chaque livraison d'une version mineure le dernier chiffre est incrementé: 4.4.1, 4.4.2, ...
 des corrections sont livrées chaque semaine par Moodle HQ, mais des tests globaux de non régression sont seulement effectués lors des livraisons de nouvelles versions mineures.   
