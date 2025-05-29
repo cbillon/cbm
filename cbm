@@ -11,7 +11,7 @@ fi
 
 source includes/env.cnf
 source includes/functions.cfg
-source includes/menu.sh
+source includes/menu."$LANG"
 source includes/bash_strict.sh
 info DEBUG="$DEBUG"
 # Le script
