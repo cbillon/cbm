@@ -8,23 +8,24 @@ la génération d'une base de code est composée de 4 étapes
 
 Pour lancer le script
 ---bash
-  cb mdm
-  ./mbm
+  cb cbm
+  ./cbm
 ---
-Apres avoir saisi le nom du projet le menu s'affiche ![meni](../pictures/CodeBaseManager_Menu.png)
+Apres avoir saisi le nom du projet le menu s'affiche ![menu](../pictures/CodeBaseManager_Menu.png)
 
 ## 1 Mise à jour du cache local
 
 ### 1.1 Moodle
 
-Initialement le dépôt local Moodle est mise à jour lors de la création d'un nouveau projet.
+Le dépôt local Moodle est mis à jour lors de la création d'un nouveau projet.
 
 Ensuite le dépôt est mis à jour par le lancement de la commande **Mise à jour du cache Moodle**
 
 Chaque version majeure de Moodle, est associée à une branche du dépôt git.
 
 Les versions 4.5.X sont liées à la branche **MOODLE_405_STABLE**
-Cette branche est uniquement mise à jour à partir du dépôt de référence Moodle, et sert de point de départ à la branche du projet.
+
+Cette branche est mise à jour à partir du dépôt de référence Moodle, et sert de point de départ à la branche du projet.
 Moodle publie régulièrement des mises à jour:
 - toutes les semaines pour des corrections (fixes)
 - tous les 2 mois pour une nouvelle version mineure

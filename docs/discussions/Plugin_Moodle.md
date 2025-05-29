@@ -9,7 +9,7 @@ Plus de 2000 plugins complémentaires ont été développés par la communauté.
 Les plugins sont regroupés par type selon la similitude de fonctionnement  : 
 [type de plugins](https://moodledev.io/docs/4.1/apis/plugintypes)
 
-La convention de nommage d'un plugin est la suivante : **moodle-type_nom**
+La convention de nommage d'un plugin est la suivante : **type_nom**
 
 ## Installation
 

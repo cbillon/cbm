@@ -3,7 +3,7 @@
 
 La version d'une application est representée par 3 nombres ; **MAJOR.MINOR.PATCH**
 
-Ces nombres sont incrémentes dans chacun des segments en utilisant les règles suivantes :
+Ces nombres sont incrémentés dans chacun des segments en utilisant les règles suivantes :
 
 - **PATCH** est incrémenté lorsque nous publions des correctifs de bogues.
 - **MINOR** est incrémenté lorsque de nouvelles fonctionnalités sont ajoutées de manière rétrocompatible.

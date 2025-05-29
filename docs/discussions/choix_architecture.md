@@ -1,8 +1,8 @@
 # Choix Architecture
 
 nous avons fait les choix suivants :
-- utilisation de git source unique de vérité
 - mode déclaratif : un fichier unique de configuration
+- utilisation de git source unique de vérité
 
 L'état des ressources (version Moodle, version des plugins) est donné par git.
 Le script a pour fonction de reconcilier l'état observé avec l'état demandé.
@@ -15,15 +15,10 @@ Une base de code Moodle est un assemblage constitué à partir
 - une liste de plugins
 
 Le répertoire officiel des plugins agréés par Moodle fournit le dépôt git des sources des plugins. 
-Le fait de tout gérer sous git présente plusieurs avantages;  en particulier:
-- définition précise de ce qui est installé
-- pouvoir reconstruire un état antérieur
-- automatisation de la génération des bases de codes
 
 Le script peut gérer plusieurs projets distinctes: ces différentes instances partagent les ressources dans le cache (Moodle, plugins).
 L'automatisation des tâches de mise à jour est essentielle pour la fiabilité des opérations ainsi que pour le gain de temps.
-Les mises à jour de Moodle corrigent bon nombre de failles de sécurité mais souvent ne sont pas installées à cause de la 
-lourdeur des opérations manuelles [voir Eduardo Kraus](https://moodle.org/user/view.php?id=1428341&course=5)
+Les mises à jour de Moodle corrigent bon nombre de failles de sécurité mais souvent ne sont pas installées à cause de la lourdeur des opérations manuelles [voir Eduardo Kraus](https://moodle.org/user/view.php?id=1428341&course=5)
 La possibilité de reconstruire la base de code à un état donné est essentielle en cas de problémes.
 [ce qu'un crash complet de notre production m'a appris](https://www.youtube.com/watch?v=IY3S4l81aB4)
 
@@ -37,12 +32,12 @@ Notre base de code est constitué à partir d'une version Moodle et d'une liste 
 
 Le fichier de configuration décrit l'état de chacune des composants :
 
-- état de Moddle 
+- état de Moodle 
 - état de chaque plugin
 
 Le script effectue la re concialition entre l'état demandé et l'état courant observé
 
 Les événements suivant nécessitent une reconciliation :
-- livraison de mise à jour moodle(fixes, version mineure,...)
+- disponibilité d' une mise à jour moodle(fixes, version mineure,...)
 - mise à jour de plugins (nouvelle version, version customisée pour le site)
 - modification du fichier de configuration (ajout, suppression de plugins, ...)

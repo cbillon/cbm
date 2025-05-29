@@ -1,46 +1,58 @@
 # Codebase Manager 
 
-CodeBase Manager est un outil en ligne de commande pour installer les plugins Moodle via Git (sans utiliser les commades git submodules).
-Il s'agit de construire une base de code à partir d'une version de Moodle et d'y intégrer une liste de plugins.
-L'outil est un script bash qui fonctionne dans un environnement Linux.
+**CodeBase Manager** est un outil en ligne de commande pour gérer un projet Moodle avec Git.
+
+L'outil est un script qui fonctionne dans un environnement Linux.
 
 Vous décrivez la configuration souhaitée dans un fichier au format yaml:
 
-```bash
+```
+  project:
+    name: demo
+    branch: demo
 
   moodle:
     version: 4.5+
 
   plugins:
-    moodle-report_benchmark:
-      source: https://github.com/mikasmart/moodle-report_benchmark
-      branch: master        
-    moodle-filter_filtercodes:
-      source: https://github.com/michael-milette/moodle-filter_filtercodes
-      branch: master
-      version: v2.6.1
+    moodle-filter_filtercodes:      
+
+    moodle-mod_attendance:
 
 ```    
-Ce fichier définit l'état de la base de code .
+## Principe de fonctionnement 
 
-![Boucle de controle](./docs/pictures/Reconcialiation.png) 
+Le fichier de configuration définit l'état demandé de la base de code.
+Les informations concernant le dépôt des sources, la version des plugins sont récupérées depuis le
+[répertoire officiel des plugins](https://moodle.org/plugins).
+L'outil sélectionne une version du plugin compatible avec la version de Moodle.
 
-Le script construit pour chaque projet une base de code conforme à l'état demandé.
-En cas de modifications (mise à jour de Moodle, ajout d'un nouveau plugin, mise à jour d'un plugin,.. ) le script met à jour la base de code à jour pour obtenir le nouvel état demandé. 
+### Fonctionnement 
 
-L'utilisation de git permet de gérer un historique de la base de code :
-- son état initial
-- son évolution (historique des versions)
+Un fichier unique de configuration définit l'***état demandé***
 
-Cela permet de recréer à l'identique un état antérieur de la base de code.
+![Boucle de controle](./docs/pictures/Boucle_de_controle.png) 
 
-Pour démarrer un tutoriel se trouve [ici](docs/tutorials/Getting-started.md) 
+Le script observe l'***état courant*** et si il est différent de l'***état demandé***, il y a génèration d'une nouvelle base de code. 
 
-# Organisation du projet
+### Git 
 
-## La documentation se trouve dans le répertoire **docs** :
+Le fait de tout gérer sous git présente plusieurs avantages :
+
+- automatisation des tâches : installation des plugins, des montées de version mineures de Moodle 
+- conservation d'un historique des mises à jour:
+  - documentation automatique de ce qui est installé
+  - possibilité de restoration d'un état antérieur
+
+Nota: pour faire simple, on n'utilise pas les fonctions git submodules. 
+
+## Pour démarrer
+
+Les informations nécessaires pour démarrer se trouvent [ici](docs/tutorials/Getting-started.md) 
+
+La documentation se trouve dans le répertoire **docs** :
 
 - tutorials : pour démarrer
 - how-to-guides: comment faire 
-- reference : document de référence sur les paramètres
-- explanations: documents sur des sujets relatifs au projet
+- reference : document de référence sur les commandes
+- discussions: documents sur des sujets relatifs au projet
