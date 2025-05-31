@@ -29,8 +29,7 @@ verif_pre_requis
 
 [ -d "$PROJECTS_PATH" ] || create_env
 # restore last project
-. save.var
-PROJECT=$(menu --inputbox "What is your project?" 8 39 "$PROJECT" --title "Code Base Manager")
+readonly PROJECT=$(menu --inputbox "What is your project?" 8 39 "$PROJECT_SAVE" --title "Code Base Manager")
 # A trick to swap stdout and stderr.
 # Again, you can pack this inside if, but it seems really long for some 80-col terminal users.
 
@@ -57,8 +56,9 @@ else
    echo "Select canceled."
    exit 1
 fi
-# save last acceeded project
-echo "PROJECT=$PROJECT" > "$RACINE/save.var"
+# save current project
+sed -i "s/^PROJECT_SAVE=.*/PROJECT_SAVE=$PROJECT/" "$RACINE/includes/env.cnf"
+
 # Verify date pluglist.json
 get_pluglist
 get_requested_state "$PROJECT" || exit 1
