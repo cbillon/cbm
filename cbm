@@ -29,23 +29,28 @@ verif_pre_requis
 
 [ -d "$PROJECTS_PATH" ] || create_env
 # restore last project
-readonly PROJECT=$(menu --inputbox "What is your project?" 8 39 "$PROJECT_SAVE" --title "Code Base Manager")
+readonly PROJECT=$(menu --inputbox "What is your project?" 8 39 "$PROJECT_CURRENT" --title "Code Base Manager")
 # A trick to swap stdout and stderr.
 # Again, you can pack this inside if, but it seems really long for some 80-col terminal users.
 
 if [[ "$?" -eq 0 ]]; then
   if [ -d "$PROJECTS_PATH"/"$PROJECT" ]; then
+    # save current project
+    sed -i "s/^PROJECT_CURRENT=.*/PROJECT_CURRENT=$PROJECT/" "$RACINE/includes/env.cnf"
     info "Project: $PROJECT"
   else
     echo "Project not exists."
     if (menu --title "Boite de dialogue Oui / Non" --yesno "Create new project $PROJECT ?" 10 60);
     then
-      version_valid=false
-      while [ "$version_valid" = false ];
+      while [[ :: ]];
       do
-        MOODLE_VERSION=$(menu --inputbox "What is your Moodle version?" 8 39 --title "Conf $PROJECT" "$MOODLE_VERSION")
-        [[ "$MOODLE_VERSION" =~ ^[4-5]\.[0-5]\+?$|^[4-5]\.[0-5]\.[0-4]\+?$|^[a-f0-9]{7,40} ]] && version_valid=true || version_valid=false
+        parm=$(menu --inputbox "What is your Moodle version?" 8 39 --title "Conf $PROJECT" "$MOODLE_VERSION_DEFAULT")
+        [[ "$?" -ne 0 ]] && error Canceled... && exit 1
+        is_version_valid "$parm" && break         
       done 
+      
+      readonly MOODLE_VERSION="$parm"
+      info MOODLE_VERSION: "MOODLE_VERSION"
       create_project "$PROJECT" "$MOODLE_VERSION"
     else
        echo "Cancel."
@@ -56,8 +61,6 @@ else
    echo "Select canceled."
    exit 1
 fi
-# save current project
-sed -i "s/^PROJECT_SAVE=.*/PROJECT_SAVE=$PROJECT/" "$RACINE/includes/env.cnf"
 
 # Verify date pluglist.json
 get_pluglist
@@ -81,13 +84,13 @@ do
   then
     if   [ "$OPTION" = 0 ]; then add_plugin_cache
     elif [ "$OPTION" = 1 ]; then list_plugins_cache
-    elif [ "$OPTION" = 2 ]; then edit_plugins "$PROJECT"
-    elif [ "$OPTION" = 3 ]; then add_plugin_project "$PROJECT"
-    elif [ "$OPTION" = 4 ]; then update_moodle "$PROJECT" && update_project "$PROJECT"
-    elif [ "$OPTION" = 5 ]; then update_plugins_repo  "$PROJECT"
-    elif [ "$OPTION" = 6 ]; then update_codebase "$PROJECT"
-    elif [ "$OPTION" = 7 ]; then release  "$PROJECT"
-    elif [ "$OPTION" = 8 ]; then help "$PROJECT"
+    elif [ "$OPTION" = 2 ]; then edit_plugins 
+    elif [ "$OPTION" = 3 ]; then add_plugin_project
+    elif [ "$OPTION" = 4 ]; then update_moodle && update_project 
+    elif [ "$OPTION" = 5 ]; then update_plugins_repo
+    elif [ "$OPTION" = 6 ]; then update_codebase
+    elif [ "$OPTION" = 7 ]; then release
+    elif [ "$OPTION" = 8 ]; then help
     elif [ "$OPTION" = 9 ]; then sortie=1
     else
      echo "Vous avez annulé"
