@@ -37,6 +37,9 @@ if [[ "$?" -eq 0 ]]; then
   if [ -d "$PROJECTS_PATH"/"$PROJECT" ]; then
     # save current project
     sed -i "s/^PROJECT_CURRENT=.*/PROJECT_CURRENT=$PROJECT/" "$RACINE/includes/env.cnf"
+    readonly PROJECT_BRANCH=$(yq .project.branch "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".yml)
+    readonly MOODLE_VERSION=$(yq .moodle.version "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".yml)
+    is_version_valid "$MOODLE_VERSION"
     info "Project: $PROJECT"
   else
     echo "Project not exists."
@@ -64,7 +67,7 @@ fi
 
 # Verify date pluglist.json
 get_pluglist
-get_requested_state "$PROJECT" || exit 1
+get_moodle_desired_state "$PROJECT"
 sortie=0
 
 while [ $sortie = 0 ];

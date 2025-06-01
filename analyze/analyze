@@ -1,0 +1,65 @@
+List of functions:
+0 End 55
+1 Start 43
+2 add_plugin_cache 608
+3 add_plugin_project 683
+4 check_command 36
+5 clone_plugin 645
+6 config_check 298
+7 create_commit 171
+8 create_dir 98
+9 create_env 160
+10 create_file 91
+11 create_project 436
+12 edit_plugins 741
+13 error 11
+14 find_plugin_source 660
+15 get_plugin_desired_state 955
+16 get_plugin_dir 581
+17 get_plugin_req_state 905
+18 get_pluglist 68
+19 get_requested_state 185
+20 help 1216
+21 info 9
+22 install_plugin_project 997
+23 is_conf_file 139
+24 is_plugin_in_cache 144
+25 is_project 131
+26 is_version_valid 135
+27 list_plugins_cache 565
+28 menu 105
+29 nb_project_plugins 735
+30 nothingtodo 1208
+31 plugin_need_update 852
+32 project_lock 1141
+33 release 1079
+34 select_plugin_branch 353
+35 setx_output 23
+36 success 12
+37 suppress_plugin 1178
+38 update_codebase 1023
+39 update_moodle 505
+40 update_plugins_repo 793
+41 update_project 538
+42 validate_option 111
+43 verif_pre_requis 148
+44 warn 10
+ 
+Functions not used:
+ 
+   add_plugin_cache
+   add_plugin_project
+   create_env
+   create_project
+   get_plugin_req_state
+   get_pluglist
+   help
+   is_plugin_in_cache
+   list_plugins_cache
+   nb_project_plugins
+   nothingtodo
+   setx_output
+   validate_option
+   verif_pre_requis
+
+That's All!
