@@ -36,10 +36,8 @@ readonly PROJECT=$(menu --inputbox "What is your project?" 8 39 "$PROJECT_CURREN
 if [[ "$?" -eq 0 ]]; then
   if [ -d "$PROJECTS_PATH"/"$PROJECT" ]; then
     # save current project
+    get_project_conf
     sed -i "s/^PROJECT_CURRENT=.*/PROJECT_CURRENT=$PROJECT/" "$RACINE/includes/env.cnf"
-    readonly PROJECT_BRANCH=$(yq .project.branch "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".yml)
-    readonly MOODLE_VERSION=$(yq .moodle.version "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".yml)
-    is_version_valid "$MOODLE_VERSION"
     info "Project: $PROJECT"
   else
     echo "Project not exists."
@@ -49,12 +47,10 @@ if [[ "$?" -eq 0 ]]; then
       do
         parm=$(menu --inputbox "What is your Moodle version?" 8 39 --title "Conf $PROJECT" "$MOODLE_VERSION_DEFAULT")
         [[ "$?" -ne 0 ]] && error Canceled... && exit 1
-        is_version_valid "$parm" && break         
-      done 
-      
-      readonly MOODLE_VERSION="$parm"
-      info MOODLE_VERSION: "MOODLE_VERSION"
-      create_project "$PROJECT" "$MOODLE_VERSION"
+        is_version_valid "$parm" && break
+      done
+      info MOODLE_VERSION: "$parm"
+      create_project "$PROJECT" "$parm"
     else
        echo "Cancel."
        exit 1
@@ -87,9 +83,9 @@ do
   then
     if   [ "$OPTION" = 0 ]; then add_plugin_cache
     elif [ "$OPTION" = 1 ]; then list_plugins_cache
-    elif [ "$OPTION" = 2 ]; then edit_plugins 
+    elif [ "$OPTION" = 2 ]; then edit_plugins
     elif [ "$OPTION" = 3 ]; then add_plugin_project
-    elif [ "$OPTION" = 4 ]; then update_moodle && update_project 
+    elif [ "$OPTION" = 4 ]; then update_moodle && update_project
     elif [ "$OPTION" = 5 ]; then update_plugins_repo
     elif [ "$OPTION" = 6 ]; then update_codebase
     elif [ "$OPTION" = 7 ]; then release
