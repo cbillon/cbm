@@ -1,3 +1,4 @@
+logs
 moodle
 modules
 projects
@@ -8,3 +9,4 @@ test*
 env.cnf
 analyze/code.sh
 analyze/fonction.sh
+analyze/analyze

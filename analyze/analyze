@@ -1,49 +1,52 @@
 List of functions:
 0 End 55
 1 Start 43
-2 add_plugin_cache 608
-3 add_plugin_project 683
+2 add_plugin_cache 621
+3 add_plugin_project 696
 4 check_command 36
-5 clone_plugin 645
-6 config_check 298
-7 create_commit 171
-8 create_dir 98
-9 create_env 160
-10 create_file 91
-11 create_project 436
-12 edit_plugins 741
+5 clone_plugin 658
+6 config_check 321
+7 create_commit 190
+8 create_dir 106
+9 create_env 168
+10 create_file 99
+11 create_project 453
+12 edit_plugins 743
 13 error 11
-14 find_plugin_source 660
-15 get_plugin_desired_state 955
-16 get_plugin_dir 581
-17 get_plugin_req_state 905
-18 get_pluglist 68
-19 get_requested_state 185
-20 help 1216
-21 info 9
-22 install_plugin_project 997
-23 is_conf_file 139
-24 is_plugin_in_cache 144
-25 is_project 131
-26 is_version_valid 135
-27 list_plugins_cache 565
-28 menu 105
-29 nb_project_plugins 735
-30 nothingtodo 1208
-31 plugin_need_update 852
-32 project_lock 1141
-33 release 1079
-34 select_plugin_branch 353
-35 setx_output 23
-36 success 12
-37 suppress_plugin 1178
-38 update_codebase 1023
-39 update_moodle 505
-40 update_plugins_repo 793
-41 update_project 538
-42 validate_option 111
-43 verif_pre_requis 148
-44 warn 10
+14 find_plugin_source 673
+15 get_moodle_desired_state 204
+16 get_plugin_desired_state 965
+17 get_plugin_dir 594
+18 get_plugin_req_state 915
+19 get_plugins 795
+20 get_pluglist 76
+21 get_project_conf 68
+22 help 1217
+23 info 9
+24 install_plugin_project 1007
+25 is_conf_file 147
+26 is_plugin_in_cache 152
+27 is_project 139
+28 is_version_valid 143
+29 list_plugins_cache 578
+30 menu 113
+31 nothingtodo 1209
+32 plugin_need_update 862
+33 project_lock 1143
+34 release 1081
+35 select_plugin_branch 370
+36 set_project_branch 314
+37 setx_output 23
+38 success 12
+39 suppress_plugin 1178
+40 test_setup 179
+41 update_codebase 1032
+42 update_moodle 524
+43 update_plugins_repo 808
+44 update_project 555
+45 validate_option 119
+46 verif_pre_requis 156
+47 warn 10
  
 Functions not used:
  
@@ -53,12 +56,13 @@ Functions not used:
    create_project
    get_plugin_req_state
    get_pluglist
+   get_project_conf
    help
    is_plugin_in_cache
    list_plugins_cache
-   nb_project_plugins
    nothingtodo
    setx_output
+   test_setup
    validate_option
    verif_pre_requis
 
