@@ -19,13 +19,13 @@ function show_help() {
 
 		OPTIONAL ARGS:
 		-m - plugin to install
-    -s - steps 0-8 for all steps 0,1,2,..8	
+    -s - steps 0-8 for all steps 0,1,2,3,4,5,6,7,8	
     -d - debug default : false	
 		-h - show help
 
 		EXAMPLES
     - cd test
-		- ./test.sh -p test -v 5.0+ -m mod_attendance -s 8
+		- ./test.sh -p test -v 5.0+ -m mod_attendance -s 0,1,2,3,4,5,6,7,8
 END
 }
 

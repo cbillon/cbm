@@ -112,7 +112,8 @@ do
     fi
   else
     #"Vous avez annulé... :-("
-    sortie=1
+    #sortie=1
+    exit 
   fi
 
   if [ "$DEBUG" = true ];
