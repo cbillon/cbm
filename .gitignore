@@ -1,0 +1,9 @@
+moodle
+modules
+projects
+tmp.json
+pluglist.json
+env.cnf
+analyze/code.sh
+analyze/fonction.sh
+analyze/analyze
