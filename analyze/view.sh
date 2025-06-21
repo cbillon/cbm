@@ -8,18 +8,19 @@ function help() {
 	# Note that the here doc uses <<- to allow tabbing (must use tabs)
 	# Note argument zero used here
 	cat > /dev/stdout <<- END
-		${0} [-a] [-c] [-d]-f: [-h]
-
+		${0} [-a] [-c] [-d] -f: [-h] [-l] [-u]
+    
 		REQUIRED ARGS
-    -f : function number * for all functions
+    -f : function number required if -a, -c, -u
 
 		OPTIONAL ARGS:
-		-a - analyse decomposition function
-    -c - cas d emploi	
-    -d - debug default : false	
-		-h - show help
-    -l - list all functions
-    -u - list unused functions
+		
+    -a  analyse decomposition function
+    -c  cas d emploi	
+    -d  debug default false	
+		    -h  show help
+    -l  list all functions
+    -u  list unused functions
 
 		EXAMPLES
     - cd analyze
@@ -30,13 +31,9 @@ END
 function list_all () {
   
   local i j k
-  function_file='../includes/functions.cfg'
- 
-  
   echo List of functions:    
   for i in $(seq 0 $n); do
-    f=${fonc[$i]}
-    echo "$i" "$f" $(grep -n "$f ()" "$function_file" | head -n 1 | cut -d: -f1)
+    echo "$i" "${fonc[$i]}" $(grep -n "${fonc[$i]} ()" "$function_file" | head -n 1 | cut -d: -f1)
   done
 }  
 
@@ -99,23 +96,22 @@ if=0
 source=false
 list_all=false
 list_unused=false
+function_file='../includes/functions.cfg'
 
 while getopts "h?acdf:lsu" opt
 do
 	# case statement
 	case "${opt}" in
-	h|\?)
-		help
-		# exit code
-		exit 0
-		;;
-  a) ia=true ;;
-  c) ic=true ;;
-	d) DEBUG=true ;;
-	f) ifn=${OPTARG} ;;
-  l) list_all=true ;;
-  s) source=true ;;
-  u) list_unused=true ;;
+	  h|\?)
+		  help
+		  exit 0 ;;
+    a) ia=true ;;
+    c) ic=true ;;
+	  d) DEBUG=true ;;
+	  f) ifn=${OPTARG} ;;
+    l) list_all=true ;;
+    s) source=true ;;
+    u) list_unused=true ;;
 	esac
 done
 
@@ -124,7 +120,20 @@ done
 n=$((${#fonc[@]}-1))
 [[ -z "${fonc["$ifn"]}" ]] && echo valeur incorrecte "$ifn" && exit 1
 
-echo param Analyze: "$ia" Cas d emploi: "$ic" debug: "$DEBUG" "$source" function: "$ifn" "$ifunc"
+msg=''
+if [ -n "$ifn" ]; then
+  msg+="$ifn" 
+  msg+=" ${fonc[$ifn]} "
+  msg+=$(grep -n "${fonc[$ifn]} ()" $function_file | head -n 1 | cut -d: -f1)
+fi
+[ "$ia" = true ] && msg+=" -a: Analyze"
+[ "$ic" = true ] && msg+=" -c: Cas d'emploi"
+[ "$DEBUG" = true ] && msg+=" -d: debug"
+[ "$list_all" = true ] && msg+=" -l: List all functions"
+[ "$source" = true ] && msg+=" -s: Source"
+[ "$list_unused" = true ] && msg+=" -u: List unused functions"
+
+echo "$msg"
 echo
 [ "$source" = true ] && echo "${code[${fonc["$ifn"]}]}"
 [ "$ia" = true ] && decomp "$ifn"
