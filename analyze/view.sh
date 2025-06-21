@@ -12,7 +12,7 @@ function help() {
     
 		REQUIRED ARGS
     -f : function number required if -a, -c, -u
-
+    -v : variable 
 		OPTIONAL ARGS:
 		
     -a  analyse decomposition function
@@ -88,6 +88,30 @@ function cas_emploi () {
   [ "$j" -eq 0 ] && echo function "${fonc[$1]}" not used 
 }
 
+function var_def () {
+ 
+  local i j
+  j=0
+  for i in $(seq 0 $n);
+  do      
+    if [[ "${code["${fonc[$i]}"]}" =~ "$var"= ]]; then
+      j=$((j+1))
+      echo "$j" defined in "$i" "${fonc[$i]}" $(grep -n "${fonc[$i]} ()" "$function_file" | head -n 1 | cut -d: -f1)
+    fi
+  done
+  echo ''
+  for i in $(seq 0 $n);
+  do      
+    if [[ "${code["${fonc[$i]}"]}" =~ "$var" ]]; then
+      j=$((j+1))
+      echo "$j" used by "$i" "${fonc[$i]}" $(grep -n "${fonc[$i]} ()" "$function_file" | head -n 1 | cut -d: -f1)
+    fi
+  done
+  
+  [ "$j" -eq 0 ] && echo var "${var}" not used 
+
+}
+
 # while loop, and getopts
 DEBUG=false
 ia=false
@@ -98,7 +122,7 @@ list_all=false
 list_unused=false
 function_file='../includes/functions.cfg'
 
-while getopts "h?acdf:lsu" opt
+while getopts "h?acdf:lsuv:" opt
 do
 	# case statement
 	case "${opt}" in
@@ -112,6 +136,7 @@ do
     l) list_all=true ;;
     s) source=true ;;
     u) list_unused=true ;;
+    v) var=${OPTARG} ;;
 	esac
 done
 
@@ -132,6 +157,7 @@ fi
 [ "$list_all" = true ] && msg+=" -l: List all functions"
 [ "$source" = true ] && msg+=" -s: Source"
 [ "$list_unused" = true ] && msg+=" -u: List unused functions"
+[ -n "$var" ] && msg+=" -v $var"
 
 echo "$msg"
 echo
@@ -140,5 +166,6 @@ echo
 [ "$ic" = true ] && cas_emploi "$ifn"
 [ "$list_all" = true ] && list_all
 [ "$list_unused" = true ] && list_unused
+[ -n "$var" ] && var_def
 echo ''
 echo "That's All!"

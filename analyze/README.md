@@ -20,6 +20,7 @@ La commande view a les options suivantes:
   - u fonctions non utilisées (mais utiles!)
 
   -f désigne la fonction sur laquelle porte l'analyse 
+  -v nom de variable definition et cas d'utilisation
 
 ### Build
 
@@ -68,3 +69,9 @@ comprend :
 Liste les fonctions non utilisées : **./view.sh -u**
 
 Cela correspond aux fonctions point d'entrée du menu et aux fonctions réellement non utilisées.
+
+### Variable
+
+correspond à l'option **-v var**
+
+Liste la fonction où la variable est définie et dasn quelle(s) fonction(s) elle est utilisée.
