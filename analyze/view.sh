@@ -18,6 +18,7 @@ function help() {
     -a  analyse decomposition function
     -c  cas d emploi	
     -d  debug default false	
+    -g  list global variables
 		    -h  show help
     -l  list all functions
     -u  list unused functions
@@ -89,8 +90,10 @@ function cas_emploi () {
 }
 
 function var_def () {
- 
-  local i j
+  
+
+  local i j var
+  var="$1"
   j=0
   for i in $(seq 0 $n);
   do      
@@ -112,6 +115,29 @@ function var_def () {
 
 }
 
+function var_global () {
+
+  moodle_array+=(MOODLE_VERSION MOODLE_MAJOR_VERSION MOODLE_BRANCH MOODLE_DESIRED_STATE MOODLE_DESIRED_STATE_SHA1)
+  plugin_array+=(PLUGIN_VERSION LOCALDEV PLUGIN_BRANCH COMPONENT_NAME TYPE DIR)
+
+
+  for value in "${moodle_array[@]}"; do
+    echo
+    echo "   $value"
+    var_def "$value"
+  done
+
+  for value in "${plugin_array[@]}"; do
+    echo
+    echo "   $value"
+    var_def "$value"
+  done
+
+}
+
+
+
+
 # while loop, and getopts
 DEBUG=false
 ia=false
@@ -122,7 +148,7 @@ list_all=false
 list_unused=false
 function_file='../includes/functions.cfg'
 
-while getopts "h?acdf:lsuv:" opt
+while getopts "h?acdf:glsuv:" opt
 do
 	# case statement
 	case "${opt}" in
@@ -133,6 +159,7 @@ do
     c) ic=true ;;
 	  d) DEBUG=true ;;
 	  f) ifn=${OPTARG} ;;
+    g) global=true ;;
     l) list_all=true ;;
     s) source=true ;;
     u) list_unused=true ;;
@@ -154,6 +181,7 @@ fi
 [ "$ia" = true ] && msg+=" -a: Analyze"
 [ "$ic" = true ] && msg+=" -c: Cas d'emploi"
 [ "$DEBUG" = true ] && msg+=" -d: debug"
+[ "$global" = true ] && msg+=" -g: List globalvar"
 [ "$list_all" = true ] && msg+=" -l: List all functions"
 [ "$source" = true ] && msg+=" -s: Source"
 [ "$list_unused" = true ] && msg+=" -u: List unused functions"
@@ -164,6 +192,7 @@ echo
 [ "$source" = true ] && echo "${code[${fonc["$ifn"]}]}"
 [ "$ia" = true ] && decomp "$ifn"
 [ "$ic" = true ] && cas_emploi "$ifn"
+[ "$global" = true ] && var_global
 [ "$list_all" = true ] && list_all
 [ "$list_unused" = true ] && list_unused
 [ -n "$var" ] && var_def
