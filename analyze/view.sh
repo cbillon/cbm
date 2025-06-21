@@ -66,7 +66,7 @@ function decomp () {
     if [[ "$fn" != "${fonc[$i]}" ]] && [[ "${code[$fn]}" =~ "${fonc[$i]}" ]];
     then
       j=$((j+1))
-      echo "$j" "$i" "${fonc[$i]}"     
+      echo "$j" "$i" "${fonc[$i]}" $(grep -n "${fonc[$i]} ()" "$function_file" | head -n 1 | cut -d: -f1)    
     fi
   done 
 }
