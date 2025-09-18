@@ -4,7 +4,7 @@
 Le tutoriel enchaine les différentes étapes de la génération d'une nouvelle base de code :
 A l'issue vous obtiendrez :
 - une base de code Moodle:
-  - Version Moodle 4.5 avec les derniers fixes publiés
+  - Version Moodle 5.0 avec les derniers fixes publiés
   - installation de 2 plugins : mod_attendance, tool_opcache
 
 ## Pre requis
@@ -25,7 +25,7 @@ Configurer username and email en utilsant les commandes ci dessous, après avoir
   git config --global user.email "eparis@gmail.com"
 
 ```
-Optionnel: installation de l'ouil de visualisation d'un depot git **gitk**
+Optionnel: installation de l'outil de visualisation d'un depot git **gitk**
 
 
 - installation du package jq pour lire les fichiers au format json
@@ -85,7 +85,7 @@ Faites Entrée
 Les options sont conservées dans un fichier env.cnf
 
 Saisir ensuite le nom du projet, par exemple : demo
-Indiquer la version de Moodle: 4.5+
+Indiquer la version de Moodle: 5.0+
 
 A chaque projet est associée une base de code.
 
@@ -102,8 +102,8 @@ Il est possible de gérer plusieurs projets (multi instances), les éléments co
 #### Version de Moodle
 
 La version Moodle est précisée lors de la création du projet.
-L'option définie ici est 4.5+
-cela désigne la dernière version 4.5 de Moodle disponible avec les dernières mises à jour hebdomadaires.
+L'option définie ici est 5.0+
+cela désigne la dernière version 5.0 de Moodle disponible avec les dernières mises à jour hebdomadaires.
 
 Il est possible de définir une version figée : 4.5.1 par exemple.
 Les différentes options du fichier de configuration sont détaillées [ici](../reference/conf.md)
@@ -158,6 +158,7 @@ Mais celui ci n'a pas à préciser ***comment sont gérées les dépendances du 
 Ce qui fait que plusieurs pratiques co existent :
 - une branche unique 
 - une branche pour chaque version majeure de Moodle
+
 Le script essaie de déterminer la version du plugin compatible avec la version Moodle, mais laisse la possibilité à l'administrateur de modifier cette proposition.
 
 ### 3 Mise à jour de la base de code

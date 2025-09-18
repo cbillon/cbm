@@ -2,7 +2,7 @@
 
 **CodeBase Manager** est un outil en ligne de commande pour gérer un projet Moodle avec Git.
 
-L'outil est un script qui fonctionne dans un environnement Linux.
+L'outil est un script bash qui fonctionne dans un environnement Linux.
 
 Vous décrivez la configuration souhaitée dans un fichier au format yaml:
 
@@ -56,3 +56,8 @@ La documentation se trouve dans le répertoire **docs** :
 - how-to-guides: comment faire 
 - reference : document de référence sur les commandes
 - discussions: documents sur des sujets relatifs au projet
+
+Le fichier de configuation du projet : projects/<nom du projet>/<nom du projet>.yml
+Les sources de la base de code générée :
+cd cbm/moodle
+git checkout <nom du projet>

@@ -86,7 +86,6 @@ PROJECT=$(menu --inputbox "What is your project?" 8 39 "$PROJECT_CURRENT" --titl
 if [[ "$?" -eq 0 ]]; then
   if [ -d "$PROJECTS_PATH"/"$PROJECT" ]; then
     # save current project
-    get_project_conf
     sed -i "s/^PROJECT_CURRENT=.*/PROJECT_CURRENT=$PROJECT/" "$RACINE/includes/env.cnf"
     info "Project: $PROJECT"
   else
@@ -114,7 +113,9 @@ fi
 
 # Verify date pluglist.json
 get_pluglist
-get_moodle_desired_state "$PROJECT"
+
+get_project_conf
+
 sortie=0
 
 while [ $sortie = 0 ];

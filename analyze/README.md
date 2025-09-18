@@ -6,18 +6,18 @@ L'outil d'analyse permet l'exploration de l'ensemble de ces fonctions.
 
 L'analyse nécessite 2 étapes :
 
-- ./build. construction de 2 tableaux
+- ./build.sh construction de deux tableaux
 - ./view.sh permet l'analyse
 
 ## Liste des fonctions disponibles
 
-La commande view a les options suivantes:
+La commande view a les options suivantes :
 
   - a analyse
   - c cas d'emploi
   - d mode debug
-  - l list de l'ensemble des fonctions
-  - u fonctions non utilisées (mais utiles!)
+  - l liste de l'ensemble des fonctions
+  - u fonctions non utilisées (mais utiles !)
 
   -f désigne la fonction sur laquelle porte l'analyse 
   -v nom de variable definition et cas d'utilisation
@@ -26,7 +26,7 @@ La commande view a les options suivantes:
 
 Lancement: **./build.sh**
 
-La fonction construit 2 tableaux :
+La fonction construit deux tableaux :
 
 - fonction.sh contient l'ensemble des fonctions.
 - code.sh contient le code de chaque fonction.
@@ -37,7 +37,7 @@ Le tableau fonction.sh comporte le no de ligne de l'emplacement de la fonction d
 
 Permet l'exploration de l'ensemble de fonctions.
 
-Lancement:  **./view.sh**
+Lancement: **./view.sh**
 
 Pour obtenir de l'aide ./view.sh -h
 
@@ -74,4 +74,4 @@ Cela correspond aux fonctions point d'entrée du menu et aux fonctions réelleme
 
 correspond à l'option **-v var**
 
-Liste la fonction où la variable est définie et dasn quelle(s) fonction(s) elle est utilisée.
+Liste la fonction où la variable est définie et dans quelle(s) fonction(s) elle est utilisée.
