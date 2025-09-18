@@ -1,5 +1,8 @@
 #!/bin/bash
 
+[ ! -z "$LANG" ] && LANG='fr'
+source ../includes/menu."$LANG"
+source includes/menu."$LANG"
 source fonction.sh
 source code.sh 
 
@@ -8,7 +11,7 @@ function help() {
 	# Note that the here doc uses <<- to allow tabbing (must use tabs)
 	# Note argument zero used here
 	cat > /dev/stdout <<- END
-		${0} [-a] [-c] [-d] -f: [-h] [-l] [-u]
+		${0} [-a] [-c] [-d] -f: [-h] [-l] [-m] [-u]
     
 		REQUIRED ARGS
     -f : function number required if -a, -c, -u
@@ -19,8 +22,9 @@ function help() {
     -c  cas d emploi	
     -d  debug default false	
     -g  list global variables
-		    -h  show help
+		-h  show help
     -l  list all functions
+    -m  list menu functions
     -u  list unused functions
 
 		EXAMPLES
@@ -114,7 +118,16 @@ function var_def () {
   [ "$j" -eq 0 ] && echo var "${var}" not used 
 
 }
-
+function func_menu () {
+  local i
+  i=0
+  func_array+=(add_plugin_cache list_plugins_cache add_plugin_project edit_plugins config_check update_moodle update_plugins_repo update_codebase release)
+  for value in "${func_array[@]}"; do
+    echo
+    echo "   $i ${menu[$i]}: $value"
+    i=$((i+1))
+  done
+} 
 function var_global () {
 
   moodle_array+=(MOODLE_VERSION MOODLE_MAJOR_VERSION MOODLE_BRANCH MOODLE_DESIRED_STATE MOODLE_DESIRED_STATE_SHA1)
@@ -148,7 +161,7 @@ list_all=false
 list_unused=false
 function_file='../includes/functions.cfg'
 
-while getopts "h?acdf:glsuv:" opt
+while getopts "h?acdf:glmsuv:" opt
 do
 	# case statement
 	case "${opt}" in
@@ -161,6 +174,7 @@ do
 	  f) ifn=${OPTARG} ;;
     g) global=true ;;
     l) list_all=true ;;
+    m) menu_func=true ;;
     s) source=true ;;
     u) list_unused=true ;;
     v) var=${OPTARG} ;;
@@ -183,6 +197,7 @@ fi
 [ "$DEBUG" = true ] && msg+=" -d: debug"
 [ "$global" = true ] && msg+=" -g: List globalvar"
 [ "$list_all" = true ] && msg+=" -l: List all functions"
+[ "$menu_func" = true ] && msg+=" -m: List menu functions"
 [ "$source" = true ] && msg+=" -s: Source"
 [ "$list_unused" = true ] && msg+=" -u: List unused functions"
 [ -n "$var" ] && msg+=" -v $var"
@@ -193,6 +208,7 @@ echo
 [ "$ia" = true ] && decomp "$ifn"
 [ "$ic" = true ] && cas_emploi "$ifn"
 [ "$global" = true ] && var_global
+[ "$menu_func" = true ] && func_menu
 [ "$list_all" = true ] && list_all
 [ "$list_unused" = true ] && list_unused
 [ -n "$var" ] && var_def
