@@ -2,7 +2,6 @@
 
 [ ! -z "$LANG" ] && LANG='fr'
 source ../includes/menu."$LANG"
-source includes/menu."$LANG"
 source fonction.sh
 source code.sh 
 
@@ -21,6 +20,7 @@ function help() {
     -a  analyse decomposition function
     -c  cas d emploi	
     -d  debug default false	
+    -f  fonction (index)
     -g  list global variables
 		-h  show help
     -l  list all functions
@@ -41,6 +41,14 @@ function list_all () {
     echo "$i" "${fonc[$i]}" $(grep -n "${fonc[$i]} ()" "$function_file" | head -n 1 | cut -d: -f1)
   done
 }  
+function find_func () {
+  local i func 
+  func="$1"  
+  for i in $(seq 0 $n); do
+    [[ "${fonc[$i]}" == "$func" ]] && return "$i"
+  done
+  return 0
+}
 
 function list_unused () {
   
@@ -124,7 +132,8 @@ function func_menu () {
   func_array+=(add_plugin_cache list_plugins_cache add_plugin_project edit_plugins config_check update_moodle update_plugins_repo update_codebase release)
   for value in "${func_array[@]}"; do
     echo
-    echo "   $i ${menu[$i]}: $value"
+    find_func "$value"
+    echo "   $i ${menu[$i]}: $? $value"     
     i=$((i+1))
   done
 } 
