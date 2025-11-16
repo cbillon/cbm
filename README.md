@@ -61,3 +61,25 @@ Le fichier de configuation du projet : projects/<nom du projet>/<nom du projet>.
 Les sources de la base de code générée :
 cd cbm/moodle
 git checkout <nom du projet>
+
+## Modidification Menu
+
+le nouvea menu :
+
+  edit_plugins
+  config_check
+  update_moodle
+  update_codebase
+  release
+  exit
+
+
+les fonctions suivantes ont été supprimées du menu :
+
+ add_plugin_cache
+ list_plugins_cache
+ add_plugin_project
+ edit_plugins
+ config_check
+ update_plugins_repo
+

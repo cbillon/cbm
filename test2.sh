@@ -27,7 +27,7 @@ END
 # while loop, and getopts
 DEBUG=false
 RELOAD=false
-while getopts "h?dp:r" opt
+while getopts "h?dp:" opt
 do
 	# case statement
 	case "${opt}" in
@@ -38,22 +38,10 @@ do
 		;;
 	d) DEBUG=true ;;
   p) PLUGIN=${OPTARG} ;; 
-  r) RELOAD=true ;;
   esac
 done
 
-info debug: "$DEBUG" reload: "$RELOAD"
-
-function reload_file () {
-  info "$*"
-  error=0
-  if [ -f "$RACINE"/pluglist.json ]; then
-    rm pluglist.jsonnow
-  fi
-  wget download.moodle.org/api/1.3/pluglist.php -O "$RACINE"/pluglist.json 
-  return $error
-  info End 
-}
+info debug: "$DEBUG"
 
 function find_plugin_source () {
   Start "$*"

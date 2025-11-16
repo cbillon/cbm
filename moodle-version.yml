@@ -24,6 +24,11 @@
   branch: MOODLE_405_STABLE
 
 "5.0":
-  version: "20250414"
+  version: "2025041400"
   release: "5.0"
   branch: MOODLE_500_STABLE
+
+"5.1":
+  version: "2025100600"
+  release: "5.1"
+  branch: MOODLE_501_STABLE

@@ -1,12 +1,7 @@
 declare -a menu=(
-    [0]="Import d'un plugin (cache)"
-    [1]="Liste des plugins (cache)"
-    [2]="Ajout d'un plugin au projet" 
-    [3]="Mise a jour de la configuration d'un projet" 
-    [4]="Verification de la configuration du projet"
-    [5]="Mise a jour de Moodle" 
-    [6]="Mise a jour du cache des plugins" 
-    [7]="Mise a jour de la base de code" 
-    [8]="Livraison d'une nouvelle version de la base de code" 
-    [9]="Exit"
-)
+    [0]="Mise a jour de la configuration d'un projet" 
+    [1]="Verification de la configuration du projet"
+    [2]="Mise a jour de Moodle" 
+    [3]="Mise a jour de la base de code" 
+    [4]="Livraison d'une nouvelle version de la base de code" 
+    [5]="Exit")
