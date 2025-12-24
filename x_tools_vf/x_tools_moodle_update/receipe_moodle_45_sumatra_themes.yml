@@ -1,0 +1,29 @@
+# Yaml_writer generated 2025/06/12
+#
+
+targets:
+    - /mnt/c/wwwroot64/moodle_45_sumatra
+
+core:
+    405
+
+plugins:
+    - theme_klassplace
+    - theme_klassplace01_P
+    - theme_klassplace02_P
+    - theme_klassplace03_P
+    - theme_klassplace04_P
+    - theme_klassplace05_P
+    - theme_klassplace06_P
+
+options:
+    withcore: no
+    forcecreatedirs: true
+    forceinstall: true
+    debug: true
+    ignorefailing: false
+    errortrace: sumatra45_themes_trace.log
+    processcustomscripts: false
+    processpatchs: false
+    preferprivate: true
+    skipnetworking: false

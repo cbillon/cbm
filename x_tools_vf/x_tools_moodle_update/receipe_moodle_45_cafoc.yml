@@ -1,0 +1,151 @@
+# Yaml_writer generated 2025/04/14
+#
+
+targets:
+    - /mnt/c/wwwroot64/moodle_45_cafoc
+
+core:
+    405
+
+override:
+    405
+
+plugins:
+    - mod_choicegroup
+    - mod_customlabel
+    - mod_flashcard
+    - mod_game
+    - mod_hvp
+    - mod_learningtimecheck
+    - mod_magtest
+    - mod_mplayer
+    - mod_pdcertificate
+    - mod_publication
+    - mod_questionnaire --allow-older
+    - mod_scheduler
+    - mod_sharedresource
+    - mod_tracker
+#    - mod_wowslider
+    - block_activity_publisher
+    - block_assign_download
+    - block_auditquiz_results
+    - block_chronometer
+    - block_cms_navigation
+    - block_cohortspecifichtml
+    - block_conditionalhtml
+    - block_course_ascendants
+    - block_course_descendants
+    - block_course_notification
+    - block_dashboard
+    - block_editablecontenthtml
+    - block_groupspecifichtml
+    - block_learningtimecheck
+    - block_page_module
+    - block_page_tracker
+    - block_profileselectorhtml
+    - block_profilespecifichtml
+    - block_quiz_behaviour
+    - block_quiz_progress
+    - block_quiz_results
+    - block_remote_content
+    - block_rolespecifichtml
+    - block_search
+    - block_sharedresources
+    - block_sharing_cart
+    - block_use_stats
+    - block_user_delegation
+    - block_user_memo
+    - block_user_mnet_hosts
+    - block_userquiz_limits
+    - block_userquiz_monitor
+    - qtype_ddmatch
+    - qtype_randomconstrained
+    - qtype_splitset
+    - filter_multilangenhanced
+    - filter_multiroot
+    - filter_searchmarks
+    - filter_wikipediacalls
+    - enrol_profilefield
+    - enrol_sync
+    - auth_digicode
+    - auth_drupalservices
+    - auth_netypareo
+    - auth_ticket
+    - tool_adhoc
+    - tool_backupmanager
+    - tool_cohortfromcourse
+    - tool_coursecategorycheck
+    - tool_cronmonitor
+    - tool_dbcleaner
+    - tool_filecheck
+    - tool_filesystemmanager
+    - tool_mergeusers
+    - tool_migratehvp2h5p
+    - tool_mnetusers
+    - tool_moodlescript
+    - tool_opcache
+    - tool_sync
+    - availability_badge
+    - availability_coursecompletion
+    - availability_coursetime
+    - availability_days
+    - availability_enrol
+    - availability_othermodulecompletion
+    - availability_password
+    - availability_quizquestion
+    - availability_role
+    - availability_sectiontime
+    - availability_week
+    - format_grid
+    - format_menutopic
+    - format_page
+    - format_topcoll
+    - report_benchmark
+    - report_examtraining
+    - report_growth
+    - report_learningtimecheck
+    - report_patches
+    - report_trainingsessions
+    - report_zabbix
+    - repository_sharedresources
+    - theme_klassplace
+    - theme_klassplace01
+    - theme_klassplace02
+    - theme_klassplace03
+    - theme_klassplace04
+    - theme_klassplace05
+    - theme_klassplace06
+    - local_adminsettings
+    - local_advancedperfs
+    - local_alternatelogin
+    - local_catdup
+    - local_cms
+    - local_courseindex
+    - local_coursetemplates
+    - local_groupcopy
+    - local_ltiprovider
+    - local_mailtest
+    - local_moodlescript
+    - local_multiroot
+    - local_my
+    - local_obf
+    - local_search
+    - local_sharedresources
+    - local_staticguitexts
+    - local_tabbedquickform
+    - local_technicalsignals
+    - local_userequipment
+    - local_vfcore
+    - local_vflibs
+
+options:
+    withcore: once
+    forcecreatedirs: true
+    forceinstall: false
+    debug: true
+    ignorefailing: false
+    errortrace: cafoc45_trace.log
+    processcustomscripts: true
+    processpatchs: false
+    preferprivate: true
+

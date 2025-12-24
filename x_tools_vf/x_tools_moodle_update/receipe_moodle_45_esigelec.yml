@@ -1,0 +1,131 @@
+# Yaml_writer generated 2025/04/18
+#
+
+#
+# Rules for plugin lines :
+# --allow-other : allow any other (generally the highest available, but often lower)
+# --allow-lower : allow the highest lower version if available version does not reach requirement
+# --force-branch : forces a specific branch.
+# --upstream <> --branch <> : contacts a third party repository 
+#
+
+targets:
+    - /mnt/c/wwwroot64/moodle_45_esigelec
+
+core:
+    405
+
+override:
+    405
+
+plugins:
+    - mod_choicegroup
+    - mod_customlabel
+    - mod_flashcard
+    - mod_game
+    - mod_hotpot
+    - mod_hvp
+    - mod_learningtimecheck
+    - mod_magtest
+    - mod_mplayer
+    - mod_offlinequiz --allow-other
+    - mod_pdcertificate
+    - mod_publication
+    - mod_questionnaire
+    - mod_realtimequiz
+    - mod_scheduler --allow-other
+    - mod_tracker
+    - mod_via
+    - mod_wooclap
+    - block_activity_publisher
+    - block_assign_download
+    - block_chronometer
+    - block_cms_navigation
+    - block_course_ascendants
+    - block_course_descendants
+    - block_dashboard
+    - block_data_behaviour
+    - block_editablecontenthtml
+    - block_groupspecifichtml
+    - block_learningtimecheck
+    - block_my_certificates
+    - block_mycredits
+    - block_page_module
+    - block_page_tracker
+    - block_profileselectorhtml
+    - block_profilespecifichtml
+    - block_quiz_behaviour
+    - block_quiz_progress
+    - block_remote_content
+    - block_rolespecifichtml
+    - block_use_stats
+    - block_user_memo
+    - cachestore_redismb
+    - qtype_splitset
+    - filter_multilangenhanced
+    - filter_searchmarks
+    - filter_wikipediacalls
+    - enrol_sync
+    - auth_ticket
+    - tool_adhoc
+    - tool_backupmanager
+    - tool_cohortfromcourse
+    - tool_cronmonitor
+    - tool_dbcleaner
+    - tool_delivery
+    - tool_filecheck
+    - tool_mnetusers
+    - tool_moodlescript
+    - tool_opcache
+    - tool_redis
+    - tool_resetuserpolicy
+    - tool_sync
+    - availability_badge --allow-other
+    - availability_coursecompletion
+    - availability_coursetime
+    - availability_days
+    - availability_enrol
+    - availability_language
+    - availability_quizquestion
+    - availability_role
+    - availability_sectiontime
+    - availability_week
+    - format_flexsections
+    - format_grid
+    - format_page
+    - format_topcoll
+    - report_benchmark
+    - report_examtraining
+    - report_learningtimecheck
+    - report_patches
+    - report_trainingsessions
+    - report_zabbix
+    - plagiarism_compilatio
+    - theme_klassplace
+    - theme_klassplace01
+    - local_advancedperfs
+    - local_cms
+    - local_coursetemplates
+    - local_ent_installer
+    - local_groupcopy
+    - local_ltiprovider
+    - local_mailtest
+    - local_moodlescript
+    - local_my
+    - local_search
+    - local_staticguitexts
+    - local_technicalsignals
+    - local_vfcore
+    - local_vflibs
+
+options:
+    withcore: once
+    forcecreatedirs: false
+    forceinstall: false
+    debug: true
+    ignorefailing: true
+    errortrace: true
+    processcustomscripts: false
+    processpatchs: false
+    preferprivate: true
+

@@ -61,3 +61,40 @@ Le fichier de configuation du projet : projects/<nom du projet>/<nom du projet>.
 Les sources de la base de code générée :
 cd cbm/moodle
 git checkout <nom du projet>
+
+## tips jq
+
+
+
+$ jq -r '[.versions[]| {(.vcstag): (.supportedmoodles[].release)}]' tmp.json
+
+[
+  {
+    "v1": "3.9"
+  },
+  {
+    "v1": "3.10"
+  },
+  {
+    "v1": "3.11"
+  },
+  {
+    "v2": "4.4"
+  },
+  {
+    "v2": "4.5"
+  }
+]
+
+
+$ jq -r '[.versions[]| {(.vcstag): (.supportedmoodles[].release)}]|length' tmp.json
+
+5
+
+List all version supported
+
+jq -r '.versions[]| {(.vcstag): (.supportedmoodles[].release)}|.[]' tmp.json
+
+List vcstag for sopported Moodle version
+
+jq -r '[.versions[]| {version: .vcstag, moodle: .supportedmoodles[].release}]|.[]|select(.moodle == "4.5")' tmp.json

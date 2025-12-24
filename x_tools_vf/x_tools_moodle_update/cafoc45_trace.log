@@ -1,0 +1,340 @@
+Core: WARNING: Core in place and must installed once. Skipping.
+Core: syncing core overrides...
+
+
+Plugin:
+name: mod_choicegroup
+url: https://moodle.org/plugins/download.php/33936/mod_choicegroup_moodle45_2024111301.zip
+branch: MOODLE_405_STABLE
+release: 1.48 for Moodle 4.3-4.5 (Build: 2024111301)
+version: 2024111301
+
+
+Opening /mnt/g/gitrepos/moodle-mod_customlabel_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/mod/customlabel
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-mod_flashcard/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/mod/flashcard
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: mod_game
+url: https://moodle.org/plugins/download.php/35823/mod_game_moodle50_2025042200.zip
+branch: MOODLE_405_STABLE
+release: 2025-04-22
+version: 2025042200
+
+
+
+Plugin:
+name: mod_hvp
+url: https://moodle.org/plugins/download.php/34151/mod_hvp_moodle45_2024120900.zip
+branch: MOODLE_405_STABLE
+release: 1.27.2
+version: 2024120900
+
+
+Opening /mnt/g/gitrepos/moodle-mod_learningtimecheck_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/mod/learningtimecheck
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-mod_magtest/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/mod/magtest
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-mod_mplayer_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/mod/mplayer
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-mod_pdcertificate_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/mod/pdcertificate
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: mod_publication
+url: https://moodle.org/plugins/download.php/35241/mod_publication_moodle45_2024101803.zip
+branch: MOODLE_405_STABLE
+release: v4.5.3
+version: 2024101803
+
+
+
+Plugin:
+name: mod_questionnaire
+url: https://moodle.org/plugins/download.php/33023/mod_questionnaire_moodle44_2022121601.zip
+branch: MOODLE_401_STABLE
+release: 4.1.1 (Build - 2024082900)
+version: 2022121601
+
+
+Opening /mnt/g/gitrepos/moodle-mod_scheduler/version.php
+
+Plugin:
+name: mod_scheduler
+url: https://moodle.org/plugins/download.php/29293/mod_scheduler_moodle42_2023052300.zip
+branch: MOODLE_400_STABLE
+release: 4.0.0
+version: 2023052300
+
+
+Opening /mnt/g/gitrepos/moodle-mod_sharedresource_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/mod/sharedresource
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-mod_tracker_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/mod/tracker
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_activity_publisher/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/activity_publisher
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_assign_download/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/assign_download
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_auditquiz_results_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/auditquiz_results
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_chronometer/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/chronometer
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_cms_navigation/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/cms_navigation
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: block_cohortspecifichtml
+url: https://moodle.org/plugins/download.php/36223/block_cohortspecifichtml_moodle50_2025041400.zip
+branch: MOODLE_405_STABLE
+release: v5.0-r1
+version: 2025041400
+
+
+Opening /mnt/g/gitrepos/moodle-block_conditionalhtml/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/conditionalhtml
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_course_ascendants_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/course_ascendants
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_course_descendants/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/course_descendants
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_course_notification_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/course_notification
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_dashboard_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/dashboard
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_editablecontenthtml/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/editablecontenthtml
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_groupspecifichtml/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/groupspecifichtml
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_learningtimecheck/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/learningtimecheck
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_page_module/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/page_module
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_page_tracker/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/page_tracker
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_profileselectorhtml/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/profileselectorhtml
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_profilespecifichtml/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/profilespecifichtml
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_quiz_behaviour/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/quiz_behaviour
+syncing plugin code...
+	Customscripting /mnt/c/wwwroot64/moodle_45_cafoc/customscripts/mod/quiz/attempt.php
+	Customscripting /mnt/c/wwwroot64/moodle_45_cafoc/customscripts/mod/quiz/review.php
+	Customscripting /mnt/c/wwwroot64/moodle_45_cafoc/customscripts/mod/quiz/startattempt.php
+	Customscripting /mnt/c/wwwroot64/moodle_45_cafoc/customscripts/mod/quiz/summary.php
+	Customscripting /mnt/c/wwwroot64/moodle_45_cafoc/customscripts/question/category.php
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_quiz_progress/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/quiz_progress
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: block_quiz_results
+url: https://moodle.org/plugins/download.php/26229/block_quiz_results_moodle40_2021051700.zip
+branch: MOODLE_405_STABLE
+release: 
+version: 2021051700
+
+
+Opening /mnt/g/gitrepos/moodle-block_remote_content/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/remote_content
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_rolespecifichtml/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/rolespecifichtml
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_search/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/search
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_sharedresources/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/sharedresources
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: block_sharing_cart
+url: https://moodle.org/plugins/download.php/32715/block_sharing_cart_moodle44_2024072900.zip
+branch: MOODLE_405_STABLE
+release: 4.4, release 5
+version: 2024072900
+
+
+Opening /mnt/g/gitrepos/moodle-block_use_stats_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/use_stats
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_user_delegation_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/user_delegation
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_user_memo/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/user_memo
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_user_mnet_hosts/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/user_mnet_hosts
+syncing plugin code...
+	Customscripting /mnt/c/wwwroot64/moodle_45_cafoc/customscripts/admin/roles/admins.php
+	Customscripting /mnt/c/wwwroot64/moodle_45_cafoc/customscripts/admin/roles/classes/admins_potential_selector.php
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_userquiz_limits/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/userquiz_limits
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_userquiz_monitor_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/blocks/userquiz_monitor
+syncing plugin code...
+	Customscripting /mnt/c/wwwroot64/moodle_45_cafoc/customscripts/mod/quiz/attempt.php
+	Customscripting /mnt/c/wwwroot64/moodle_45_cafoc/customscripts/mod/quiz/review.php
+	Customscripting /mnt/c/wwwroot64/moodle_45_cafoc/customscripts/mod/quiz/startattempt.php
+	Customscripting /mnt/c/wwwroot64/moodle_45_cafoc/customscripts/mod/quiz/summary.php
+coming back...
+
+
+Plugin:
+name: qtype_ddmatch
+url: https://moodle.org/plugins/download.php/36253/qtype_ddmatch_moodle50_2025051900.zip
+branch: MOODLE_405_STABLE
+release: 2.5.4 (Build: 2025051900)
+version: 2025051900
+
+
+Opening /mnt/g/gitrepos/moodle-qtype_randomconstrained/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/question/type/randomconstrained
+syncing plugin code...
+	Customscripting /mnt/c/wwwroot64/moodle_45_cafoc/customscripts/mod/quiz/edit.php
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-qtype_splitset/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/question/type/splitset
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-filter_multilangenhanced/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/filter/multilangenhanced
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-filter_multiroot/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/filter/multiroot
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-filter_searchmarks/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/filter/searchmarks
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-filter_wikipediacalls/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/filter/wikipediacalls
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-enrol_profilefield/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/enrol/profilefield
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-enrol_sync/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/enrol/sync
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-auth_digicode/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_cafoc/auth/digicode
+      ...creating dir  /mnt/c/wwwroot64/moodle_45_cafoc/auth/digicode... 
+
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-auth_drupalservices/version.php
+Git branch switch failed. It may be missing on plugin auth_drupalservices

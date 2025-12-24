@@ -1,0 +1,147 @@
+# Yaml_writer generated 2025/06/12
+#
+
+core:
+    401
+
+override:
+    401
+
+plugins:
+    - mod_attendance
+    - mod_choicegroup
+    - mod_customlabel
+    - mod_flashcard
+    - mod_hvp
+    - mod_learningtimecheck
+    - mod_mplayer
+    - mod_pdcertificate
+    - mod_questionnaire
+    - mod_scheduler
+    - mod_sharedresource
+    - mod_zoom
+    - block_activity_publisher
+    - block_auditquiz_results
+    - block_cms_navigation
+    - block_completion_progress
+    - block_conditionalhtml
+    - block_course_ascendants
+    - block_course_descendants
+    - block_course_notification
+    - block_dashboard
+    - block_learningtimecheck
+    - block_my_certificates
+    - block_page_module
+    - block_page_tracker
+    - block_profileselectorhtml
+    - block_profilespecifichtml
+    - block_quiz_behaviour
+    - block_quiz_dyn_key
+    - block_quiz_progress
+    - block_quiz_results
+    - block_readspeaker_embhl
+    - block_remote_content
+    - block_rolespecifichtml
+    - block_search
+    - block_self_check_in
+    - block_sharedresources
+    - block_shop_access
+    - block_shop_bills
+    - block_shop_course_seats
+    - block_shop_discounts
+    - block_shop_products
+    - block_shop_total
+    - block_use_stats
+    - block_user_delegation
+    - block_user_memo
+    - block_user_mnet_hosts
+    - block_userquiz_limits
+    - block_userquiz_monitor
+    - block_vmoodle
+    - qtype_ddmatch
+    - qtype_randomconstrained
+    - qtype_splitset
+    - filter_multilangenhanced
+    - filter_multiroot
+    - filter_searchmarks
+    - filter_wikipediacalls
+    - enrol_autoenrol
+    - enrol_profilefield
+    - enrol_selfcheckin
+    - enrol_sync
+    - auth_selfcheckin
+    - auth_ticket
+    - tool_adhoc
+    - tool_backupmanager
+    - tool_cohortfromcourse
+    - tool_coursecategorycheck
+    - tool_cronmonitor
+    - tool_dbcleaner
+    - tool_delivery
+    - tool_filecheck
+    - tool_mergeusers
+    - tool_mnetusers
+    - tool_moodlescript
+    - tool_opcache
+    - tool_snapconfig
+    - tool_sync
+    - availability_badge
+    - availability_coursecompletion
+    - availability_coursetime
+    - availability_days
+    - availability_enrol
+    - availability_othermodulecompletion
+    - availability_password
+    - availability_sectiontime
+    - availability_week
+    - format_page
+    - report_benchmark
+    - report_examtraining
+    - report_growth
+    - report_learningtimecheck
+    - report_patches
+    - report_trainingsessions
+    - report_vmoodle
+    - report_zabbix
+    - repository_sharedresources
+    - cachestore_redismb
+    - theme_klassplace
+    - theme_klassplace01_P
+    - theme_klassplace02_P
+    - theme_klassplace03_P
+    - theme_klassplace04_P
+    - theme_klassplace05_P
+    - theme_klassplace06_P
+    - local_advancedperfs
+    - local_cms
+    - local_courseindex
+    - local_coursetemplates
+    - local_groupcopy
+    - local_ltiprovider
+    - local_mailtest
+    - local_moodlescript
+    - local_multiroot
+    - local_my
+    - local_nolej
+    - local_search
+    - local_sharedresources
+    - local_shop
+    - local_staticguitexts
+    - local_tabbedquickform
+    - local_technicalsignals
+    - local_userequipment
+    - local_vfcore
+    - local_vflibs
+    - local_vmoodle
+
+options:
+    withcore: once
+s    forcecreatedirs: true
+    forceinstall: true
+    debug: true
+    ignorefailing: false
+    errortrace: false
+    processcustomscripts: false
+    processpatchs: false
+    preferprivate: true
+

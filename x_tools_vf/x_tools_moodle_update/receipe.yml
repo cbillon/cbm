@@ -1,0 +1,44 @@
+targets:
+    - C:/wwwroot64/moodle_31_iplh
+
+core:
+    31
+
+override:
+    31
+
+plugins:
+    - mod_pdcertificate
+    - mod_customlabel
+    - mod_scheduler
+    - mod_tracker
+    - mod_magtest
+    - mod_flashcard
+    - mod_sharedresource
+    - mod_pagemenu
+
+    - block_activity_publisher
+    - block_sharedresources
+    - block_rolespecifichtml
+    - block_groupspecifichtml
+    - block_profilespecifichtml
+    - block_profileselectorhtml
+    - block_course_ascendants
+    - block_course_descendants
+    - block_teams
+    - block_page_module
+    - block_page_tracker
+    - block_learningtimecheck
+
+    - local_technicalsignals
+    - local_staticguitexts
+    - local_my
+    - local_advancedperfs
+    - local_sharedresources
+    - local_tabbedquickform
+
+    - tool_sync
+    - tool_backupmanager
+    - tool_filecheck
+    
+    - qtype_splitset

@@ -1,0 +1,721 @@
+Core: WARNING: Core in place and must installed once. Skipping.
+
+
+Plugin:
+name: mod_attendance
+url: https://moodle.org/plugins/download.php/35587/mod_attendance_moodle45_2024072401.zip
+branch: MOODLE_405_STABLE
+release: 2024072401
+version: 2024072401
+
+
+
+Plugin:
+name: mod_choicegroup
+url: https://moodle.org/plugins/download.php/33936/mod_choicegroup_moodle45_2024111301.zip
+branch: MOODLE_405_STABLE
+release: 1.48 for Moodle 4.3-4.5 (Build: 2024111301)
+version: 2024111301
+
+
+Opening /mnt/g/gitrepos/moodle-mod_customlabel/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/mod/customlabel
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-mod_flashcard/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/mod/flashcard
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: mod_hvp
+url: https://moodle.org/plugins/download.php/34151/mod_hvp_moodle45_2024120900.zip
+branch: MOODLE_405_STABLE
+release: 1.27.2
+version: 2024120900
+
+
+Opening /mnt/g/gitrepos/moodle-mod_learningtimecheck/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/mod/learningtimecheck
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-mod_mplayer/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/mod/mplayer
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-mod_pdcertificate/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/mod/pdcertificate
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: mod_questionnaire
+url: https://moodle.org/plugins/download.php/33023/mod_questionnaire_moodle44_2022121601.zip
+branch: MOODLE_401_STABLE
+release: 4.1.1 (Build - 2024082900)
+version: 2022121601
+
+VCS Branch mismatch. Trying with release
+Last chance. analysing supported versions
+
+Opening /mnt/g/gitrepos/moodle-mod_scheduler/version.php
+
+Plugin:
+name: mod_scheduler
+url: https://moodle.org/plugins/download.php/29293/mod_scheduler_moodle42_2023052300.zip
+branch: MOODLE_400_STABLE
+release: 4.0.0
+version: 2023052300
+
+VCS Branch mismatch. Trying with release
+Last chance. analysing supported versions
+
+Opening /mnt/g/gitrepos/moodle-mod_sharedresource/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/mod/sharedresource
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: mod_zoom
+url: https://moodle.org/plugins/download.php/36269/mod_zoom_moodle50_2025052000.zip
+branch: MOODLE_405_STABLE
+release: v5.4.0
+version: 2025052000
+
+
+Opening /mnt/g/gitrepos/moodle-block_activity_publisher/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/activity_publisher
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_auditquiz_results/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/auditquiz_results
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_cms_navigation/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/cms_navigation
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: block_completion_progress
+url: https://moodle.org/plugins/download.php/35649/block_completion_progress_moodle50_2025041400.zip
+branch: MOODLE_405_STABLE
+release: Version for Moodle 4.1 onwards
+version: 2025041400
+
+
+Opening /mnt/g/gitrepos/moodle-block_conditionalhtml/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/conditionalhtml
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_course_ascendants/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/course_ascendants
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_course_descendants/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/course_descendants
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_course_notification/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/course_notification
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_dashboard/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/dashboard
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_learningtimecheck/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/learningtimecheck
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_my_certificates/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/my_certificates
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_page_module/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/page_module
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_page_tracker/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/page_tracker
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_profileselectorhtml/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/profileselectorhtml
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_profilespecifichtml/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/profilespecifichtml
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_quiz_behaviour/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/quiz_behaviour
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_quiz_dyn_key/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/quiz_dyn_key
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_quiz_progress/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/quiz_progress
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: block_quiz_results
+url: https://moodle.org/plugins/download.php/26229/block_quiz_results_moodle40_2021051700.zip
+branch: MOODLE_405_STABLE
+release: 
+version: 2021051700
+
+
+
+Plugin:
+name: block_readspeaker_embhl
+url: https://moodle.org/plugins/download.php/34258/block_readspeaker_embhl_moodle50_2024121601.zip
+branch: MOODLE_405_STABLE
+release: December release (Minor update)
+version: 2024121601
+
+
+Opening /mnt/g/gitrepos/moodle-block_remote_content/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/remote_content
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_rolespecifichtml/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/rolespecifichtml
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_search/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/search
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_self_check_in/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/self_check_in
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_sharedresources/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/sharedresources
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_shop_access/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/shop_access
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_shop_bills/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/shop_bills
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_shop_course_seats/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/shop_course_seats
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_shop_discounts/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/shop_discounts
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_shop_products/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/shop_products
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_shop_total/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/shop_total
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_use_stats/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/use_stats
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_user_delegation/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/user_delegation
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_user_memo/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/user_memo
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_user_mnet_hosts/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/user_mnet_hosts
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_userquiz_limits/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/userquiz_limits
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_userquiz_monitor/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/userquiz_monitor
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-block_vmoodle/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/blocks/vmoodle
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: qtype_ddmatch
+url: https://moodle.org/plugins/download.php/36253/qtype_ddmatch_moodle50_2025051900.zip
+branch: MOODLE_405_STABLE
+release: 2.5.4 (Build: 2025051900)
+version: 2025051900
+
+
+Opening /mnt/g/gitrepos/moodle-qtype_randomconstrained/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/question/type/randomconstrained
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-qtype_splitset/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/question/type/splitset
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-filter_multilangenhanced/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/filter/multilangenhanced
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-filter_multiroot/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/filter/multiroot
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-filter_searchmarks/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/filter/searchmarks
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-filter_wikipediacalls/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/filter/wikipediacalls
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: enrol_autoenrol
+url: https://moodle.org/plugins/download.php/35282/enrol_autoenrol_moodle45_2025031400.zip
+branch: MOODLE_405_STABLE
+release: 2.4.1
+version: 2025031400
+
+
+Opening /mnt/g/gitrepos/moodle-enrol_profilefield/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/enrol/profilefield
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-enrol_selfcheckin/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/enrol/selfcheckin
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-enrol_sync/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/enrol/sync
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-auth_selfcheckin/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/auth/selfcheckin
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-auth_ticket/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/auth/ticket
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: tool_adhoc
+url: https://moodle.org/plugins/download.php/11375/tool_adhoc_moodle31_2016052500.zip
+branch: MOODLE_405_STABLE
+release: 3.1 (Build: 2016052500)
+version: 2016052500
+
+
+Opening /mnt/g/gitrepos/moodle-tool_backupmanager/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/admin/tool/backupmanager
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-tool_cohortfromcourse/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/admin/tool/cohortfromcourse
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-tool_cronmonitor/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/admin/tool/cronmonitor
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-tool_dbcleaner/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/admin/tool/dbcleaner
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-tool_delivery/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/admin/tool/delivery
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-tool_filecheck/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/admin/tool/filecheck
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: tool_mergeusers
+url: https://moodle.org/plugins/download.php/34768/tool_mergeusers_moodle45_2025020505.zip
+branch: MOODLE_405_STABLE
+release: 2025020505 (Happy 2025)
+version: 2025020505
+
+
+Opening /mnt/g/gitrepos/moodle-tool_mnetusers/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/admin/tool/mnetusers
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-tool_moodlescript/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/admin/tool/moodlescript
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: tool_opcache
+url: https://moodle.org/plugins/download.php/36238/tool_opcache_moodle50_2025041400.zip
+branch: MOODLE_405_STABLE
+release: v5.0-r1
+version: 2025041400
+
+
+Opening /mnt/g/gitrepos/moodle-tool_sync/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/admin/tool/sync
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: availability_badge
+url: https://moodle.org/plugins/download.php/11311/availability_badge_moodle31_2016020200.zip
+branch: master
+release: 1.0.0
+version: 2016020200
+
+VCS Branch mismatch. Trying with release
+Last chance. analysing supported versions
+
+Opening /mnt/g/gitrepos/moodle-availability_coursecompletion/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/availability/condition/coursecompletion
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-availability_coursetime/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/availability/condition/coursetime
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-availability_days/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/availability/condition/days
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: availability_enrol
+url: https://moodle.org/plugins/download.php/16249/availability_enrol_moodle34_2018030900.zip
+branch: master
+release: v1.0.4
+version: 2018030900
+
+VCS Branch mismatch. Trying with release
+Last chance. analysing supported versions
+
+Opening /mnt/g/gitrepos/moodle-availability_othermodulecompletion/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/availability/condition/othermodulecompletion
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: availability_password
+url: https://moodle.org/plugins/download.php/36221/availability_password_moodle50_2025041400.zip
+branch: MOODLE_405_STABLE
+release: v5.0-r1
+version: 2025041400
+
+
+Opening /mnt/g/gitrepos/moodle-availability_sectiontime/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/availability/condition/sectiontime
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-availability_week/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/availability/condition/week
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-format_page/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/course/format/page
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: report_benchmark
+url: https://moodle.org/plugins/download.php/35939/report_benchmark_moodle50_2025042700.zip
+branch: MOODLE_405_STABLE
+release: v1.5.3
+version: 2025042700
+
+
+Opening /mnt/g/gitrepos/moodle-report_examtraining/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/report/examtraining
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: report_growth
+url: https://moodle.org/plugins/download.php/36007/report_growth_moodle50_2025043000.zip
+branch: MOODLE_405_STABLE
+release: v5.1.1
+version: 2025043000
+
+
+Opening /mnt/g/gitrepos/moodle-report_learningtimecheck/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/report/learningtimecheck
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-report_patches/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/report/patches
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-report_trainingsessions/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/report/trainingsessions
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-report_vmoodle/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/report/vmoodle
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-report_zabbix/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/report/zabbix
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-repository_sharedresources/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/repository/sharedresources
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-cachestore_redismb/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/cache/stores/redismb
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-theme_klassplace/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/theme/klassplace
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-theme_klassplace01_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/theme/klassplace01
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-theme_klassplace02_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/theme/klassplace02
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-theme_klassplace03_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/theme/klassplace03
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-theme_klassplace04_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/theme/klassplace04
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-theme_klassplace05_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/theme/klassplace05
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-theme_klassplace06_P/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/theme/klassplace06
+      ...creating dir  /mnt/c/wwwroot64/moodle_45_sumatra/theme/klassplace06... 
+
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_advancedperfs/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/advancedperfs
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_cms/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/cms
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_courseindex/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/courseindex
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_coursetemplates/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/coursetemplates
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_groupcopy/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/groupcopy
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: local_ltiprovider
+url: https://moodle.org/plugins/download.php/10423/local_ltiprovider_moodle30_2016020100.zip
+branch: MOODLE_405_STABLE
+release: 2.9.0
+version: 2016020100
+
+
+
+Plugin:
+name: local_mailtest
+url: https://moodle.org/plugins/download.php/35942/local_mailtest_moodle50_2025042700.zip
+branch: MOODLE_405_STABLE
+release: 3.1.7
+version: 2025042700
+
+
+Opening /mnt/g/gitrepos/moodle-local_moodlescript/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/moodlescript
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_multiroot/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/multiroot
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_my/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/my
+syncing plugin code...
+coming back...
+
+
+Plugin:
+name: local_nolej
+url: https://moodle.org/plugins/download.php/35725/local_nolej_moodle45_2025041101.zip
+branch: MOODLE_405_STABLE
+release: 
+version: 2025041101
+
+
+Opening /mnt/g/gitrepos/moodle-local_search/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/search
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_sharedresources/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/sharedresources
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_shop/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/shop
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_staticguitexts/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/staticguitexts
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_tabbedquickform/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/tabbedquickform
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_technicalsignals/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/technicalsignals
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_userequipment/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/userequipment
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_vfcore/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/vfcore
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_vflibs/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/vflibs
+syncing plugin code...
+coming back...
+
+Opening /mnt/g/gitrepos/moodle-local_vmoodle/version.php
+Changing to /mnt/c/wwwroot64/moodle_45_sumatra/local/vmoodle
+syncing plugin code...
+coming back...
+
+Build finished.
+
+
+Build finished.
+

@@ -1,0 +1,632 @@
+{
+  "id": 1903,
+  "name": "Opcache management",
+  "component": "tool_opcache",
+  "source": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+  "doc": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache/blob/master/README.md",
+  "bugs": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache/issues",
+  "discussion": null,
+  "timelastreleased": 1761988454,
+  "versions": [
+    {
+      "id": 14816,
+      "version": "2017091100",
+      "release": "v3.2-r3",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/14816/tool_opcache_moodle32_2017091100.zip",
+      "downloadmd5": "82a844e7952acd4d26b0b53f7472a0fe",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodleuulm/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v3.2-r3",
+      "timecreated": 1505136343,
+      "supportedmoodles": [
+        {
+          "version": 2016110800,
+          "release": "3.2"
+        }
+      ]
+    },
+    {
+      "id": 15487,
+      "version": "2017112300",
+      "release": "v3.3-r1",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/15487/tool_opcache_moodle33_2017112300.zip",
+      "downloadmd5": "67b2e7e76e0b50f02eac9120aec97a3a",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodleuulm/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v3.3-r1",
+      "timecreated": 1511508961,
+      "supportedmoodles": [
+        {
+          "version": 2017042100,
+          "release": "3.3"
+        }
+      ]
+    },
+    {
+      "id": 16793,
+      "version": "2018051700",
+      "release": "v3.4-r3",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/16793/tool_opcache_moodle34_2018051700.zip",
+      "downloadmd5": "3a7cd415cb258c34089f01453dfeb8ef",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodleuulm/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v3.4-r3",
+      "timecreated": 1526583643,
+      "supportedmoodles": [
+        {
+          "version": 2017102500,
+          "release": "3.4"
+        }
+      ]
+    },
+    {
+      "id": 16894,
+      "version": "2018052400",
+      "release": "v3.5-r1",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/16894/tool_opcache_moodle35_2018052400.zip",
+      "downloadmd5": "8fe01ff138c52896cd9544e20dcd3d93",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodleuulm/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v3.5-r1",
+      "timecreated": 1527166225,
+      "supportedmoodles": [
+        {
+          "version": 2018042500,
+          "release": "3.5"
+        }
+      ]
+    },
+    {
+      "id": 19904,
+      "version": "2019050500",
+      "release": "v3.6-r2",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/19904/tool_opcache_moodle36_2019050500.zip",
+      "downloadmd5": "baba13cf79a9fbac6dbdc7ddee89afd6",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodleuulm/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v3.6-r2",
+      "timecreated": 1562326027,
+      "supportedmoodles": [
+        {
+          "version": 2018111800,
+          "release": "3.6"
+        }
+      ]
+    },
+    {
+      "id": 20094,
+      "version": "2019081200",
+      "release": "v3.7-r1",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/20094/tool_opcache_moodle37_2019081200.zip",
+      "downloadmd5": "04cc1c756836d7244c7291927d4c068c",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodleuulm/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v3.7-r1",
+      "timecreated": 1565610437,
+      "supportedmoodles": [
+        {
+          "version": 2019051100,
+          "release": "3.7"
+        }
+      ]
+    },
+    {
+      "id": 22550,
+      "version": "2020092500",
+      "release": "v3.8-r2",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/22550/tool_opcache_moodle38_2020092500.zip",
+      "downloadmd5": "9173b70f4a49608be05437733f85a2c6",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodleuulm/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v3.8-r2",
+      "timecreated": 1601042946,
+      "supportedmoodles": [
+        {
+          "version": 2019111200,
+          "release": "3.8"
+        }
+      ]
+    },
+    {
+      "id": 27309,
+      "version": "2022071200",
+      "release": "v4.0-r1",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/27309/tool_opcache_moodle40_2022071200.zip",
+      "downloadmd5": "6ab784fade8f2ae4b267f7358690ba3f",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.0-r1",
+      "timecreated": 1659888361,
+      "supportedmoodles": [
+        {
+          "version": 2022030300,
+          "release": "4.0"
+        }
+      ]
+    },
+    {
+      "id": 27318,
+      "version": "2022071201",
+      "release": "v4.0-r2",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/27318/tool_opcache_moodle40_2022071201.zip",
+      "downloadmd5": "06a03c2628bde8cb2bf6d106c3024187",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.0-r2",
+      "timecreated": 1659984048,
+      "supportedmoodles": [
+        {
+          "version": 2022030300,
+          "release": "4.0"
+        }
+      ]
+    },
+    {
+      "id": 29045,
+      "version": "2023010500",
+      "release": "v4.1-r1",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/29045/tool_opcache_moodle41_2023010500.zip",
+      "downloadmd5": "c7645a7b5c06384cb2156bf7d27508cc",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.1-r1",
+      "timecreated": 1682453437,
+      "supportedmoodles": [
+        {
+          "version": 2022111500,
+          "release": "4.1"
+        }
+      ]
+    },
+    {
+      "id": 29046,
+      "version": "2022071202",
+      "release": "v4.0-r3",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/29046/tool_opcache_moodle40_2022071202.zip",
+      "downloadmd5": "1fc11b947c0579419eebcd383e3ea01b",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.0-r3",
+      "timecreated": 1682454091,
+      "supportedmoodles": [
+        {
+          "version": 2022030300,
+          "release": "4.0"
+        }
+      ]
+    },
+    {
+      "id": 29047,
+      "version": "2021051704",
+      "release": "v3.11-r5",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/29047/tool_opcache_moodle311_2021051704.zip",
+      "downloadmd5": "b07969ae79000b239bdba8dc60357c04",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v3.11-r5",
+      "timecreated": 1682454109,
+      "supportedmoodles": [
+        {
+          "version": 2021050700,
+          "release": "3.11"
+        }
+      ]
+    },
+    {
+      "id": 29048,
+      "version": "2020120904",
+      "release": "v3.10-r5",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/29048/tool_opcache_moodle310_2020120904.zip",
+      "downloadmd5": "889fbfdba60428f311cce71f63fd0ef8",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v3.10-r5",
+      "timecreated": 1682454128,
+      "supportedmoodles": [
+        {
+          "version": 2020102800,
+          "release": "3.10"
+        }
+      ]
+    },
+    {
+      "id": 29049,
+      "version": "2020120804",
+      "release": "v3.9-r8",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/29049/tool_opcache_moodle39_2020120804.zip",
+      "downloadmd5": "8939361454dec9acf458441a1c49fcde",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v3.9-r8",
+      "timecreated": 1682454146,
+      "supportedmoodles": [
+        {
+          "version": 2020060700,
+          "release": "3.9"
+        }
+      ]
+    },
+    {
+      "id": 30230,
+      "version": "2023010501",
+      "release": "v4.1-r2",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/30230/tool_opcache_moodle41_2023010501.zip",
+      "downloadmd5": "f716fd4e4fe938f0ae81c280f384a0d9",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.1-r2",
+      "timecreated": 1697316730,
+      "supportedmoodles": [
+        {
+          "version": 2022111500,
+          "release": "4.1"
+        }
+      ]
+    },
+    {
+      "id": 30291,
+      "version": "2023090100",
+      "release": "v4.2-r1",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/30291/tool_opcache_moodle42_2023090100.zip",
+      "downloadmd5": "b3734320e7630646debe12ed98f46502",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.2-r1",
+      "timecreated": 1697654373,
+      "supportedmoodles": [
+        {
+          "version": 2023041400,
+          "release": "4.2"
+        }
+      ]
+    },
+    {
+      "id": 30358,
+      "version": "2023102000",
+      "release": "v4.3-r1",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/30358/tool_opcache_moodle43_2023102000.zip",
+      "downloadmd5": "618c75f0ca487febf711b7f4201165ce",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.3-r1",
+      "timecreated": 1698128299,
+      "supportedmoodles": [
+        {
+          "version": 2023092300,
+          "release": "4.3"
+        }
+      ]
+    },
+    {
+      "id": 32919,
+      "version": "2023102001",
+      "release": "v4.3-r2",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/32919/tool_opcache_moodle43_2023102001.zip",
+      "downloadmd5": "67df25d83cf656f3226bbf035d10cc20",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.3-r2",
+      "timecreated": 1724224719,
+      "supportedmoodles": [
+        {
+          "version": 2023092300,
+          "release": "4.3"
+        }
+      ]
+    },
+    {
+      "id": 32920,
+      "version": "2023090101",
+      "release": "v4.2-r2",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/32920/tool_opcache_moodle42_2023090101.zip",
+      "downloadmd5": "14a7cb7f03efa13dc05614fdac693980",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.2-r2",
+      "timecreated": 1724224875,
+      "supportedmoodles": [
+        {
+          "version": 2023041400,
+          "release": "4.2"
+        }
+      ]
+    },
+    {
+      "id": 32922,
+      "version": "2023010502",
+      "release": "v4.1-r3",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/32922/tool_opcache_moodle41_2023010502.zip",
+      "downloadmd5": "57e719d6bdcedf08ed19b4a3d8ade9f9",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.1-r3",
+      "timecreated": 1724225310,
+      "supportedmoodles": [
+        {
+          "version": 2022111500,
+          "release": "4.1"
+        }
+      ]
+    },
+    {
+      "id": 32934,
+      "version": "2023102002",
+      "release": "v4.3-r3",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/32934/tool_opcache_moodle43_2023102002.zip",
+      "downloadmd5": "c80f47bbd944292f175818319c58a32e",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.3-r3",
+      "timecreated": 1724265284,
+      "supportedmoodles": [
+        {
+          "version": 2023092300,
+          "release": "4.3"
+        }
+      ]
+    },
+    {
+      "id": 32935,
+      "version": "2023090102",
+      "release": "v4.2-r3",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/32935/tool_opcache_moodle42_2023090102.zip",
+      "downloadmd5": "61ef64b559bdf772b2610c61867efdad",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.2-r3",
+      "timecreated": 1724265442,
+      "supportedmoodles": [
+        {
+          "version": 2023041400,
+          "release": "4.2"
+        }
+      ]
+    },
+    {
+      "id": 32936,
+      "version": "2023010503",
+      "release": "v4.1-r4",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/32936/tool_opcache_moodle41_2023010503.zip",
+      "downloadmd5": "a0bb1f7339a800379866b439ac874fda",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.1-r4",
+      "timecreated": 1724265462,
+      "supportedmoodles": [
+        {
+          "version": 2022111500,
+          "release": "4.1"
+        }
+      ]
+    },
+    {
+      "id": 32994,
+      "version": "2024060100",
+      "release": "v4.4-r1",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/32994/tool_opcache_moodle44_2024060100.zip",
+      "downloadmd5": "ad28ddd0f4dec903b6b97ffbf5160742",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.4-r1",
+      "timecreated": 1724599149,
+      "supportedmoodles": [
+        {
+          "version": 2024041200,
+          "release": "4.4"
+        }
+      ]
+    },
+    {
+      "id": 33686,
+      "version": "2024100700",
+      "release": "v4.5-r1",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/33686/tool_opcache_moodle45_2024100700.zip",
+      "downloadmd5": "b19e67df9c42d8b011e6d77227aaff45",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.5-r1",
+      "timecreated": 1730200359,
+      "supportedmoodles": [
+        {
+          "version": 2024100700,
+          "release": "4.5"
+        }
+      ]
+    },
+    {
+      "id": 36238,
+      "version": "2025041400",
+      "release": "v5.0-r1",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/36238/tool_opcache_moodle50_2025041400.zip",
+      "downloadmd5": "aeb89d5b3b510152af37607b54e86e7a",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v5.0-r1",
+      "timecreated": 1747503306,
+      "supportedmoodles": [
+        {
+          "version": 2025041400,
+          "release": "5.0"
+        }
+      ]
+    },
+    {
+      "id": 38383,
+      "version": "2025041401",
+      "release": "v5.0-r2",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/38383/tool_opcache_moodle50_2025041401.zip",
+      "downloadmd5": "e1a7f9f974379c70975e00b68d15f97b",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v5.0-r2",
+      "timecreated": 1761248852,
+      "supportedmoodles": [
+        {
+          "version": 2025041400,
+          "release": "5.0"
+        }
+      ]
+    },
+    {
+      "id": 38384,
+      "version": "2024100701",
+      "release": "v4.5-r2",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/38384/tool_opcache_moodle45_2024100701.zip",
+      "downloadmd5": "58346fe0121f34c24e270d1283d986de",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.5-r2",
+      "timecreated": 1761249009,
+      "supportedmoodles": [
+        {
+          "version": 2024100700,
+          "release": "4.5"
+        }
+      ]
+    },
+    {
+      "id": 38531,
+      "version": "2024100703",
+      "release": "v4.5-r4",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/38531/tool_opcache_moodle45_2024100703.zip",
+      "downloadmd5": "77617c5ef29ffa4640832594d3662fd5",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v4.5-r4",
+      "timecreated": 1761986860,
+      "supportedmoodles": [
+        {
+          "version": 2024100700,
+          "release": "4.5"
+        }
+      ]
+    },
+    {
+      "id": 38532,
+      "version": "2025041403",
+      "release": "v5.0-r4",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/38532/tool_opcache_moodle50_2025041403.zip",
+      "downloadmd5": "45dfa5d282ae3d4c9bd32c1cf7749133",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v5.0-r4",
+      "timecreated": 1761986861,
+      "supportedmoodles": [
+        {
+          "version": 2025041400,
+          "release": "5.0"
+        }
+      ]
+    },
+    {
+      "id": 38533,
+      "version": "2025100600",
+      "release": "v5.1-r1",
+      "maturity": 200,
+      "downloadurl": "https://moodle.org/plugins/download.php/38533/tool_opcache_moodle51_2025100600.zip",
+      "downloadmd5": "02440b5d988ab05c11aafb783aaadcd5",
+      "vcssystem": "git",
+      "vcssystemother": null,
+      "vcsrepositoryurl": "https://github.com/moodle-an-hochschulen/moodle-tool_opcache",
+      "vcsbranch": null,
+      "vcstag": "v5.1-r1",
+      "timecreated": 1761988454,
+      "supportedmoodles": [
+        {
+          "version": 2025100600,
+          "release": "5.1"
+        }
+      ]
+    }
+  ]
+}
