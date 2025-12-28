@@ -4,11 +4,34 @@ source includes/env.cnf
 source includes/functions.cfg
 source includes/bash_strict.sh
 
-PROJECT=demo
+PROJECT="$1"
+NEW_PLUGIN="$2"
 DEBUG=false
 
+info new plugin: "$2"
+
+
+function get_plugins () {
+  
+  #in: $PROJECT
+  #out: $PLUGINS
+
+  Start "$*"
+  if [[ $(jq '.plugins' "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json) != null ]]; then
+    #PLUGINS=($(jq -r '.plugins[].name' "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json | tr "\n" " "))
+    PLUGINS=($(jq -r ".plugins[].name" "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json | tr "\n" " "))
+  else
+    PLUGINS=''
+    warn plugin list empty
+  fi
+  [ "$DEBUG" = true ] && info Nb plugins: "${#PLUGINS[@]}"
+
+  End
+}
 function add_plugin_project () {
 
+  PROJECT="$1"
+  PLUGIN="$2"
   Start "$*"
   # Retrieve plugins already in configuration file
   get_plugins "$PROJECT"
@@ -28,7 +51,7 @@ function add_plugin_project () {
   done
 
   PLUGINS=$(menu --title "Plugins cache" --checklist "Plugin's List" 25 78 16 $list)
-  
+
   for PLUGIN in "${PLUGINS[@]}"; do
     PLUGIN="${PLUGIN//'"'}"
     [ "$DEBUG" = true ] && info projects plugin add: "$PLUGIN"
@@ -42,7 +65,7 @@ function add_plugin_project () {
 }
 
 
-add_plugin_project
+add_plugin_project "$1" "$2"
 
 cat /home/cb/cbm/projects/demo/demo.json
 

@@ -98,3 +98,45 @@ jq -r '.versions[]| {(.vcstag): (.supportedmoodles[].release)}|.[]' tmp.json
 List vcstag for sopported Moodle version
 
 jq -r '[.versions[]| {version: .vcstag, moodle: .supportedmoodles[].release}]|.[]|select(.moodle == "4.5")' tmp.json
+
+## Structure du fichier <project>.json
+
+jq . demo.json
+{
+  "project": {
+    "name": "demo",
+    "branch": "demo"
+  },
+  "moodle": {
+    "version": 5.1
+  },
+  "plugins": []
+}
+
+Pour ajouter un element au tableau des plugins
+
+jq  '.plugins[.plugins| length] |= . + { "name": "tool_excimer"}' demo.json > demo.tmp && mv demo.tmp demo.json
+
+Pour lister les plugins
+
+jq -r '.plugins[].name' demo.json
+
+### build plugins array
+plugins=($(jq -r ".plugins[].name" projects/demo/demo.json | tr "\n" " "))
+
+echo nb:"${#plugins[@]}"
+i=0
+IFS=" "
+for plugin in ${plugins[*]}
+do
+    echo "$i" "${plugin}"
+    ((++i))
+done
+
+Pour filter sur un plugin 
+jq -r '.plugins[].name' projects/demo/demo.json | grep "tool_redis" 
+jq -r '.plugins[] | select(.name == "tool_redis")' projects/demo/demo.json
+
+Pour retire un plugin du projet
+jq '.| del(.plugins[] | select(.name == "tool_redis"))' projects/demo/demo.json
+

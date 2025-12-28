@@ -111,10 +111,10 @@ else
    exit 1
 fi
 
-# Verify date pluglist.json
+# Verify date pluglist.json reload if needed
 get_pluglist
 
-get_project_conf
+get_project_conf "$PROJECT"
 
 sortie=0
 
