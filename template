@@ -1,0 +1,10 @@
+{
+  "project": {
+    "name": "${project}",
+    "branch": "${project}"
+  },
+  "moodle": {
+    "version": "${version}"
+  },
+  "plugins": []
+}

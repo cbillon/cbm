@@ -12,6 +12,26 @@ DEBUG=false
 # do
 #     echo "${FILES[$i]}"
 # done
+# for ((i = 0; i < ${#FILES[@]}; i++))
+# do
+#     echo "${FILES[$i]}"
+# done
+
+# l=($(jq -r ".plugins[].name" projects/demo/demo.json | tr "\n" " "))
+
+# echo nb:"${#l[@]}"
+# i=0
+# IFS=" "
+# for plugin in ${l[*]}
+# do
+#     echo "$i" "${plugin}"
+#     ((++i))
+# done
+
+# for plugin in "${plugins[@]}"; do
+#   echo "$plugin"
+#   echo ' '
+# done
 
 plugins=($(jq -r ".plugins[].name" projects/demo/demo.json | tr "\n" " "))
 

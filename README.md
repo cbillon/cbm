@@ -64,8 +64,6 @@ git checkout <nom du projet>
 
 ## tips jq
 
-
-
 $ jq -r '[.versions[]| {(.vcstag): (.supportedmoodles[].release)}]' tmp.json
 
 [
@@ -127,10 +125,19 @@ plugins=($(jq -r ".plugins[].name" projects/demo/demo.json | tr "\n" " "))
 echo nb:"${#plugins[@]}"
 i=0
 IFS=" "
-for plugin in ${plugins[*]}
+for plugin in ${plugins[@]}
 do
     echo "$i" "${plugin}"
     ((++i))
+done
+
+ceci est encapsulé dans la fonction get_plugins
+
+get_plugins
+i=0
+for PLUGIN in PLUGINS; do
+  echo "$i" "$PLUGIN"
+  ((++i))
 done
 
 Pour filter sur un plugin 

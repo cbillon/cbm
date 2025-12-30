@@ -1,6 +1,6 @@
 # Analyze
 
-L'application Code Base Manager est un assemblage de fonctions qui sont contenues dans **includes/functions.cfg**.
+L'application Code Base Manager utilise un ensemble de fonctions qui sont contenues dans **includes/functions.cfg**.
 
 L'outil d'analyse permet l'exploration de l'ensemble de ces fonctions. 
 
