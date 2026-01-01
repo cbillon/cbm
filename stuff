@@ -1,0 +1,14 @@
+   
+  if [[ $(git rev-parse --verify "$PLUGIN_DESIRED_STATE") ]]; then
+    git checkout "$PLUGIN_DESIRED_STATE" --quiet
+    PLUGIN_DESIRED_STATE_SHA1=$(git rev-parse --short HEAD)
+    [ "$DEBUG" = true ] && info "$PLUGIN" desired state sha1: "${PLUGIN_DESIRED_STATE_SHA1:0:7}"
+  else
+    error=1
+    error git rev-parse --verify "$PLUGIN_DESIRED_STATE"
+  fi
+
+  for sha1 complet -c11-50 | cut -c11-50
+  COMMIT=$(grep .gitrepo -e 'commit = ')
+   [[ $(grep .gitrepo -e 'commit = ') =~ ^.*commit' = '([a-f0-9].*)$ ]] && COMMIT="${BASH_REMATCH[1]}"
+    
