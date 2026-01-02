@@ -5,47 +5,55 @@ source includes/functions.cfg
 source includes/bash_strict.sh
 
 PLUGIN="$1"
-DEBUG=true
+MOODLE_VERSION="$2"
+DEBUG="${3:-false}"
+
+
+function is_moodleversion_supported () {  
+  # $1 PLUGIN
+  # $2 MOODLE_VERSION
+  # out if PLUGIN supports MOODLE_VERSION
+  # VCS_URL
+  # DOWNLOAD_URL
+  Start "$*"  
+  local error vcs download 
+  error=0
+  PLUGIN="$1"
+  MOODLE_VERSION="$2"
+
+  VCS_URL=null
+  DOWNLOAD_URL=null
+  
+  jq -r --arg plugin  "$PLUGIN" '.plugins|map(select(.component == $plugin)) | .[]' "$RACINE"/pluglist.json > "$RACINE"/tmp.json
+  if [[ $(jq '.id' "$RACINE"/tmp.json) ]]; then 
+    VCS_URL=$(jq -r '.source' "$RACINE"/tmp.json)
+    PLUGIN_MOODLE_VERSION=$(jq -r '[.versions[]| {(.version) : (.supportedmoodles[].release)} ]' "$RACINE"/tmp.json | grep "$MOODLE_VERSION" | sort -nr | grep -E -o  "([0-9]{10})" | cut -f 1 -d " ") || true
+    [[ -n "$PLUGIN_MOODLE_VERSION" ]] && success "$PLUGIN": "$MOODLE_VERSION" supported || { error=1; error "$PLUGIN" not support Moodle version "$MOODLE_VERSION"; }
+    vcs=$(jq -r '.versions[]|{(.supportedmoodles[].release) : .vcsrepositoryurl}' ./tmp.json | grep "$2" | head -n 1) || true
+    [[ -n "$vcs" ]] && VCS_URL="$vcs"
+    download=$(jq -r '.versions[]|{(.supportedmoodles[].release) : .downloadurl}' ./tmp.json | grep "$2") || true    
+    if [[ "$download" =~ ^.*' '(.*)$ ]]; then
+      DOWNLOAD_URL="${BASH_REMATCH[1]}"
+    else
+      DOWNLOAD_URL=null
+      error no value for download url
+      error=1
+    fi
+  else
+    error "$PLUGIN"  not in official repository
+    error=1 
+  fi
+    
+  [ "$DEBUG" = true ] && info vcs "$vcs" download: "$download"
+  
+  info VCS URL: "$VCS_URL" DOWNLOAD URL: "$DOWNLOAD_URL"
+  
+  End
+  return
+}
+
 
 info plugin: "$PLUGIN" debug: "$DEBUG"
 
-get_plugin_observed_state () {
-  
-  Start "$*"
-  PLUGIN="$1"
-  STATE_TYPE=null
-  STATE=null
-  get_plugin_dir "$PLUGIN"
-  
-  # plugin already installed
-  cd "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME" || exit
-  [[ $(grep .gitrepo -e 'PLUGIN_STATE_TYPE=') =~ ^.*PLUGIN_STATE_TYPE=(.*)$ ]] && STATE_TYPE="${BASH_REMATCH[1]}"
-  [[ $(grep .gitrepo -e 'PLUGIN_DESIRED_STATE=') =~ ^.*PLUGIN_DESIRED_STATE=(.*)$ ]] && STATE="${BASH_REMATCH[1]}"
-  
-  [ "$DEBUG" = true ] && info state type in plugin: "$STATE_TYPE" state: "$STATE"
-  End
-}
+is_moodleversion_supported "$PLUGIN" "$MOODLE_VERSION"
 
-codebase_need_update () {
-  
-  Start "$*"
-  PLUGIN="$1"
-  get_plugin_dir "$PLUGIN"
-  
-  if [ -d "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME" ]; then
-
-    get_plugin_desired_state "$PLUGIN"
-
-    get plugin_observed_state "$PLUGIN"
-    if [ "$PLUGIN_STATE_TYPE" == "$STATE_TYPE" ] && [ "$PLUGIN_DESIRED_STATE" == "$STATE" ]; then
-      success "$PLUGIN" type "$STATE_TYPE" state "$PLUGIN_DESIRED_STATE" OK
-    else
-      install_plugin "$PLUGIN"
-    fi
-  else
-    info "$PLUGIN" not installed
-    install_plugin "$PLUGIN"
-  fi
-
-  End
-}

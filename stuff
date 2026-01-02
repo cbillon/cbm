@@ -11,4 +11,7 @@
   for sha1 complet -c11-50 | cut -c11-50
   COMMIT=$(grep .gitrepo -e 'commit = ')
    [[ $(grep .gitrepo -e 'commit = ') =~ ^.*commit' = '([a-f0-9].*)$ ]] && COMMIT="${BASH_REMATCH[1]}"
-    
+
+# Creation du fichier tmp.json
+
+jq -r '.plugins|map(select(.component == "tool_token"))|.[]' pluglist.json > tmp.json
