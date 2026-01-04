@@ -138,8 +138,8 @@ do
     if   [ "$OPTION" = 0 ]; then add_plugin_cache
     elif [ "$OPTION" = 1 ]; then list_plugins_cache
     elif [ "$OPTION" = 2 ]; then add_plugin_project
-    elif [ "$OPTION" = 3 ]; then nothing_todo
-    elif [ "$OPTION" = 4 ]; then nothing_todo
+    elif [ "$OPTION" = 3 ]; then rm_plugin
+    elif [ "$OPTION" = 4 ]; then config_check
     elif [ "$OPTION" = 5 ]; then update_moodle
     elif [ "$OPTION" = 6 ]; then update_plugins_repo
     elif [ "$OPTION" = 7 ]; then update_codebase
