@@ -77,9 +77,9 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # Verify pre requis
 
 git --version 1>/dev/null || { error git not installed see README.md; exit; }
-  jq --version 1>/dev/null || { error jq not installed see README.md; exit; }
+jq --version 1>/dev/null || { error jq not installed see README.md; exit; }
 
-[ -d "$PROJECTS_PATH" ] || create_env
+#[ -d "$PROJECTS_PATH" ] || create_env
 # restore last project
 
 PROJECT=$(menu --inputbox "What is your project?" 8 39 "$PROJECT_CURRENT" --title "Code Base Manager")
@@ -106,7 +106,7 @@ if [[ "$?" -eq 0 ]]; then
        echo "Cancel."
        exit 1
     fi
-  fi
+  fi  
 else
    echo "Select canceled."
    exit 1
