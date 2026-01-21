@@ -15,3 +15,9 @@
 # Creation du fichier tmp.json
 
 jq -r '.plugins|map(select(.component == "tool_token"))|.[]' pluglist.json > tmp.json
+
+
+function info() { [ "$DEBUG" = false ] && echo "${BLUE}" "${@}" "${NC}" || echo "${BLUE}" "${@}" "${FUNCNAME[1]}" line:"${BASH_LINENO[0]}" "${NC}"; }
+function warn() { [ "$DEBUG" = false ] && echo "${YELOW}" "${@}" "${NC}" || echo "${YELOW}" "${@}" "${FUNCNAME[1]}" line:"${BASH_LINENO[0]}" "${NC}"; }
+function error() { [ "$DEBUG" = false ] && echo "${RED}" "${@}" "${NC}" || echo "${RED}" "${@}" "${FUNCNAME[1]}" line:"${BASH_LINENO[0]}" "${NC}"; }
+function success() { [ "$DEBUG" = false ] && echo "${GREEN}" "${@}" "${NC}" || echo "${GREEN}" "${@}" "${FUNCNAME[1]}" line:"${BASH_LINENO[0]}" "${NC}"; }

@@ -21,9 +21,9 @@ function cbm_help() {
 
 
   ## La documentation
-  
+
   Elle se trouve dans le repertoire docs
-  
+
   Elle est organisée de la façon suivante:
   - tutorials : infos pour démarrer : pre requis , installation du script, tutoriel
   - how-to-guide : desciption des différentes commandes
@@ -92,21 +92,26 @@ if [[ "$?" -eq 0 ]]; then
   else
     menu --title "Boite de dialogue Oui / Non" --yesno "Create new project $PROJECT ?" 10 60
     if [[ "$?" -eq 0 ]]; then
-      while [[ :: ]];
-      do        
+      error=1
+      while [ "$error" -ne 0 ]; do
         parm=$(menu --inputbox "What is your Moodle version?" 8 39 --title "Conf $PROJECT" "$MOODLE_VERSION_DEFAULT")
         [[ "$?" -eq 0 ]] || exit 1
-        is_version_valid "$parm" && break
+        if is_moodle_version_valid "$parm"; then
+          error=0
+        else
+          error Invalid Moodle version "$parm"
+        fi
       done
 
       info Call create project "$PROJECT" "$parm"
       create_project "$PROJECT" "$parm"
       info Project "$PROJECT" created
+
     else
-       echo "Cancel."
+       error "Cancel."
        exit 1
     fi
-  fi  
+  fi
 else
    echo "Select canceled."
    exit 1
@@ -132,7 +137,7 @@ do
   "7"  "${menu[7]}" \
   "8"  "${menu[8]}" \
   "9"  "${menu[9]}" )
-  
+
 
   if [ "$?" -eq 0 ]; then
     if   [ "$OPTION" = 0 ]; then add_plugin_cache
@@ -152,7 +157,7 @@ do
   else
     #"Vous avez annulé... :-("
     #sortie=1
-    exit 
+    exit
   fi
 
   if [ "$DEBUG" = true ];
