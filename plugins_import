@@ -1,0 +1,4 @@
+tool_datewatch	Date watcher
+tool_opcache	Gestion OPcache
+tool_redis	Redis management
+report_benchmark	Moodle Benchmark
