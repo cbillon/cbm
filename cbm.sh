@@ -64,9 +64,11 @@ source includes/functions.cfg
 source includes/menu."$LANG"
 source includes/bash_strict.sh
 
-bash_setup
-
 info DEBUG: "$DEBUG"
+
+setup_logging
+info log file: "$logfile" logfile policy: "$logfile_policy" logging mode: "$logging_mode"
+
 # Le script
 #CURRENT_DIR=$(dirname "${0}")
 #SCRIPT_NAME=$(basename "${0}")
