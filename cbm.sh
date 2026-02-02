@@ -39,7 +39,7 @@ END
 }
 
 DEBUG=false
-while getopts "h?d" opt
+while getopts "h?dl:" opt
 do
 	# case statement
 	case "${opt}" in
@@ -49,6 +49,7 @@ do
 		exit 0
 		;;
 	d) DEBUG=true ;;
+  l) logging_mode="$OPTARG" ;;
 	esac
 done
 

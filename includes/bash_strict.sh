@@ -41,29 +41,35 @@ function validate_option() {
 setup_logging() {
     # By default, the log file is created in /tmp to avoid permissions issues 
     logfile="${logfile:-/tmp/$(basename ${0%.*}).log}"
-
+    
     # Logs are shown on stdout if the script if called from a tty (ie: manually) or sent in a file.
     #  - terminal_or_file : logs are sent on the terminal OR in the log file
     #  - terminal_and_file : logs are sent both on the terminal and the log file
-    validate_option logging_mode ${logging_mode:=terminal_or_file} terminal_or_file terminal_and_file 
+    validate_option logging_mode ${logging_mode:=terminal_or_file} terminal_or_file terminal_and_file only_file
     
     # Logs can be appended to the log file, or the log file can be recreated each time
     validate_option logfile_policy ${logfile_policy:=append} append recreate
 
     [[ ${logfile_policy} == "recreate" ]] && rm -f "${logfile}"
     
-    # Do we have a tty attached ?
-    term=$(tty)
-    if (( $? != 0 ))
-    then
-        # Nope, let's close stdout and stderr and redirect 
-	exec 1<&-
-        exec 2<&-
-        exec &>> "$logfile"
-    elif [[ ${logging_mode} == "terminal_and_file" ]]
-    then
-	exec &> >(tee -a "$logfile") 
-    fi
+    # # Do we have a tty attached ?
+    # term=$(tty)
+    # if (( $? != 0 ))
+    # then
+    #   # Nope, let's close stdout and stderr and redirect 
+	#   exec 1<&-
+    #   exec 2<&-
+    #   exec &>> "$logfile"
+    # elif [[ ${logging_mode} == "only_file" ]]
+    # then
+    #   # Nope, let's close stdout and stderr and redirect 
+	#   exec 1<&-
+    #   exec 2<&-
+    #   exec &>> "$logfile"
+    # elif [[ ${logging_mode} == "terminal_and_file" ]]
+    # then
+	# exec &> >(tee -a "$logfile") 
+    # fi
 }
 
 exit_handler() {
