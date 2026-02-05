@@ -52,24 +52,24 @@ setup_logging() {
 
     [[ ${logfile_policy} == "recreate" ]] && rm -f "${logfile}"
     
-    # # Do we have a tty attached ?
-    # term=$(tty)
-    # if (( $? != 0 ))
-    # then
-    #   # Nope, let's close stdout and stderr and redirect 
-	#   exec 1<&-
-    #   exec 2<&-
-    #   exec &>> "$logfile"
-    # elif [[ ${logging_mode} == "only_file" ]]
-    # then
-    #   # Nope, let's close stdout and stderr and redirect 
-	#   exec 1<&-
-    #   exec 2<&-
-    #   exec &>> "$logfile"
-    # elif [[ ${logging_mode} == "terminal_and_file" ]]
-    # then
-	# exec &> >(tee -a "$logfile") 
-    # fi
+    # Do we have a tty attached ?
+    term=$(tty)
+    if (( $? != 0 ))
+    then
+      # Nope, let's close stdout and stderr and redirect 
+	  exec 1<&-
+      exec 2<&-
+      exec &>> "$logfile"
+    elif [[ ${logging_mode} == "only_file" ]]
+    then
+      # Nope, let's close stdout and stderr and redirect 
+	  exec 1<&-
+      exec 2<&-
+      exec &>> "$logfile"
+    elif [[ ${logging_mode} == "terminal_and_file" ]]
+    then
+	exec &> >(tee -a "$logfile") 
+    fi
 }
 
 exit_handler() {

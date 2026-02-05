@@ -4,96 +4,63 @@ source includes/env.cnf
 source includes/functions.cfg
 source includes/bash_strict.sh
 
-function show_help() {
-	# Here doc, note _not_ in quotes, as we want vars to be substituted in.
-	# Note that the here doc uses <<- to allow tabbing (must use tabs)
-	# Note argument zero used here
-	cat > /dev/stdout <<- END
-		${0} -p <project> -v <moodle_version> [-m <plugin install>] [-s <steps>]
-		  [-d ] [-h]
+LC_ALL=fr_FR.UTF-8
 
-		REQUIRED ARGS:
-		
-		OPTIONAL ARGS:
-    -d - debug mod
-		-r - reload json file
-		-h - show help
-
-		EXAMPLES
-    - ./test.sh -r
-END
+function func1 () {
+  echo func 1 CB
 }
 
-# while loop, and getopts
-DEBUG=false
-RELOAD=false
-while getopts "h?dp:r" opt
-do
-	# case statement
-	case "${opt}" in
-	h|\?)
-		show_help
-		# exit code
-		exit 0
-		;;
-	d) DEBUG=true ;;
-  p) PLUGIN=${OPTARG} ;; 
-  r) RELOAD=true ;;
-  esac
-done
-
-info debug: "$DEBUG" reload: "$RELOAD"
-
-function reload_file () {
-  info "$*"
-  error=0
-  if [ -f "$RACINE"/pluglist.json ]; then
-    rm pluglist.jsonnow
-  fi
-  wget download.moodle.org/api/1.3/pluglist.php -O "$RACINE"/pluglist.json 
-  return $error
-  info End 
+function func2 () {
+  echo func 2 CB
 }
 
-function find_plugin_source () {
-  Start "$*"
-  local error
-  error=0
-  [ "$DEBUG" = true ] && info Plugin: "$PLUGIN"
-  jq -r --arg plugin  "$PLUGIN" '.plugins|map(select(.component == $plugin)) | .[]' "$RACINE"/pluglist.json > tmp.json
+function func3 () {
+  echo func 3 CB
+}
+
+function menu () {
+
+sel=$(zenity --list --width=600 --height=450 --text="Menu CBM" \
+	--ok-label="Sélectionner" \
+	--cancel-label="Quitter" \
+	--hide-column 2 --print-column 2 --column "Plugin" --column fonction \
+  "Import d'un plugin (cache)" add_plugin_cache \
+  "Liste des plugins (cache)" list_plugins_cache \
+  "Ajout d'un plugin au projet" add_plugin_project \
+  "Retirer un plugin du projet" rm_plugin \
+  "Verification de la configuration du projet" config_check \
+  "Mise a jour de Moodle" update_moodle  \
+  "Mise a jour du cache des plugins" update_plugins_repo \
+  "Mise a jour de la base de code" update_codebase \
+  "Livraison d'une nouvelle version de la base de code" release \
+  "Exit" cbm_exit
+)
   
-  MOODLE='4.9'
-  var=$(jq -r --arg moodle $MOODLE '.versions[] | .supportedmoodles [] .release | select(contains ($moodle))|@sh' "$RACINE"/tmp.json)
-  info $var
-  if [ -z $var ]; then
-    error "$PLUGIN" ne supporte pas la version "$MOODLE"
-  else
-    success "$PLUGIN" supporte la version "$MOODLE"
-  fi
-
-
-
-  [ "$DEBUG" = true ] && info id: "$var"
-      
-  
-  # COMPONENT=$(jq -r '.component' "$RACINE"/tmp.json)  # <type>_<plugin name>
-  # NAME=$(jq -r '.name' "$RACINE"/tmp.json)  # description
-  # SOURCE=$(jq -r '.source' "$RACINE"/tmp.json)
-  # VERSIONS=$(jq -r '.[] | . .versions' "$RACINE"/tmp.json)
-  # info versions: "$VERSIONS"
-  # [ "$DEBUG" = true ] && info PLUGIN: "$COMPONENT" "$NAME" "$SOURCE"
+}
  
-  # pour o la version du plugin a partir de la version Moodle
-  # supprimer  |  select(.vcstag != null)  si on veut 
-  # [.versions[] | select(.vcstag != null) | {id: .id,version: .version,tag: .vcstag, moodle: .supportedmoodles[]} | select (.moodle.release == "2.0")] | last
+  menu
+  info retour: "$?" "$sel"
+  "$sel"
+  exit
 
-  End
-  return "$error"
-}
 
-[[ "$RELOAD" = true  ]] && reload_file
+#PROJECT=$(menu --inputbox "What is your project?" 8 39 "$PROJECT_CURRENT" --title "Code Base Manager")
 
-find_plugin_source 
-[[ "$DEBUG" = true ]] && wait_keyboard
+PROJECT=$(zenity --entry --text="What is your project?" --title "Code Base Manager" --width=300)
+echo retour: "$?"
+if [ -n "$PROJECT" ]; then
+  info OK "$PROJECT"
+else
+  error ko!
+fi
+
+exit
+
+#menu --title "Boite de dialogue Oui / Non" --yesno "Create new project $PROJECT ?" 10 60
+
+
+REP=$(zenity --question --text "Are you sure you want to create new project $PROJECT?" --no-wrap --ok-label "Yes" --cancel-label "No")
+
+echo rep: "$REP"
 
 info "That's All!"

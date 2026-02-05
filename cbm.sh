@@ -9,15 +9,16 @@ function cbm_help() {
   #Lancement de Code Base Manager
   cat > /dev/stdout <<- END
   Lancement depuis le répertoire d'installation
-  	${0} [-d] [-h]
+  	${0} [-d] [-h] [-l]
 
 		OPTIONAL ARGS:
-  -d : set mode debug
-	  -h : show help
-
+    -d : set mode debug (default false)
+	    -h : show help
+    -l : logging mode terminal_or_file (default) terminal_and_file only_file
+   
 		EXAMPLES
      cd cbm
-		 ./cbm -d
+		 ./cbm.sh -d
 
 
   ## La documentation
@@ -31,7 +32,7 @@ function cbm_help() {
   - discussions: documents relatifs au sujet : version moodle,semantic versionning,  moodle gestion des branches ...
 
   ## La base de code
-  La base de code générée pour le projet se trouve dans le dépot "$MOODLE_SRC" branche $PROJECT_BRANCH
+  La base de code générée pour le projet se trouve dans le dépot local Moodle avec une branche correspondant au nom du projet
 
   Consultez le fichier README.md qui se trouve dans le répertoire d installation.
 END
@@ -45,7 +46,6 @@ do
 	case "${opt}" in
 	h|\?)
 		cbm_help
-		# exit code
 		exit 0
 		;;
 	d) DEBUG=true ;;
@@ -62,7 +62,6 @@ fi
 
 source includes/env.cnf
 source includes/functions.cfg
-source includes/menu."$LANG"
 source includes/bash_strict.sh
 
 info DEBUG: "$DEBUG"
@@ -87,19 +86,21 @@ jq --version 1>/dev/null || { error jq not installed see README.md; exit; }
 #[ -d "$PROJECTS_PATH" ] || create_env
 # restore last project
 
-PROJECT=$(menu --inputbox "What is your project?" 8 39 "$PROJECT_CURRENT" --title "Code Base Manager")
-
-if [[ "$?" -eq 0 ]]; then
+#PROJECT=$(menu --inputbox "What is your project?" 8 39 "$PROJECT_CURRENT" --title "Code Base Manager")
+PROJECT=$(zenity --entry --text "What is your project? $PROJECT_CURRENT" --entry-text "$PROJECT_CURRENT" --title "Code Base Manager")
+if [[ "$?" -eq 0 && -n "$PROJECT" ]]; then
   if [ -d "$PROJECTS_PATH"/"$PROJECT" ]; then
     # save current project
     sed -i "s/^PROJECT_CURRENT=.*/PROJECT_CURRENT=$PROJECT/" "$RACINE/includes/env.cnf"
     info "Project: $PROJECT"
   else
-    menu --title "Boite de dialogue Oui / Non" --yesno "Create new project $PROJECT ?" 10 60
+    # menu --title "Boite de dialogue Oui / Non" --yesno "Create new project $PROJECT ?" 10 60
+    zenity --question --text "Create new project $PROJECT ?" --title "Code Base Manager"
     if [[ "$?" -eq 0 ]]; then
       error=1
       while [ "$error" -ne 0 ]; do
-        parm=$(menu --inputbox "What is your Moodle version?" 8 39 --title "Conf $PROJECT" "$MOODLE_VERSION_DEFAULT")
+        #parm=$(menu --inputbox "What is your Moodle version?" 8 39 --title "Conf $PROJECT" "$MOODLE_VERSION_DEFAULT")
+        parm=$(zenity --entry --text "What is your Moodle version?" --title "Code Base Manger $PROJECT" --entry-text "$MOODLE_VERSION_DEFAULT")
         [[ "$?" -eq 0 ]] || exit 1
         if is_moodle_version_valid "$parm"; then
           error=0
@@ -127,48 +128,33 @@ get_pluglist
 
 get_project_conf "$PROJECT"
 
-sortie=0
+while true ; do
 
-while [ $sortie = 0 ];
-do
-  OPTION=$(menu --title "Code Base Manager" --menu "Project : ${PROJECT}" 20 60 12 \
-  "0"  "${menu[0]}" \
-  "1"  "${menu[1]}" \
-  "2"  "${menu[2]}" \
-  "3"  "${menu[3]}" \
-  "4"  "${menu[4]}" \
-  "5"  "${menu[5]}" \
-  "6"  "${menu[6]}" \
-  "7"  "${menu[7]}" \
-  "8"  "${menu[8]}" \
-  "9"  "${menu[9]}" ) || true
-
-
-  if [ "$?" -eq 0 ]; then
-    if   [ "$OPTION" = 0 ]; then add_plugin_cache
-    elif [ "$OPTION" = 1 ]; then list_plugins_cache
-    elif [ "$OPTION" = 2 ]; then add_plugin_project
-    elif [ "$OPTION" = 3 ]; then rm_plugin
-    elif [ "$OPTION" = 4 ]; then config_check
-    elif [ "$OPTION" = 5 ]; then update_moodle
-    elif [ "$OPTION" = 6 ]; then update_plugins_repo
-    elif [ "$OPTION" = 7 ]; then update_codebase
-    elif [ "$OPTION" = 8 ]; then release
-    elif [ "$OPTION" = 9 ]; then sortie=1
-    else
-     echo "Vous avez annulé"
-     sortie=1
-    fi
+  func=$(zenity --list --width=600 --height=450 --text="Menu CBM" \
+    --width=300 \
+    --height=350 \
+  	--ok-label="Select" \
+  	--cancel-label="Cancel" \
+	  --hide-column 2 --print-column 2 --column "Plugin" --column fonction \
+    "Plugin import (cache)" add_plugin_cache \
+    "Plugins list (cache)" list_plugins_cache \
+    "Add plugin to project" add_plugin_project \
+    "Remove plugin from project" rm_plugin \
+    "Check project configuration" config_check \
+    "Update core Moodle" update_moodle  \
+    "Update plugins in cache" update_plugins_repo \
+    "Sync codebase" update_codebase \
+    "Release a new codebase version" release \
+    "Exit" exit
+  )
+  if [[ "$?" -eq 0 && -n "$func" ]]; then
+    [ "DEBUG" = true ] && info function: "$func"
+    $func
   else
-    #"Vous avez annulé... :-("
-    #sortie=1
-    exit
-  fi
-
-  if [ "$DEBUG" = true ];
-  then
-    wait_keyboard
-  fi
+    error "Code Base Manager exit"
+    break
+  fi   
+  
 done
 
 info Bye Bye
