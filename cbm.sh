@@ -64,9 +64,9 @@ source includes/env.cnf
 source includes/functions.cfg
 source includes/bash_strict.sh
 
-info DEBUG: "$DEBUG"
-
 setup_logging
+
+info DEBUG: "$DEBUG"
 info log file: "$logfile" logfile policy: "$logfile_policy" logging mode: "$logging_mode"
 
 # Le script
@@ -76,7 +76,7 @@ HOSTNAME=$(hostname)
 DATE_DU_JOUR=$(date)
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-[ $EUID -eq 0 ] && echo error "This script must run as normal user" && exit 1
+[ $EUID -eq 0 ] && error "This script must run as normal user" && exit 1
 
 # Verify pre requis
 
@@ -86,8 +86,7 @@ jq --version 1>/dev/null || { error jq not installed see README.md; exit; }
 #[ -d "$PROJECTS_PATH" ] || create_env
 # restore last project
 
-#PROJECT=$(menu --inputbox "What is your project?" 8 39 "$PROJECT_CURRENT" --title "Code Base Manager")
-PROJECT=$(zenity --entry --text "What is your project? $PROJECT_CURRENT" --entry-text "$PROJECT_CURRENT" --title "Code Base Manager")
+PROJECT=$(yad --entry --text "What is your project? $PROJECT_CURRENT" --entry-text "$PROJECT_CURRENT" --title "Code Base Manager")
 if [[ "$?" -eq 0 && -n "$PROJECT" ]]; then
   if [ -d "$PROJECTS_PATH"/"$PROJECT" ]; then
     # save current project
@@ -95,13 +94,33 @@ if [[ "$?" -eq 0 && -n "$PROJECT" ]]; then
     info "Project: $PROJECT"
   else
     # menu --title "Boite de dialogue Oui / Non" --yesno "Create new project $PROJECT ?" 10 60
-    zenity --question --text "Create new project $PROJECT ?" --title "Code Base Manager"
-    if [[ "$?" -eq 0 ]]; then
+    
+
+    if yad --image="dialog-question" \
+    --title "Alert" \
+    --text "Create a new Project?" \
+    --button="gtk-no:1" \
+    --button="gtk-yes:0" ; then
       error=1
       while [ "$error" -ne 0 ]; do
         #parm=$(menu --inputbox "What is your Moodle version?" 8 39 --title "Conf $PROJECT" "$MOODLE_VERSION_DEFAULT")
-        parm=$(zenity --entry --text "What is your Moodle version?" --title "Code Base Manger $PROJECT" --entry-text "$MOODLE_VERSION_DEFAULT")
-        [[ "$?" -eq 0 ]] || exit 1
+        #parm=$(zenity --entry --text "What is your Moodle version?" --title "Code Base Manger $PROJECT" --entry-text "$MOODLE_VERSION_DEFAULT")
+        parm=$(yad --form \
+        --window-icon=gtk-preferences \
+        --align=right \
+        --width=150 \
+        --mouse \
+        --title="CodeBase Manager configurator" \
+        --field="Admin:" "admin" \
+        --field="Admin em mail" "admin@gmail.com" \
+        --field="Branch project:" "$PROJECT" \
+        --field="Moodle Version:CBE" 4.5\!5.0\!5.1\!5.2 \
+        --field="Description:TXT" \
+        --button="About!gtk-about":"bash -c about_dlg" \
+        --button="Cancel!gtk-cancel":1 \
+        --button="Yes!gtk-yes":0)
+
+        [[ "$?" -eq 0 && -n "$parm" ]] || exit 1
         if is_moodle_version_valid "$parm"; then
           error=0
         else
@@ -124,18 +143,14 @@ else
 fi
 
 # Verify date pluglist.json reload if needed
-get_pluglist
+get_pluglist "$DIFF_DAYS"
 
 get_project_conf "$PROJECT"
 
 while true ; do
 
-  func=$(zenity --list --width=600 --height=450 --text="Menu CBM" \
-    --width=300 \
-    --height=350 \
-  	--ok-label="Select" \
-  	--cancel-label="Cancel" \
-	  --hide-column 2 --print-column 2 --column "Plugin" --column fonction \
+  func=$(yad --list --no-headers --width=450 --height=450 --text="Menu CBM"  --title="Code Base Manager" \
+	  --hide-column 2 --print-column 2 --column "Plugin" --column fonction --separator=" " \
     "Plugin import (cache)" add_plugin_cache \
     "Plugins list (cache)" list_plugins_cache \
     "Add plugin to project" add_plugin_project \
@@ -147,8 +162,9 @@ while true ; do
     "Release a new codebase version" release \
     "Exit" exit
   )
+  
   if [[ "$?" -eq 0 && -n "$func" ]]; then
-    [ "DEBUG" = true ] && info function: "$func"
+    [ "$DEBUG" = true ] && info function: "$func"
     $func
   else
     error "Code Base Manager exit"
