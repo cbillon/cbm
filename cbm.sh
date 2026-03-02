@@ -110,9 +110,9 @@ if [[ "$?" -eq 0 && -n "$PROJECT" ]]; then
         --align=right \
         --width=150 \
         --mouse \
-        --title="CodeBase Manager configurator" \
+        --title="CodeBase Manager configurator: $PROJECT" \
         --field="Admin:" "admin" \
-        --field="Admin em mail" "admin@gmail.com" \
+        --field="Admin e-mail" "admin@gmail.com" \
         --field="Branch project:" "$PROJECT" \
         --field="Moodle Version:CBE" 4.5\!5.0\!5.1\!5.2 \
         --field="Description:TXT" \
@@ -121,15 +121,21 @@ if [[ "$?" -eq 0 && -n "$PROJECT" ]]; then
         --button="Yes!gtk-yes":0)
 
         [[ "$?" -eq 0 && -n "$parm" ]] || exit 1
-        if is_moodle_version_valid "$parm"; then
+        IFS='|'; arr_parm=($parm); unset IFS;             
+        # 2 PROJECT_BRANCH 3 MOODLE_VERSION
+        
+        if is_moodle_version_valid "${arr_parm[3]}"; then
           error=0
         else
-          error Invalid Moodle version "$parm"
+          error Invalid Moodle version "${arr_parm[3]}"
         fi
       done
 
-      info Call create project "$PROJECT" "$parm"
-      create_project "$PROJECT" "$parm"
+      info Call create project "$PROJECT" "${arr_parm[2]}" "${arr_parm[3]}" "${arr_parm[4]}"
+      
+      create_project "$PROJECT" "${arr_parm[2]}" "${arr_parm[3]}" "${arr_parm[4]}"
+      # save current project
+      sed -i "s/^PROJECT_CURRENT=.*/PROJECT_CURRENT=$PROJECT/" "$RACINE/includes/env.cnf"
       info Project "$PROJECT" created
 
     else

@@ -1,10 +1,9 @@
 {
   "project": {
-    "name": "${project}",
-    "branch": "${project}"
-  },
-  "moodle": {
-    "version": "${version}"
+    "name": "${name}",
+    "branch": "${branch}",
+    "version": "${version}",
+    "description" : "${description}"
   },
   "plugins": []
 }
