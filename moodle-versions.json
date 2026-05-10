@@ -33,5 +33,10 @@
     "version": "20251006",
     "release": "5.1",
     "branch": "MOODLE_501_STABLE"
+  },
+  "5.2": {
+    "version": "20260420",
+    "release": "5.2",
+    "branch": "MOODLE_502_STABLE"
   }
 }
