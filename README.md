@@ -20,11 +20,19 @@ Vous décrivez la configuration souhaitée dans un fichier au format yaml:
     moodle-mod_attendance:
 
 ```    
+Le fichier de configuration comprend 3 parties:
+- le projet
+- la base de code Moodle
+- la liste des plugins
+
 ## Principe de fonctionnement 
 
 Le fichier de configuration définit l'état demandé de la base de code.
+L'état de la base de code est défini par l'ensemble des états de chaque composant (Moodle,plugins)
+Les sources de chaque composant sont gérés par git.
 Les informations concernant le dépôt des sources, la version des plugins sont récupérées depuis le
 [répertoire officiel des plugins](https://moodle.org/plugins).
+
 L'outil sélectionne une version du plugin compatible avec la version de Moodle.
 
 ### Fonctionnement 
@@ -34,6 +42,31 @@ Un fichier unique de configuration définit l'***état demandé***
 ![Boucle de controle](./docs/pictures/Boucle_de_controle.png) 
 
 Le script observe l'***état courant*** et si il est différent de l'***état demandé***, il y a génèration d'une nouvelle base de code. 
+
+## La gestion des plugins
+
+un depot recense tous les plugins "officiels"
+Ces plugins doivent répondre à différents critéres pour etre integrés dans le répertoire officiel
+
+see https://moodledev.io/general/community/plugincontribution/checklist
+
+- un nom du <type>_<nom du composant> permet de regrouper le plugins par type (block,local,activités...)
+- etre disponible dasn un répertoire public
+- doit la (ou les) version de Moodle compatible pour son fonctionnement
+
+
+
+une API permet de récuprer ces meta données
+
+
+
+
+## Variantes pour la récuperation des sources des plugins
+
+- zip de l'archive ; fournit par API si support officiel
+- souce git piloté par la meta donnée version (branch, tag, commit)
+
+
 
 ### Git 
 
@@ -48,14 +81,15 @@ Nota: pour faire simple, on n'utilise pas les fonctions git submodules.
 
 ## Pour démarrer
 
-Les informations nécessaires pour démarrer se trouvent [ici](docs/tutorials/Getting-started.md) 
-
 La documentation se trouve dans le répertoire **docs** :
 
 - tutorials : pour démarrer
 - how-to-guides: comment faire 
 - reference : document de référence sur les commandes
 - discussions: documents sur des sujets relatifs au projet
+
+Les informations nécessaires pour démarrer se trouvent [ici](docs/tutorials/Getting-started.md) 
+
 
 Le fichier de configuation du projet : projects/<nom du projet>/<nom du projet>.yml
 Les sources de la base de code générée :
