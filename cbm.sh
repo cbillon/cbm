@@ -39,6 +39,12 @@ END
 
 }
 
+# First find out if this was called from symlink,
+# then find the real path of parent directory.
+# This is needed because macOS does not have GNU realpath.
+thisfile=$( readlink "${BASH_SOURCE[0]}" ) || thisfile="${BASH_SOURCE[0]}"
+cd "$( cd "$( dirname "$thisfile" )/" && pwd -P )"
+
 DEBUG=false
 while getopts "h?dl:" opt
 do
