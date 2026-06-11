@@ -1,0 +1,55 @@
+1 add_plugin_cache
+2 list_plugins_cache
+3 add_plugin_project
+4 rm_plugin
+5 config_check
+6 update_moodle
+7 update_plugins_repo
+8 update_codebase
+9 release
+0 add_plugin_cache 617
+1 add_plugin_project 1222
+2 add_plugins_from_list 1273
+3 clone_plugin 665
+4 codebase_need_update 936
+5 config_check 411
+6 create_commit.old 280
+7 create_dir 94
+8 create_file 87
+9 create_project 445
+10 edit_plugins 680
+11 End 61
+12 get_moodle_desired_state 294
+13 get_observed_state 917
+14 get_plugin_default_state 881
+15 get_plugin_desired_state 815
+16 get_plugin_dir 580
+17 get_plugin_project_state 844
+18 get_plugins 738
+19 get_pluglist 72
+20 get_project_conf 220
+21 install_plugin_project 957
+22 install_plugin_vcstag 984
+23 install_plugin_versionnumber 1019
+24 is_moodleversion_supported 124
+25 is_moodleversion_supported.old 169
+26 is_moodle_version_valid 243
+27 is_official_plugin 112
+28 is_plugin_branch 432
+29 is_project_branch 106
+30 list_plugins_cache 559
+31 menu 101
+32 new_project_from_old 1259
+33 nothing_todo 30
+34 project_lock 1120
+35 release 1065
+36 repo_need_upgrade 371
+37 rm_plugin 1167
+38 setx_output 37
+39 Start 50
+40 suppress_plugin 1199
+41 update_codebase 1051
+42 update_moodle 539
+43 update_plugins_repo 756
+44 wait_keyboard 26
+That's All!

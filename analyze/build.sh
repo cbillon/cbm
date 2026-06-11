@@ -4,6 +4,18 @@ declare -A a
 declare -A code
 function_file='../includes/functions.cfg'
 debug="${1:-}"
+# list menus functions
+echo 1 add_plugin_cache
+echo 2 list_plugins_cache
+echo 3 add_plugin_project
+echo 4 rm_plugin
+echo 5 config_check
+echo 6 update_moodle
+echo 7 update_plugins_repo
+echo 8 update_codebase
+echo 9 release
+echo '  '
+
 regexp='^.*function +(.*) +\(\) +\{.*$'
 str=$(cat "$function_file")
 end=${#str}
