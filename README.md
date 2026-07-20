@@ -181,3 +181,6 @@ jq -r '.plugins[] | select(.name == "tool_redis")' projects/demo/demo.json
 Pour retire un plugin du projet
 jq '.| del(.plugins[] | select(.name == "tool_redis"))' projects/demo/demo.json
 
+Pour mettre à branch dans un projet
+
+jq -r '.plugins[]|select(.name=="tool_redis") .branch = "local"' projects/new52/new52.json

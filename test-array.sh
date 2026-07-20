@@ -32,8 +32,8 @@ DEBUG=false
 #   echo "$plugin"
 #   echo ' '
 # done
-
-plugins=($(jq -r ".plugins[].name" projects/demo/demo.json | tr "\n" " "))
+PROJECT="$1"
+plugins=($(jq -r ".plugins[].name" projects/"$PROJECT"/"$PROJECT".json | tr "\n" " "))
 
 echo nb:"${#plugins[@]}"
 i=0
