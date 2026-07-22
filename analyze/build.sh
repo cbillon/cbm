@@ -11,8 +11,8 @@ echo 3 add_plugin_project
 echo 4 rm_plugin
 echo 5 config_check
 echo 6 update_moodle
-echo 7 update_plugins_repo
-echo 8 update_codebase
+echo 7 update_plugins_cache
+echo 8 sync_codebase_plugins
 echo 9 release
 echo '  '
 

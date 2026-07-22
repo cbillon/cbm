@@ -169,8 +169,8 @@ while true ; do
     "Remove plugin from project" rm_plugin \
     "Check project configuration" config_check \
     "Update core Moodle" update_moodle  \
-    "Update plugins in cache" update_plugins_repo \
-    "Sync codebase" update_codebase \
+    "Update plugins in cache" update_plugins_cache \
+    "Sync codebase plugins" sync_codebase_plugins \
     "Release a new codebase version" release \
     "Exit" exit
   )

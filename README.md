@@ -184,3 +184,12 @@ jq '.| del(.plugins[] | select(.name == "tool_redis"))' projects/demo/demo.json
 Pour mettre à branch dans un projet
 
 jq -r '.plugins[]|select(.name=="tool_redis") .branch = "local"' projects/new52/new52.json
+
+##YAD
+
+[YAD](https://yad-guide.ingk.se/#_introduction)
+
+YAD - (Yet Another Dialog) is a simple tool for developing Graphical User Interfaces. It will integrate with bash.
+YAD is a program that will display GTK+ dialogs, and return (either in the return code or on standard output) the users input. This allows you to present information, and ask for information from the user, from all manner of shell scripts.
+
+Type yad --help-all in a terminal to see all command line help.
