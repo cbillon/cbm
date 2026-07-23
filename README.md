@@ -98,6 +98,17 @@ git checkout <nom du projet>
 
 ## tips jq
 
+Pour recuperer le fichier des plugins
+  wget download.moodle.org/api/1.3/pluglist.php -O "$RACINE"/pluglist.json      
+Pour avoir le nombre de plugins
+  jq '.plugins| length' "$RACINE"/pluglist.json
+Pour recuperer un plugin
+  jq '.plugins|.[2820] | .d,.component, .name' pluglist.json
+
+Pour selectionner un plugin
+  jq '.plugins| map(select (.id == 4268)) |.[]' pluglist.json
+  jq '.plugins| map(select (.component == "local_aihub")) |.[]' pluglist.json
+
 $ jq -r '[.versions[]| {(.vcstag): (.supportedmoodles[].release)}]' tmp.json
 
 [
