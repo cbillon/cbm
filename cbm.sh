@@ -166,7 +166,7 @@ while true ; do
     "Plugin import (cache)" add_plugin_cache \
     "Plugins list (cache)" list_plugins_cache \
     "Add plugin to project" add_plugin_project \
-    "Remove plugin from project" rm_project_plugin \
+    "Remove plugin from project" rm_plugin_project \
     "Check project configuration" config_check \
     "Update core Moodle" update_moodle  \
     "Update plugins in cache" update_plugins_cache \

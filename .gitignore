@@ -3,6 +3,7 @@ plugins
 projects
 tmp.json
 pluglist.json
+pluglist.json.bck
 plugins.json
 env.cnf
 analyze/code.sh

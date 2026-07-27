@@ -4,15 +4,11 @@ source includes/env.cnf
 source includes/functions.cfg
 source includes/bash_strict.sh
 
-function get_cache_plugins () {
-  Start "$*"
-  local error=0
-  
-  End
-  return "$error"        
-}
-
-info That s All !
+# First find out if this was called from symlink,
+# then find the real path of parent directory.
+# This is needed because macOS does not have GNU realpath.
+thisfile=$( readlink "${BASH_SOURCE[0]}" ) || thisfile="${BASH_SOURCE[0]}"
+cd "$( cd "$( dirname "$thisfile" )/" && pwd -P )"
 
 PROJECT="${1:-new52}"
 DEBUG=true
@@ -22,4 +18,4 @@ info PROJECT: "$PROJECT" debug: "$DEBUG" plugin: "$PLUGIN"
 
 get_project_conf "$PROJECT"
 
-is_official_plugin "$PLUGIN" 
+success "That\'s All!"
