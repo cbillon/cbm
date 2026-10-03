@@ -1,0 +1,22 @@
+{
+  "project": {
+    "name": "new52"
+  },
+  "plugins": [
+    {
+      "name": "tool_vault",
+      "branch": "main",
+      "version": "v4.5.2"
+    },
+    {
+      "name": "tool_vault",
+      "branch": "main",
+      "version": "v4.5.1"
+    },
+    {
+      "name": "tool_automate",
+      "branch": "main",
+      "version": "v1.3.1"
+    }
+  ]
+}

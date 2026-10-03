@@ -1,0 +1,1323 @@
+
+In includes/functions.cfg line 390:
+  remote=$(git rev-parse @{u})
+                          ^-- SC1083 (warning): This { is literal. Check expression (missing ;/\n?) or quote it.
+                            ^-- SC1083 (warning): This } is literal. Check expression (missing ;/\n?) or quote it.
+
+
+In includes/functions.cfg line 391:
+  base=$(git merge-base @ @{u})
+                           ^-- SC1083 (warning): This { is literal. Check expression (missing ;/\n?) or quote it.
+                             ^-- SC1083 (warning): This } is literal. Check expression (missing ;/\n?) or quote it.
+
+
+In includes/functions.cfg line 712:
+        sha2=$(sha1sum "~/tmp/"$PLUGIN".json | cut -d " " -f 1)
+               ^-- SC1009 (info): The mentioned syntax error was in this simple command.
+                                                        ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 713:
+        if [[ "$sha1" != "$sha2" ]]; then
+              ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 714:
+          info "$PLUGIN" in cache must be updated
+               ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                       ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 715:
+          cd "$PLUGINS_SOURCE"/"$PLUGIN" || exit 1
+             ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                       ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 721:
+            [[ -f "$PLUGINS_METADATA"/"$PLUGIN".json ]] && rm "$PLUGINS_METADATA"/"$PLUGIN".json
+                  ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 722:
+            get_metadata_plugin "$PLUGIN" "$PLUGINS_METADATA"/"$PLUGIN".json
+                                ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                      ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 723:
+            success "$PLUGIN" in cache source and metadata updated
+                    ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                            ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 724:
+            [[ -f ~/tmp/"$PLUGIN".json ]] && rm ~/tmp/"$PLUGIN".json
+                        ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                              ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 730:
+          success "$PLUGIN" already up to date
+                  ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 733:
+          error "$PLUGIN" official plugin but not in cache.
+                ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                        ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 734:
+          clone_plugin "$PLUGIN" 1
+                       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 737:
+        warn "$PLUGIN" is not official plugin. nothing todo
+             ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                     ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 739:
+    info "$PLUGIN" end of treatment
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 743:
+  return "$error"
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 752:
+  cd "$PLUGINS_SOURCE"/"$PLUGIN" || exit 1
+                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 758:
+  PLUGIN_BRANCH=""         
+                ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 759:
+  for branch in "${local_branches[@]}"; do
+                ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                     ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 760:
+    [[ "$branch" =~ ^MOODLE_[0-9]{3}_STABLE|main|master$ ]] && {
+       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 761:
+      [ "$DEBUG" = true ] && info  "${plugin}" found "$branch" 
+        ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                             ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 762:
+      PLUGIN_BRANCH="$branch"
+                    ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 768:
+  [[ "$PLUGIN_BRANCH" == "$branch" ]]&&{ error=0; info "$PLUGIN" branch: "$PLUGIN_BRANCH"; } || warn "$PLUGIN" no standard branch found 
+                                                                                                             ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 771:
+  return "$error"
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 793:
+  nano "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json
+                                            ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 794:
+  ret="$?"
+      ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 802:
+  if [ "$date_after" != "$date_before" ]; then
+                                     ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 803:
+     [ "$DEBUG" = true ] && echo "il y a eu des maj..."
+       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 805:
+    jq "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json >/dev/null || exit 1
+                                            ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 806:
+    get_plugins "$PROJECT"
+                ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 812:
+    if [ -n "$plugins_suppress" ]; then
+                              ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 813:
+      for key in "${!plugins_suppress[@]}"; do
+                 ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                         ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 814:
+        # skip first entry -[ -f "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json ]
+                                 ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                      ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 816:
+        echo "A supprimmer: $key ${plugins_suppress[$key]}"
+             ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 825:
+  if [ -n "${must_update_codebase:-}" ] && [ "$must_update_codebase" -eq 1 ]; then
+                                                                   ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 826:
+    sync_codebase_plugins "$PROJECT" && success Code base updated || { error Codebase not synchronized coorectly; error=1; }
+                          ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                   ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 829:
+  return "$error"
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 855:
+#   [ -f "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json ]
+                                              ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 857:
+#   get_plugins "$PROJECT"
+                ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 859:
+#   for PLUGIN in "${PLUGINS[@]}"; do
+                                ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 860:
+#     [ "$DEBUG" = true ] && info check PLUGIN: "$PLUGIN"
+        ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 861:
+#     if [ -d "$PLUGINS_SOURCE"/"$PLUGIN" ]; then
+                                        ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 862:
+#       get_plugin_desired_state "$PLUGIN" "$MOODLE_VERSION"
+                                 ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 864:
+#       case "$ret" in
+                  ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 866:
+#         success "$PLUGIN" up to date
+                  ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 870:
+#         info "Mise à jour automatique du plugin $PLUGIN" from upstream
+               ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                         ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 871:
+#         git checkout --quiet "$PLUGIN_BRANCH"
+                               ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 874:
+#         if [ "$LOCALDEV" != null ];
+                         ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 878:
+#           #   git branch --quiet "$LOCALDEV"
+                                   ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 887:
+#         warn "$PLUGIN" no remote repo found
+                       ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 891:
+#         warn "$PLUGIN_BRANCH need to push to remote"
+               ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 900:
+#       error "$PLUGIN" missing in local cache
+                      ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 906:
+#   return "$error"
+           ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 923:
+  [ -d "$PLUGINS_SOURCE"/"$PLUGIN" ] || { error Plugin "$PLUGIN" not present in cache; return 1; }
+                                                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 925:
+  if get_plugin_project_state "$PLUGIN" "$MOODLE_VERSION" ; then
+                              ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                        ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 928:
+     get_plugin_default_state "$PLUGIN" "$MOODLE_VERSION" && error="$?"|| error="$?"      
+                              ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                   ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 932:
+  [ "$DEBUG" = true ] && info "$error" "  PLUGIN_STATE_TYPE: $PLUGIN_STATE_TYPE" PLUGIN_DESIRED_STATE: "$PLUGIN_DESIRED_STATE"
+    ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 950:
+  [ "$DEBUG" == true ]&& info source "$PROJECT".json: "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json
+                                                                                           ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 952:
+  [ "$DEBUG" == true ]&& info plugin_branch: "$plugin_branch"
+    ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 958:
+  if [[ "$plugin_version" != null ]]; then
+                        ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 960:
+    PLUGIN_DESIRED_STATE="$plugin_version"
+                         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 962:
+  elif [[ "$plugin_branch" != null ]]; then
+                         ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 964:
+    PLUGIN_DESIRED_STATE="$plugin_branch"
+                         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 966:
+  elif [[ "$plugin_versionnumber" != null ]]; then
+                                ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 968:
+    PLUGIN_DESIRED_STATE="$plugin_versionnumber"
+                         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 970:
+    info no value for "$PLUGIN" in "$PROJECT".json
+                                            ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 973:
+  [ "$DEBUG" == true ]&& info PLUGIN_STATE_TYPE: "$PLUGIN_STATE_TYPE"
+    ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 988:
+  if is_moodleversion_supported "$PLUGIN" "$MOODLE_VERSION" ; then
+                                                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 990:
+    [ "$DEBUG" = true ] && info Tag: "$vcstag"
+      ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 991:
+    if [[ "$vcstag" != null ]]; then
+                  ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 993:
+      PLUGIN_DESIRED_STATE="$vcstag"
+                           ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 996:
+      if [[ "$downloadurl" != null ]]; then
+                         ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 997:
+        [ "$DEBUG" = true ] && info "${FUNCNAME[0]}" b"${LINENO}" DOWNLOADURL: "$DOWNLOADURL"
+          ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1001:
+        error "$PLUGIN" "${FUNCNAME[0]}" "${LINENO}" no vcstag or downloadurl
+                                                   ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1006:
+    error "$PLUGIN" not supports Moodle version "$MOODLE_VERSION"
+          ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1024:
+  if [[ -d "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME" ]]; then
+                                                ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1025:
+    cd "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME" || exit
+       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                            ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1026:
+    [[ $(grep .gitrepo -e 'PLUGIN_STATE_TYPE=') =~ ^.*PLUGIN_STATE_TYPE=(.*)$ ]] &&   OBSERVED_TYPE="${BASH_REMATCH[1]}" || error=1
+                                                                                                    ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                                                       ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1027:
+    [[ $(grep .gitrepo -e 'PLUGIN_DESIRED_STATE=') =~ ^.*PLUGIN_DESIRED_STATE=(.*)$ ]] && OBSERVED_STATE="${BASH_REMATCH[1]}" || error=1
+                                                                                                         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                                                            ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1029:
+  [ "$DEBUG" = true ] && info "$PLUGIN" observed type : "$OBSERVED_TYPE" state: "$OBSERVED_STATE"
+    ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1042:
+  case "$PLUGIN_STATE_TYPE" in 
+                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1043:
+  "version" |"branch" | "vcstag")
+  ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1044:
+    install_plugin_git "$PLUGIN" "Add $PLUGIN" "$PLUGIN_STATE_TYPE" "$PLUGIN_DESIRED_STATE";;
+                       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1045:
+  "versionnumber")
+  ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1046:
+    install_plugin_versionnumber "$PLUGIN" "Add $PLUGIN" "$PLUGIN_STATE_TYPE" "$PLUGIN_DESIRED_STATE";;
+                                 ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                                    ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1048:
+    error Unknown PLUGIN_STATE_TYPE "$PLUGIN_STATE_TYPE"
+                                    ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1066:
+  [ -d "$PLUGINS_SOURCE"/"$PLUGIN" ] || { error "$PLUGIN" not in cache; exit; }
+                                                        ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1067:
+  cd "$PLUGINS_SOURCE"/"$PLUGIN" || exit
+     ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1068:
+  git checkout "$PLUGIN_DESIRED_STATE" --quiet
+               ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                     ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1070:
+  cd "$MOODLE_SRC" || exit
+     ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1071:
+  git checkout "$PROJECT_BRANCH" --quiet
+               ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1073:
+  get_plugin_dir "$PLUGIN" "$MOODLE_VERSION"
+                 ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1075:
+  if [ ! -d "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME" ]; then
+                                                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1076:
+    mkdir -p "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME"
+             ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1082:
+  echo "    PLUGIN_DESIRED_STATE=$PLUGIN_DESIRED_STATE" >> "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME"/.gitrepo
+                                                                                                ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1084:
+  git commit -m "$MSG" --quiet
+                ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                     ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1086:
+  cd "$PLUGINS_SOURCE"/"$PLUGIN" || exit 1
+     ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1088:
+  if get_plugin_branch "$PLUGIN"; then
+                       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1089:
+    [ "$DEBUG" = true ] && info branch found: "$PLUGIN_BRANCH"
+      ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1090:
+    if [[ $(git branch --contains "$PLUGIN_DESIRED_STATE") =~ .*"$PLUGIN_BRANCH".*$ ]]; then
+                                                                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1091:
+      info plugin "$PLUGIN" has branch "$PLUGIN_BRANCH" wich contains "$PLUGIN_DESIRED_STATE"
+                  ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1093:
+      for p in "${PLUGINS[@]}"; do 
+                             ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1094:
+        [[ "$p"  == "$PLUGIN" ]] && { error=0; break; }
+           ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                            ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1098:
+      [[ "$p"  == "$PLUGIN" ]] && error=0
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1100:
+      [ "$DEBUG" = true ] && info debug p: $p "$PLUGIN" "$n" error: "$error"
+        ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1102:
+      if [ "$p"  == "$PLUGIN" ]; then 
+                            ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1103:
+      info Plugin: "$PLUGIN" n: "$n"
+                   ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1104:
+      jq del(.plugins[$n])|. "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json > "$PROJECT".tmp 
+                                                                                    ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1105:
+      mv "$PROJECT".tmp "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                             ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1107:
+      error internal error plugin "$PLUGIN" not found
+                                  ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1110:
+    jq  -r --arg plugin "$PLUGIN" --arg branch "$PLUGIN_BRANCH" --arg version "$PLUGIN_DESIRED_STATE" \
+                        ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1113:
+        "$PROJECT".tmp && mv "$PROJECT".tmp "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json
+                                                                                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1115:
+      error plugin "$PLUGIN" has branch "$PLUGIN_BRANCH" but not contains "$PLUGIN_DESIRED_STATE"
+                   ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1119:
+    error "$PLUGIN" no branch found
+                  ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1122:
+  [ "$error" -eq 0 ] && success "$PLUGIN" succesfully installed || error "$PLUGIN" not correctly installed
+    ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1124:
+  return "$error"
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1139:
+#   [ -d "$PLUGINS_SOURCE"/"$PLUGIN" ] || { error "$PLUGIN" not in cache; exit; }
+                                                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1140:
+#   cd "$PLUGINS_SOURCE"/"$PLUGIN" || exit
+       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1141:
+#   git checkout "$PLUGIN_DESIRED_STATE" --quiet
+                 ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                       ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1143:
+#   cd "$MOODLE_SRC" || exit
+       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                   ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1144:
+#   git checkout "$PROJECT_BRANCH" --quiet
+                 ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1146:
+#   get_plugin_dir "$PLUGIN" "$MOODLE_VERSION"
+                   ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1148:
+#   if [ ! -d "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME" ]; then
+                                                   ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1149:
+#     mkdir -p "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME"
+               ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1154:
+#   echo "    PLUGIN_DESIRED_STATE=$PLUGIN_DESIRED_STATE" >> "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME"/.gitrepo
+                                                                                                  ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1156:
+#   git commit -m "$MSG" --quiet
+                  ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                       ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1159:
+#   return "$error"
+           ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1175:
+  if [[ ! -d "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME" ]]; then
+                                                  ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1176:
+     mkdir -p "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME"
+              ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1179:
+  cd "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME" || exit
+                                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1180:
+    [[ $(grep .gitrepo -e 'PLUGIN_STATE_TYPE=') =~ ^.*PLUGIN_TYPE=(.*)$ ]] && state_type="${BASH_REMATCH[1]}"
+                                                                                         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1183:
+  if [[ (( "$state_type" == "$PLUGIN_STATE_TYPE" )) && (( "$desired_type" == "$DOWNLOADURL" )) ]]; then
+                                                                                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1184:
+    info "$PLUGIN" already installed with "$PLUGIN_STATE_TYPE" : "$DOWNLOADURL"
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1187:
+    curl "$DOWNLOADURL" -o tmp.zip
+                      ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1188:
+    [ "$DEBUG" == true ] && info unzip tmp.zip onto "$MOODLE_SRC"/"$DIR"
+      ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1189:
+    unzip  tmp.zip -d  "$MOODLE_SRC"/"$DIR"/  && rm tmp.zip
+                                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1190:
+    info before Commit Add plugin "PLUGIN" in "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME"
+                                  ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1192:
+    echo "    PLUGIN_DESIRED_STATE=$PLUGIN_DESIRED_STATE" >> "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME"/.gitrepo
+                                                                                                  ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1193:
+    git add "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME"
+            ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1200:
+    "$PROJECT".tmp && mv "$PROJECT".tmp "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json
+                                                                             ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1202:
+  [ "$error" -eq 0 ] && success "$PLUGIN" succesfully installed || error "$PLUGIN" not correctly installed
+    ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1207:
+  Start "$*"
+        ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1215:
+    if get_plugin_desired_state "$plugin" "$MOODLE_VERSION"; then
+                                                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1216:
+      info state: "${LINENO}" "$plugin" : "$PLUGIN_STATE_TYPE" : "$PLUGIN_DESIRED_STATE"
+                  ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1218:
+      get_observed_state "$PLUGIN" || true
+                                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1219:
+      if [ "$PLUGIN_STATE_TYPE" == "$OBSERVED_TYPE" ] && [ "$PLUGIN_DESIRED_STATE" == "$OBSERVED_STATE" ]; then
+           ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                                      ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1220:
+        success "$PLUGIN" type "$PLUGIN_STATE_TYPE" state "$PLUGIN_DESIRED_STATE" already synchronized
+                ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1222:
+        install_plugin_project "$plugin" "$PLUGIN_STATE_TYPE" "$PLUGIN_DESIRED_STATE"
+                               ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1225:
+      error "$PLUGIN" no desired state defined. no install
+                    ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1233:
+Start "$*"
+      ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1235:
+[ -f "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json ]
+                                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1239:
+NEWRELEASE="$PROJECT_BRANCH"-$(date +%Y.%m.%d@%Hh%M)
+           ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                           ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1240:
+MSG="${1:-$NEWRELEASE}"
+    ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1243:
+cd "$MOODLE_SRC" || exit
+               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1244:
+git checkout "$PROJECT_BRANCH" --quiet
+             ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                             ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1245:
+git commit --allow-empty -m "$MSG"
+                            ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1246:
+git tag "$NEWRELEASE" && info tag "$NEWRELEASE" created
+                                              ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1247:
+[ "$RELEASE_BRANCH"  = true ] && { git checkout -b "$NEWRELEASE"; info PROJECT_BRANCH: "$NEWRELEASE" created; } 
+  ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                                   ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1249:
+project_lock "$NEWRELEASE"
+             ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1251:
+cd "$MOODLE_SRC" || exit
+               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1252:
+git checkout "$PROJECT_BRANCH" --quiet
+             ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                             ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1253:
+if [  -n "${MOODLE_UPDATE_ORIGIN:-}" ]; then
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                   ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1254:
+  [ "$DEBUG" = true ] && info MOODLE_UPDATE_ORIGIN: "$MOODLE_UPDATE_ORIGIN"
+    ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1257:
+  if [ -n "$remote_origin_url" ]; then
+                             ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1258:
+    if [ "$remote_origin_url" == "$MOODLE_UPDATE_ORIGIN" ]; then
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                       ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1259:
+      git push origin "$PROJECT_BRANCH"
+                      ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1260:
+      success "$MOODLE_UPDATE_ORIGIN" successfully updated
+                                    ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1262:
+      error remote url has changed : "$remote_origin_url"
+                                     ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1271:
+    # The option -u is for “set upstream”.
+                           ^-- SC1111 (warning): This is a unicode quote. Delete and retype it (or ignore/singlequote for literal).
+                                        ^-- SC1111 (warning): This is a unicode quote. Delete and retype it (or ignore/singlequote for literal).
+
+
+In includes/functions.cfg line 1275:
+    success "$MOODLE_UPDATE_ORIGIN" updated
+                                  ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1277:
+  if [ "$RELEASE_BRANCH"  = true ]; then
+       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                       ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1278:
+    cd "$MOODLE_SRC" || exit
+       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                   ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1279:
+    git checkout "$NEWRELEASE" 
+                 ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                             ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1280:
+    git push -u origin refs/heads/"$NEWRELEASE"
+                                  ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1281:
+    info "$NEWRELEASE" branch pushed origin
+                     ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1286:
+return "$error"
+       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1297:
+  cd "$PROJECTS_PATH"/"$PROJECT" || exit
+                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1298:
+  # create "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".lock
+           ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1299:
+  [ -f "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json ] || exit
+       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                            ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1300:
+  [ -f "$PROJET".lock ] && rm "$PROJECT".lock
+       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                       ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1301:
+  cp "$PROJECT".json "$PROJECT".lock
+     ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                              ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1303:
+  [ "$DEBUG" = true ] && info PROJECT_BRANCH: "$PROJECT_BRANCH" Moodle: "$MOODLE_BRANCH"
+    ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1305:
+  cd "$MOODLE_SRC" || exit
+                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1306:
+  git checkout "$PROJECT_BRANCH" --quiet
+               ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1307:
+  info MOODLE_BRANCH "$MOODLE_BRANCH"
+                     ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1308:
+  jq --arg moodle_branch "$MOODLE_BRANCH" '.moodle.branch=$moodle_branch' "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".lock > "$PROJECT".tmp
+                                                                                                                                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1309:
+  mv "$PROJECT".tmp "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".lock
+     ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                         ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1311:
+  jq --arg moodleversion "${common_ancestor:0:7}" '.moodle.version=$moodleversion' "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".lock > "$PROJECT".tmp
+                         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                                                                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1312:
+  mv -- "$PROJECT".tmp "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".lock
+        ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                            ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1314:
+  # get_plugins "$PROJECT"
+                ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1315:
+  # for PLUGIN in "${PLUGINS[@]}"; do
+                                ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1316:
+  #   [ "$DEBUG" = true ] &&info "Add lock metadata plugin: $PLUGIN"
+        ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1318:
+  #   if [[ -d "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME" ]]; then
+                                                    ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1320:
+  #       [ "$DEBUG" = true ] && info debug gitrepo: "${BASH_REMATCH[1]}"
+            ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1322:
+  #       '(.plugins[]|select(.name==$name)).type=$type' "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".lock > "$PROJECT".tmp
+                                                                                                                ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1323:
+  #       mv "$PROJECT".tmp "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".lock
+             ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1325:
+  #       error content type not found  "$PLUGIN"/.gitrepo
+                                        ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1328:
+  #     warn "$PLUGIN" not installed
+             ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                     ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1333:
+  #create_commit "$NEWRELEASE"
+                 ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1346:
+  [[ "$?" -eq 0 && -n "$PLUGIN" ]] || { error Cancel;return 1; }  
+                              ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1348:
+  if yad --image="dialog-question" --title "Code Base Manager" --text "Suppress plugin $PLUGIN ?" --button="gtk-no:1" --button="gtk-yes:0"; then
+                 ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                                                                         ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1350:
+    get_plugins "$PROJECT"
+                ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1351:
+    for p in "${PLUGINS[@]}"; do 
+                           ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1352:
+      [[ "$p"  == "$PLUGIN" ]] && break
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1355:
+    if [ "$p" == "$PLUGIN" ]; then 
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                         ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1356:
+      suppress_plugin "$PLUGIN" && error=0 || return "$?" 
+                      ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                        ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1357:
+      jq del(.plugins[$n])|. "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json > "$PROJECT".tmp && mv "$PROJECT".tmp "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json
+                             ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                                                                                    ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1359:
+      error internal error plugin "$PLUGIN" not found
+                                  ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1368:
+  return "$error" 
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1373:
+  Start "$*"
+        ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1378:
+  cd "$MOODLE_SRC" || exit
+                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1379:
+  git checkout "$PROJECT_BRANCH" --quiet
+               ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1380:
+  if [ -d "$MOODLE_SRC"/"$DIR"/"$COMPONENT_NAME" ]; then
+          ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1381:
+    rm -r  "${MOODLE_SRC:-?}"/"${DIR:-?}"/"${COMPONENT_NAME:-?}"
+           ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1383:
+    git commit -m "Suppress plugin $plugin" --quiet
+                                          ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1384:
+    success "$plugin deleted in codebase"      
+            ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                        ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1386:
+    warn "Plugin $plugin not present in codebase nothing to do!"
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1398:
+  cd "$PLUGINS_SOURCE" || exit
+                     ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1403:
+      list+="FALSE $plugin "
+            ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1409:
+  [ "$h" -gt 672 ]&& h=672
+       ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1410:
+  #PLUGIN=$(menu --title "Plugins cache" --checklist "Plugin's List" 25 78 16 $list) && ret="$?" || ret="$?"
+                                                                                            ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1414:
+  if [[ "$error" -eq 0 && -n "$PLUGIN" ]]; then
+                                     ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1415:
+    [ "$DEBUG" = true ]&&info plugin selected: "$?" "$PLUGIN"
+      ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1416:
+  if get_plugin_default_state "$PLUGIN" "$MOODLE_VERSION"; then
+                                                        ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1417:
+    info plugin state type : "$PLUGIN_STATE_TYPE" desired state: "$PLUGIN_DESIRED_STATE" 
+                             ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                       ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1418:
+    jq  -r --arg plugin "$PLUGIN" \
+                        ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1421:
+      "$PROJECT".tmp && mv "$PROJECT".tmp "$PROJECTS_PATH"/"$PROJECT"/"$PROJECT".json
+                                                                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1424:
+    error "$PLUGIN" version "$MOODLE_VERSION" not supported
+          ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                            ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1429:
+#get_plugins "$PROJECT"
+             ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1430:
+[ "$error" -eq 0 ]&& info "$PLUGIN" successfully added to project || error "$PLUGIN" not added to project
+                                                                                   ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1432:
+return "$error"
+       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1437:
+  local old_project="$1" new_project="$2"  error=0
+                                        ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1438:
+  Start "$*"
+        ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1440:
+  [ -f "$PROJECTS_PATH"/"$old_project"/"$old_project".json ] || { error "$PROJECTS_PATH"/"$old_project"/"$old_project".json not exists; error=1;}
+                                                                                                                     ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1441:
+  [ -f "$PROJECTS_PATH"/"$new_project"/"$new_project".json ] || { "$PROJECTS_PATH"/"$new_project"/"$new_project".json not exists; error=1;}
+       ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                                               ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1442:
+  jq -r '.plugins' "$PROJECTS_PATH"/"$old_project"/"$old_project".json > plugins.json
+                   ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1443:
+  jq  '.plugins += $inputs[]'  "$PROJECTS_PATH"/"$new_project"/"$new_project".json --slurpfile inputs plugins.json > newtmp.json && mv newtmp.json "$PROJECTS_PATH"/"$new_project"/"$new_project".json
+                               ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+                                                                                                                                                                                                ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1446:
+  return "$error"
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1451:
+  local project="$1" filename="$2" plugin error=0 
+                                 ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1452:
+  Start "$*"
+        ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1453:
+  [[ -f "$filename" ]] || { error "$filename" not exists; error=1; }
+                                            ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1457:
+    info Add: "$plugin"
+              ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1460:
+      jq  -r --arg plugin "$plugin" '.plugins[.plugins| length] |= . + { "name": $plugin }' "$PROJECTS_PATH"/"$project"/"$project".json > "$project".tmp && mv "$project".tmp "$PROJECTS_PATH"/"$project"/"$project".json
+                                                                                                                                                                                                                   ^-- SC1078 (warning): Did you forget to close this double quoted string?
+
+
+In includes/functions.cfg line 1462:
+  done < "$filename"
+         ^-- SC1079 (info): This is actually an end quote, but due to next char it looks suspect.
+
+
+In includes/functions.cfg line 1465:
+  return "$error"
+                ^-- SC1073 (error): Couldn't parse this double quoted string. Fix to allow more checks.
+
+
+In includes/functions.cfg line 1467:
+}
+ ^-- SC1072 (error): Expected end of double quoted string. Fix any mentioned problems and try again.
+
+For more information:
+  https://www.shellcheck.net/wiki/SC1078 -- Did you forget to close this doub...
+  https://www.shellcheck.net/wiki/SC1083 -- This { is literal. Check expressi...
+  https://www.shellcheck.net/wiki/SC1111 -- This is a unicode quote. Delete a...
